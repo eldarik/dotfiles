@@ -1,0 +1,19 @@
+[user]
+	name = Eldar Iskhakov
+	email = iskhakoveldar@yandex.ru
+[core]
+	excludesfile = /home/eldar/work/.gitignore_global
+	editor = vim
+[push]
+	default = matching
+[alias]
+	df = diff
+	st = status
+	ci = commit
+	br = branch -v
+	co = checkout
+	lg = log --pretty=format:\"%h %Cblue%ai  %Cgreen%an%Creset: %s %Cred%d\"
+	lf = log --name-status --pretty=format:\"%h %Cblue%ar %Cgreen%an%Creset: %s %Cred%d\"
+	ll = log -10 --pretty= format:\"%Cred%h %Cblue%ar%Creset %Cgreen%an%Creset %s %Cred%d\"
+	gr = log --graph --pretty=format:\"%Cred%h %Cblue%ar%Creset %Cgreen%an%Creset %s %Cred%d\"
+	where = branch -av --contains
