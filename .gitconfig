@@ -2,7 +2,7 @@
 	name = Eldar Iskhakov
 	email = iskhakoveldar@yandex.ru
 [core]
-	excludesfile = /home/eldar/work/.gitignore_global
+	excludesfile = /home/eldar/projects/.gitignore_global
 	editor = vim
 [push]
 	default = matching
