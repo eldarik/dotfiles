@@ -26,7 +26,7 @@ map fk :tabnext<CR>
 map fn :tabe<CR>
 map fq :q<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
-nnoremap <F2> :set invpaste paste?<CR>
+map <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
@@ -44,3 +44,8 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
+
+" show whitespaces and tabs
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
