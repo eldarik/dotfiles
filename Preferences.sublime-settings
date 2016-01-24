@@ -1,0 +1,11 @@
+{
+    "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+    "allways_show_tabs":true,
+    "draw_white_space": "all",
+    "translate_tabs_to_spaces": true,
+    "theme": "Material Solarized Dark.sublime-theme",   
+    "ignored_packages":
+    [
+        "Vintage"
+    ]
+}
