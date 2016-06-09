@@ -19,7 +19,9 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Remove all trailing whitespace by pressing F5
-map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Clear cache of cltr.p
+map <F5> :CtrlPClearCache
 
 map fj :tabprev<CR>
 map fk :tabnext<CR>
@@ -44,8 +46,3 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
-
-" show whitespaces and tabs
-let g:indentLine_enabled = 0
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '·'
