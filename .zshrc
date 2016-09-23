@@ -29,6 +29,7 @@ alias gpr='git pull --rebase'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias telegram='/opt/telegram/Telegram'
+
 NPM_PACKAGES="${HOME}/.npm-packages"
 
 PATH="$NPM_PACKAGES/bin:$PATH"
@@ -39,3 +40,9 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias myip='curl ifconfig.co'
+alias lk4b='perl ~/bin/lk4b.pl'
+
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+alias docker_clear_cache='docker kill $(docker ps -q);docker_clean_ps;docker rmi $(docker images -a -q)'
