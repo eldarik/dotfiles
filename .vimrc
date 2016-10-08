@@ -2,10 +2,11 @@ set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 execute pathogen#infect()
 
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
+filetype plugin indent on
+syntax on
+
+set tabstop=2 shiftwidth=2 expandtab
+
 syntax on
 filetype plugin indent on
 autocmd StdinReadPre * let s:std_in=1
@@ -17,6 +18,9 @@ map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
+
+" translate tabs to spaces
+map <F3> :retab
 
 " Remove all trailing whitespace by pressing F5
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -46,3 +50,6 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
+
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
