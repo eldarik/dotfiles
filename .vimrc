@@ -8,11 +8,8 @@ syntax on
 set tabstop=2 shiftwidth=2 expandtab
 
 set listchars=tab:>¬,trail:~,space:·
-autocmd FileType ruby set list
-autocmd FileType javascript set list
-autocmd FileType yaml set list
-autocmd BufEnter *.json set filetype=javascript
-autocmd BufEnter *.json set filetype=javascript
+au Filetype nerdtree setlocal nolist
+setlocal list
 
 filetype plugin indent on
 autocmd StdinReadPre * let s:std_in=1
@@ -30,7 +27,6 @@ map <F3> :retab
 
 " Remove all trailing whitespace by pressing F5
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
 " Clear cache of cltr.p
 map <F5> :CtrlPClearCache
 
@@ -57,3 +53,4 @@ nmap <Leader>p :r ~/.vbuf<CR>
 
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
+let b:showSpaces = 1
