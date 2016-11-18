@@ -5,6 +5,10 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
+syntax enable
+set background=dark
+colorscheme solarized
+
 set tabstop=2 shiftwidth=2 expandtab
 
 set listchars=tab:>¬,trail:~,space:·
