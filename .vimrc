@@ -5,15 +5,18 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
-syntax enable
-set background=dark
 colorscheme solarized
-
 set tabstop=2 shiftwidth=2 expandtab
 
-set listchars=tab:>¬,trail:~,space:·
-au Filetype nerdtree setlocal nolist
-setlocal list
+set lcs=tab:>¬,trail:~,space:·
+au Filetype nerdtree set nolist
+set list
+
+set ruler
+set backspace=indent,eol,start
+set clipboard=unnamed
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 filetype plugin indent on
 autocmd StdinReadPre * let s:std_in=1
