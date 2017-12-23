@@ -3,12 +3,20 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 execute pathogen#infect()
 
 filetype plugin indent on
-syntax on
 
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\\",Ё\\\|,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
 
+syntax enable
+set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 set tabstop=2 shiftwidth=2 expandtab
+let g:airline_theme='base16'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = '⌥'
+
 
 set lcs=tab:>¬,trail:~,space:·
 au Filetype nerdtree set nolist

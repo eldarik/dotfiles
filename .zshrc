@@ -1,10 +1,11 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="geoffgarside"
+#ZSH_THEME="agnoster"
 
 plugins=(git bundler rails rake ruby zeus docker-compose boot2docker)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export LD_LIBRARY_PATH=~/lib/x86_64-linux-gnu​​:$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH=~/lib/x86_64-linux-gnu​​:$LD_LIBRARY_PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -13,8 +14,7 @@ set -o vi
 alias rs_up='rails s -b 0.0.0.0 -p 3001'
 
 alias gpr='git pull --rebase'
-
-alias telegram='/opt/telegram/Telegram'
+alias gbrd='git branch | grep -v "master" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
@@ -40,3 +40,9 @@ export PATH="$PATH:$HOME/Downloads/geckodriver"
 export GOPATH=$HOME/projects/golang
 bindkey '^n' expand-or-complete
 bindkey '^p' reverse-menu-complete
+
+alias dkc='docker stop $(docker ps -a -q); docker rm $(docker ps -a -q)'
+
+export PATH="$PATH:$HOME/projects/volt/volt-tools/git" # Add RVM to PATH for scripting
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
