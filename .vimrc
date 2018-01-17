@@ -1,22 +1,38 @@
+call plug#begin('~/.vim/plugged')
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'vim-scripts/paredit.vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'tpope/vim-classpath'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'jistr/vim-nerdtree-tabs'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+call plug#end()
+
 set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-execute pathogen#infect()
 
 filetype plugin indent on
 
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\\",Ё\\\|,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
 
+set tabstop=2 shiftwidth=2 expandtab
+
 syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
-set tabstop=2 shiftwidth=2 expandtab
+
 let g:airline_theme='base16'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.branch = '⌥'
-
 
 set lcs=tab:>¬,trail:~,space:·
 au Filetype nerdtree set nolist
@@ -41,7 +57,6 @@ map <C-h> <C-w><Left>
 
 " translate tabs to spaces
 map <F3> :retab
-
 " Remove all trailing whitespace by pressing F5
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Clear cache of cltr.p
