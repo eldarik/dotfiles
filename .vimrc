@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jistr/vim-nerdtree-tabs'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set number
