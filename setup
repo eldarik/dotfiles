@@ -1,0 +1,72 @@
+#!/bin/bash
+# install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+cp bashrc ~/.bashrc
+cp zshrc ~/.zshrc
+
+cp gitconfig ~/.gitconfig
+cp gitignore_global ~/.gitignore_global
+
+brew install adns \
+             autoconf \
+             automake \
+             chromedriver \
+             coreutils \
+             gdbm \
+             gettext \
+             git \
+             gmp \
+             gnupg \
+             gnutls \
+             go \
+             heroku \
+             heroku-node \
+             icu4c \
+             jemalloc \
+             libassuan \
+             libevent \
+             libffi \
+             libgcrypt \
+             libgpg-error \
+             libidn2 \
+             libksba \
+             libtasn1 \
+             libtermkey \
+             libtool \
+             libunistring \
+             libusb \
+             libuv \
+             libvterm \
+             libyaml \
+             luajit \
+             m-cli \
+             msgpack \
+             nettle \
+             node \
+             npth \
+             openssl \
+             openssl@1.1 \
+             p11-kit \
+             p7zip \
+             pcre \
+             perl \
+             pinentry \
+             pkg-config \
+             postgresql \
+             python \
+             python3 \
+             readline \
+             ruby \
+             sqlite \
+             tmux \
+             unibilium \
+             v8 \
+             vim \
+             wget \
+             xz \
+             you-get \
+             zsh
+
+cp vimrc ~/.vimrc
+cp tmux.conf ~/.tmux.conf
