@@ -87,3 +87,7 @@ nmap <Leader>p :r ~/.vbuf<CR>
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
 let b:showSpaces = 1
+
+set textwidth=100
+
+map <F7> :%norm ggw
