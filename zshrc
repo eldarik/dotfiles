@@ -46,3 +46,5 @@ alias dkc='docker stop $(docker ps -a -q); docker rm $(docker ps -a -q)'
 export PATH="$PATH:$HOME/projects/volt/volt-tools/git" # Add RVM to PATH for scripting
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+DISABLE_AUTO_TITLE="true"
