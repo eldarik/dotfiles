@@ -48,3 +48,5 @@ export PATH="$PATH:$HOME/projects/volt/volt-tools/git" # Add RVM to PATH for scr
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 DISABLE_AUTO_TITLE="true"
+
+alias iex='rlwrap -a foo iex'
