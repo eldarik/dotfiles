@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
+  Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 set number
@@ -43,7 +44,9 @@ set ruler
 set backspace=indent,eol,start
 set clipboard=unnamed
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$'
+    \ }
 
 filetype plugin indent on
 autocmd StdinReadPre * let s:std_in=1
