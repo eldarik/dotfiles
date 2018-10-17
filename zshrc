@@ -12,8 +12,11 @@ set -o vi
 
 alias rs_up='rails s -b 0.0.0.0 -p 3001'
 
+# git aliases
 alias gpr='git pull --rebase'
 alias gbrd='git branch | grep -v "master\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
+alias gsp='g stash pop'
+alias gs='g stash -u'
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
@@ -25,12 +28,7 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 alias myip='curl ifconfig.co'
 
-alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
-alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-
-alias docker_clear_all='docker kill $(docker ps -a -q); docker rmi $(docker images -a -q)'
-
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q -f)'
 
 export PATH="$PATH:$HOME/Downloads/geckodriver"
 
@@ -38,19 +36,22 @@ export GOPATH=$HOME/projects/golang
 bindkey '^n' expand-or-complete
 bindkey '^p' reverse-menu-complete
 
-alias dkc='docker stop $(docker ps -a -q); docker rm $(docker ps -a -q)'
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 DISABLE_AUTO_TITLE="true"
 
 alias iex='rlwrap -a foo iex'
 alias t='tmux'
+
+# docker aliases
 alias d='docker'
 alias dcs='docker-compose'
 alias dcup='docker-compose up -d'
+alias dsc='d stop $(d ps -a -q)'
+alias dkc='d rm $(d ps -a -q)'
+alias dri='d rmi $(d images -a -q) -f'
+
 alias rc='rspec'
-alias gsp='g stash pop'
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -58,6 +59,7 @@ function load_nvm() {
   source ~/.nvm/nvm.sh
   return
 }
+# load nvm, npm and node when necessary
 alias nvm='lazy_load_cmd nvm'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
