@@ -118,8 +118,6 @@ fi
 
 set -o vi
 
-NPM_PACKAGES="${HOME}/.npm-packages"
-
 PATH="$NPM_PACKAGES/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
@@ -128,5 +126,9 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 alias lk4b='perl ~/bin/lk4b.pl'
 export MANOPT="-L ru"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/Downloads/geckodriver
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

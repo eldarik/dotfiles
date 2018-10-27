@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+  Plug 'slim-template/vim-slim'
 call plug#end()
 
 set number
@@ -47,7 +49,7 @@ let g:airline_symbols.branch = '⌥'
 "ctrlp
 "not indexing files
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$'
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|assets\/images$\|tmp$'
     \ }
 
 "hotkeys
@@ -55,6 +57,7 @@ let mapleader=","
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
 " translate tabs to spaces
 map <F3> :retab
 " Remove all trailing whitespace by pressing F5
@@ -77,7 +80,6 @@ vmap <Leader>y :w! ~/.vbuf<CR>
 nmap <Leader>y :.w! ~/.vbuf<CR>
 " "paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
-
 
 set textwidth=100
 set backspace=indent,eol,start

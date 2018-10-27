@@ -42,6 +42,7 @@ DISABLE_AUTO_TITLE="true"
 
 alias iex='rlwrap -a foo iex'
 alias t='tmux'
+alias tat='tmux attach -t'
 
 # docker aliases
 alias d='docker'
@@ -96,3 +97,9 @@ function kill_batch_of_ps() {
   ps aux | grep $1 | echo $1
   kill -9 $(ps aux | grep $1 | grep -v 'grep' | awk '{print $2}')
 }
+
+alias start_fanctrl='/Applications/Macs\ Fan\ Control.app/Contents/MacOS/MacsFanControl /minimized & disown'
+alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
