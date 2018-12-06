@@ -21,7 +21,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
 call plug#end()
 
+set lazyredraw
 set number
+set cursorline
+set hlsearch
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -62,11 +69,11 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 " translate tabs to spaces
-map <F3> :retab
+map <F3> :retab<CR>
 " Remove all trailing whitespace by pressing F5
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Clear cache of cltr.p
-map <F5> :CtrlPClearCache
+map <F5> :CtrlPClearCache<CR>
 map fj :tabprev<CR>
 map fk :tabnext<CR>
 map fn :tabe<CR>
@@ -75,6 +82,7 @@ map <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 map ,, :NERDTreeMirrorToggle<CR>
 map <F7> :%norm ggw
+map ,r :nohlsearch<CR>
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
@@ -91,4 +99,3 @@ set ruler
 set list
 filetype plugin indent on
 
-nnoremap <C-r> :nohlsearch<CR><C-L>
