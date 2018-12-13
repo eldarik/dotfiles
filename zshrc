@@ -4,7 +4,7 @@ ZSH_THEME="geoffgarside"
 
 plugins=(git)
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -18,13 +18,13 @@ alias gbrd='git branch | grep -v "master\|development" | sed "s/^[ *]*//" | sed 
 alias gsp='g stash pop'
 alias gs='g stash -u'
 
-NPM_PACKAGES="${HOME}/.npm-packages"
-
-PATH="$NPM_PACKAGES/bin:$PATH"
-
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+#NPM_PACKAGES="${HOME}/.npm-packages"
+#
+#PATH="$NPM_PACKAGES/bin:$PATH"
+#
+## Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+#unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+#export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 alias myip='curl ifconfig.co'
 
@@ -54,45 +54,6 @@ alias dri='d rmi $(d images -a -q) -f'
 
 alias rc='rspec'
 
-export NVM_DIR="$HOME/.nvm"
-
-function load_nvm() {
-  source ~/.nvm/nvm.sh
-  return
-}
-# load nvm, npm and node when necessary
-alias nvm='lazy_load_cmd nvm'
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-function cmd_exists () {
-  whence -w nvm | grep 'command\|function'
-  return
-}
-
-function lazy_load_cmd() {
-  if ! cmd_exists $1; then
-    unalias $1
-    "load_$1"
-    eval $1
-  fi
-  return
-}
-
-function is_node_command() {
-  whence -w $1 | grep 'node\|npm\|nvm'
-  return
-}
-
-function preexec_node() {
-  if is_node_command $1; then
-    lazy_load_cmd nvm &> /dev/null
-    eval $1
-  fi
-  return
-}
-
 function kill_batch_of_ps() {
   ps aux | grep $1 | echo $1
   kill -9 $(ps aux | grep $1 | grep -v 'grep' | awk '{print $2}')
@@ -103,3 +64,13 @@ alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+alias old_vim='/usr/bin/vim'
+alias vim='nvim'
+alias v='nvim'
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+alias a='asdf'

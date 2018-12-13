@@ -127,8 +127,3 @@ alias lk4b='perl ~/bin/lk4b.pl'
 export MANOPT="-L ru"
 
 export PATH=$PATH:$HOME/Downloads/geckodriver
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
