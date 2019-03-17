@@ -45,7 +45,6 @@ brew install luajit
 brew install m-cli
 brew install msgpack
 brew install nettle
-brew install node
 brew install npth
 brew install openssl
 brew install openssl@1.1
