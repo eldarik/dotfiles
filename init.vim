@@ -1,5 +1,4 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"let &packpath = &runtimepath
 
 call plug#begin('~/.vim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
@@ -19,6 +18,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'slim-template/vim-slim'
+  Plug 'BlakeWilliams/vim-pry'
+  Plug 'bfredl/nvim-miniyank'
+  Plug 'tpope/vim-rails'
 call plug#end()
 
 set lazyredraw
@@ -29,7 +31,6 @@ set nobackup
 set nowritebackup
 set nowb
 set noswapfile
-
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\\",Ё\\\|,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
@@ -85,17 +86,22 @@ map <F7> :%norm ggw
 map ,r :nohlsearch<CR>
 
 " Allow to copy/paste between VIM instances
-" "copy the current visual selection to ~/.vbuf
+" copy the current visual selection to ~/.vbuf
 vmap <Leader>y :w! ~/.vbuf<CR>
-" "copy the current line to the buffer file if no visual selection
+" copy the current line to the buffer file if no visual selection
 nmap <Leader>y :.w! ~/.vbuf<CR>
-" "paste the contents of the buffer file
+" paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
+
+" call debugger
+nmap <leader>d :call pry#insert()<cr>
 
 set textwidth=100
 set backspace=indent,eol,start
 set clipboard=unnamed
 set ruler
 set list
+
 filetype plugin indent on
 
+map p <Plug>(miniyank-autoput)

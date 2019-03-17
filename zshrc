@@ -30,7 +30,6 @@ alias myip='curl ifconfig.co'
 
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q -f)'
 
-export PATH="$PATH:$HOME/Downloads/geckodriver"
 
 export GOPATH=$HOME/projects/golang
 bindkey '^n' expand-or-complete
@@ -65,6 +64,7 @@ alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+alias nvim='~/.local/nvim-osx64/bin/nvim'
 alias old_vim='/usr/bin/vim'
 alias vim='nvim'
 alias v='nvim'
@@ -74,3 +74,6 @@ alias v='nvim'
 . $HOME/.asdf/completions/asdf.bash
 
 alias a='asdf'
+
+export PATH="$PATH:$HOME/.local/bin"
+alias ans=ansible
