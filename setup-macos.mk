@@ -68,6 +68,7 @@ install-oh-my-zsh:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # TODO add install nvim
+# TODO add install ansible
 
 copy-dotfiles:
 	cp bashrc ~/.bashrc && \
