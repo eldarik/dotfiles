@@ -4,8 +4,9 @@ setup-linux-ubuntu: install-apt-packages \
 	install-oh-my-zsh
 
 install-apt-packages:
-	apt update && apt upgrade
-	apt install -y -qq
+	apt update -y -qq && \
+		apt upgrade -y -qq && \
+		apt install -y -qq \
 			make \
 			git \
 			gnugpg \
