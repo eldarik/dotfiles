@@ -3,7 +3,7 @@ install-asdf:
 		echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile && \
 		echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile && \
 		echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zshrc && \
-		echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc && \
+		echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
 
 install-asdf-plugins:
 	asdf plugin-add ruby elixir erlang golang nodejs java
