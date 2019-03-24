@@ -1,7 +1,8 @@
-setup-linux-ubuntu: install-apt-packages \
+setup-ubuntu: install-apt-packages \
+	install-oh-my-zsh \
+	copy-ubuntu-dotfiles \
 	install-asdf \
-	install-asdf-plugins \
-	install-oh-my-zsh
+	install-asdf-plugins
 
 install-apt-packages:
 	apt update -y -qq && \
@@ -12,18 +13,18 @@ install-apt-packages:
 			gnugpg \
 			wget \
 			zsh \
-			mosh
+			mosh \
+			tmux
 
 install-oh-my-zsh:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # TODO add install nvim
 
-copy-dotfiles:
+copy-ubuntu-dotfiles:
 	cp bashrc ~/.bashrc && \
 		cp zshrc ~/.zshrc && \
 		cp bash_profile ~/.bash_profile && \
-		cp profile ~/.profile && \
 		cp gitconfig ~/.gitconfig && \
 		cp gitignore_global ~/.gitignore_global && \
-		cp tmux.conf ~/.tmux.conf
+		cp tmux.conf.ubuntu ~/.tmux.conf
