@@ -64,7 +64,7 @@ alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-alias nvim='~/.local/nvim-osx64/bin/nvim'
+alias nvim='~/.local/nvim/bin/nvim'
 alias old_vim='/usr/bin/vim'
 alias vim='nvim'
 alias v='nvim'
