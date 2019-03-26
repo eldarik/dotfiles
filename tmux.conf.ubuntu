@@ -31,7 +31,7 @@ bind r source-file ~/.tmux.conf
 set -g status-interval 30
 set -g status-bg          colour8
 set -g status-left-length 100
-set -g status-left "#[fg=colour6]#S #[fg=colour199]#(whoami) #[fg=blue]#(curl icanhazip.com) "
+set -g status-left "#[fg=colour6]#S #[fg=blue]#(curl icanhazip.com) "
 set -g status-right-length 100
 set -g status-right '#[fg=blue]#(date +"%H:%M %d %b %Y")'
 set-window-option -g window-status-current-fg colour148
