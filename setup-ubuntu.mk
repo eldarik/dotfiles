@@ -1,5 +1,6 @@
 setup-ubuntu: install-apt-packages \
 	install-oh-my-zsh \
+	install-tmux-plugin-manager \
 	copy-ubuntu-dotfiles \
 	install-ansible \
 	install-docker \
@@ -18,9 +19,12 @@ install-apt-packages:
 			python3-pip \
 			tmux
 
+install-tmux-plugin-manager:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 copy-ubuntu-dotfiles:
 	cp bashrc ~/.bashrc
-	cp zshrc ~/.zshrc
+	cp zshrc.ubuntu ~/.zshrc
 	cp bash_profile ~/.bash_profile
 	cp gitconfig ~/.gitconfig
 	cp gitignore_global ~/.gitignore_global

@@ -1,3 +1,6 @@
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+
 set -g base-index 1
 
 set -g default-terminal screen-256color
@@ -31,14 +34,15 @@ bind r source-file ~/.tmux.conf
 set -g status-interval 30
 set -g status-bg          colour8
 set -g status-left-length 100
-set -g status-left "#[fg=colour6]#S #[fg=blue]#(curl icanhazip.com) "
+set -g status-left "#[fg=colour6]#S #[fg=colour199]ubuntu-workstation #[fg=blue]#(curl icanhazip.com) "
 set -g status-right-length 100
-set -g status-right '#[fg=blue]#(date +"%H:%M %d %b %Y")'
+set -g status-right '#[fg=red]#{sysstat_cpu} #[fg=colour70]#{sysstat_mem} #[fg=colour148]#{sysstat_swap} #[fg=blue]#(date +"%H:%M %d %b %Y")'
 set-window-option -g window-status-current-fg colour148
 set-window-option -g window-status-fg colour9
 
-bind-key -T copy-mode-vi 'v' send-keys -X begin-selection
-bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe 'reattach-to-user-namespace pbcopy'
+bind -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 set-option -g status-position top
 
@@ -54,3 +58,5 @@ set -g window-style 'fg=default,bg=colour0'
 set -g window-active-style 'fg=default,bg=colour8'
 
 set -sg escape-time 0
+
+run -b '~/.tmux/plugins/tpm/tpm'
