@@ -33,7 +33,7 @@ copy-ubuntu-dotfiles:
 	echo 'alias python=python3' >> ~/.zshrc
 
 install-ansible:
-	pip install ansible
+	pip install ansible --user
 
 install-docker:
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
