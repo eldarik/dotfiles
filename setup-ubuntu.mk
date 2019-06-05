@@ -33,7 +33,7 @@ copy-ubuntu-dotfiles:
 	echo 'alias python=python3' >> ~/.zshrc
 
 install-ansible:
-	pip install ansible --user
+	pip3 install ansible --user
 
 install-docker:
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -49,4 +49,8 @@ install-oh-my-zsh:
 	sh -c `$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)`
 
 install-docker-nvim:
+	mkdir ~/.config
+	mkdir ~/.config/nvim/
+	cp init.vim ~/.config/nvim/
 	docker pull mokevnin/dotfiles
+
