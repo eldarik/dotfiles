@@ -1,15 +1,15 @@
 setup-ubuntu: install-apt-packages \
-	install-oh-my-zsh \
 	install-tmux-plugin-manager \
 	copy-ubuntu-dotfiles \
 	install-ansible \
 	install-docker \
-	install-docker-compose
+	install-docker-compose \
+	install-oh-my-zsh
 
 install-apt-packages:
-	apt update -y -qq && \
-		apt upgrade -y -qq && \
-		apt install -y -qq \
+	sudo apt update -y -qq && \
+		sudo apt upgrade -y -qq && \
+		sudo apt install -y -qq \
 			make \
 			git \
 			wget \
@@ -37,9 +37,9 @@ install-ansible:
 
 install-docker:
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	apt-get update -y -qq
-	apt-get install -y -qq docker-ce
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	sudo apt update -y -qq
+	sudo apt install -y -qq docker-ce
 
 install-docker-compose:
 	sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
