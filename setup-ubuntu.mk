@@ -28,8 +28,6 @@ copy-ubuntu-dotfiles:
 	cp gitconfig ~/.gitconfig
 	cp gitignore_global ~/.gitignore_global
 	cp tmux.conf.ubuntu ~/.tmux.conf
-	echo 'alias pip=pip3' >> ~/.zshrc
-	echo 'alias python=python3' >> ~/.zshrc
 
 install-ansible:
 	pip3 install ansible --user
@@ -52,5 +50,6 @@ install-nvim:
 	mkdir ~/.config/nvim/
 	cp init.vim ~/.config/nvim/
 	mkdir ~/.local/
-	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz > ~/.local/
+	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+	mv nvim-linux64.tar.gz ~/.local/
 	tar -xvf ~/.local/nvim-linux64.tar.gz
