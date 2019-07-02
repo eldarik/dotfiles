@@ -67,9 +67,9 @@ export LANG=en_US.UTF-8
 alias local_nvim='~/.local/nvim/bin/nvim'
 alias old_vim='/usr/bin/vim'
 
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/asdf.sh
+#
+#. $HOME/.asdf/completions/asdf.bash
 
 alias a='asdf'
 
@@ -78,18 +78,12 @@ alias ans=ansible
 #alias pip=pip3
 #alias python=python3
 
-alias vim='\
-  docker run \
-    --net host \
-    -it \
-    --rm \
-    -v /tmp:/tmp:cached \
-    -v $HOME/myvim/backups:/root/.vim/backups:cached \
-    -v $HOME/.config/nvim/:/root/.config/nvim/ \
-    -v $HOME/.vbuf/:/root/.vbuf \
-    -v $HOME/.vim/:/root/.vim/ \
-    -v $(pwd):/app \
-    -w /app mokevnin/dotfiles
-    '
+alias vim='nvim'
+
+alias nvim='~/.local/nvim-linux64/bin/nvim'
 
 alias v=vim
+alias pip=pip3
+alias python=python3
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

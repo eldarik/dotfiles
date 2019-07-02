@@ -4,6 +4,12 @@ setglobal pastetoggle=<F2>
 set ttyfast
 set lazyredraw
 
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
   Plug 'BlakeWilliams/vim-pry'
   Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -36,6 +42,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'vim-scripts/paredit.vim'
   Plug 'leafgarland/typescript-vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 call plug#end()
 
@@ -71,7 +78,6 @@ au Filetype nerdtree set nolist
 let NERDTreeIgnore = ['\.pyc$', '\.retry$']
 
 " fzf
-set rtp+=/root/.fzf
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -86,7 +92,11 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "airline config
 let g:airline_theme='base16'

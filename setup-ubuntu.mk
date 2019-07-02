@@ -25,7 +25,6 @@ install-tmux-plugin-manager:
 copy-ubuntu-dotfiles:
 	cp bashrc ~/.bashrc
 	cp zshrc.ubuntu ~/.zshrc
-	cp bash_profile ~/.bash_profile
 	cp gitconfig ~/.gitconfig
 	cp gitignore_global ~/.gitignore_global
 	cp tmux.conf.ubuntu ~/.tmux.conf
@@ -48,9 +47,10 @@ install-docker-compose:
 install-oh-my-zsh:
 	sh -c `$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)`
 
-install-docker-nvim:
+install-nvim:
 	mkdir ~/.config
 	mkdir ~/.config/nvim/
 	cp init.vim ~/.config/nvim/
-	docker pull mokevnin/dotfiles
-
+	mkdir ~/.local/
+	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz > ~/.local/
+	tar -xvf ~/.local/nvim-linux64.tar.gz
