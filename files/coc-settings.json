@@ -1,7 +1,7 @@
 {
-  "diagnostic.infoSign": "？",
-  "diagnostic.warningSign": "⚠",
-  "diagnostic.errorSign": "✕",
+  "diagnostic.infoSign": "?",
+  "diagnostic.warningSign": "!",
+  "diagnostic.errorSign": "x",
   "suggest.maxCompleteItemCount": 30,
 
   "languageserver": {
