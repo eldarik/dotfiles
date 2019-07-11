@@ -49,6 +49,7 @@ install-nvim:
 	mkdir ~/.config
 	mkdir ~/.config/nvim/
 	cp init.vim ~/.config/nvim/
+	cp coc-settings.json ~/.config/nvim/
 	mkdir ~/.local/
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 	mv nvim-linux64.tar.gz ~/.local/

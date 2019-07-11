@@ -1,5 +1,9 @@
+set hidden
 setglobal nocompatible
 setglobal pastetoggle=<F2>
+set updatetime=300
+set signcolumn=yes
+set cmdheight=2
 
 set ttyfast
 set lazyredraw
@@ -37,6 +41,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-endwise'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -44,6 +49,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set number
@@ -68,9 +74,11 @@ set list
 
 " style
 syntax enable
-set background=dark
-silent! colorscheme solarized
-let g:solarized_termcolors=256
+" set t_Co=16
+" let g:solarized_termtrans = 1
+" let g:solarized_termcolors=256
+" set background=dark
+silent colorscheme solarized
 
 "nerdtree
 "let g:nerdtree_tabs_open_on_console_startup=1
@@ -114,6 +122,29 @@ if has('persistent_undo')
   set undofile
 endif
 
+" Coc
+let g:coc_node_path = '/home/eldar/.asdf/shims/node'
+let g:coc_npm_path = '/home/eldar/.asdf/shims/npm'
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-lists',
+      \ 'coc-css',
+      \ 'coc-stylelint',
+      \ 'coc-vimlsp',
+      \ 'coc-go',
+      \ 'coc-elixir',
+      \ 'coc-json',
+      \ 'coc-eslint',
+      \ 'coc-python',
+      \ 'coc-solargraph',
+      \ 'coc-yaml',
+      \ 'coc-snippets',
+      \ 'coc-docker',
+      \ 'coc-diagnostic',
+      \ 'coc-highlight'
+      \]
+
 " hotkeys
 let mapleader=","
 
@@ -140,13 +171,9 @@ map fk :tabnext<CR>
 map fn :tabe<CR>
 " Open same file in new tab
 map fc :tab split<CR>
-" Open object definition file in new tab
-map gtf fc gf<CR>
-
 map fq :q!<CR>
 
 map <F2> :set invpaste paste?<CR>
-set clipboard=unnamed
 " Nerdtree toggle project's tree
 map <leader><leader> :NERDTreeMirrorToggle<CR>
 
@@ -169,7 +196,7 @@ nmap <leader>d :call pry#insert()<cr>
 
 filetype plugin indent on
 
-map p <Plug>(miniyank-autoput)
+" map p <Plug>(miniyank-autoput)
 
 " Edit .vimrc
 map <leader>vl :vsp $MYVIMRC<CR>
@@ -178,5 +205,50 @@ map <leader>vr :source $MYVIMRC<CR>
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
-nnoremap <silent> <leader>gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > /root/.vbuf <CR>
+" github link to line repo
+nnoremap <silent> <leader>gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > ~/.vbuf <CR>
 
+" Coc
+
+" remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" set light background
+nmap <silent> <leader>bl :set background=light<CR>
+nmap <silent> <leader>bd :set background=dark<CR>
