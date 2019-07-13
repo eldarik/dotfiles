@@ -83,3 +83,15 @@ alias vim='nvim'
 alias v=vim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias set_light_theme="
+  cp ~/.fzf.zsh.light ~/.fzf.zsh;
+  cp ~/.config/nvim/init.vim.light ~/.config/nvim/init.vim;
+  tmux source ~/.tmux.conf.light;
+"
+
+alias set_dark_theme="
+  cp ~/.fzf.zsh.dark ~/.fzf.zsh;
+  cp ~/.config/nvim/init.vim.dark ~/.config/nvim/init.vim;
+  tmux source ~/.tmux.conf.dark;
+"

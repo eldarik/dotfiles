@@ -44,8 +44,17 @@ bind -T copy-mode-vi v send -X begin-selection
 bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
 bind -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
-bind e solarized_dark_colors
-bind E solarized_light_colors
+bind L run "\
+  cp ~/.tmux.conf.light ~/.tmux.conf && \
+    cp ~/.fzf.zsh.light ~/.fzf.zsh && \
+    cp ~/.config/nvim/init.vim.light ~/.config/nvim/init.vim \
+" && source ~/.tmux.conf
+
+bind D run "\
+  cp ~/.tmux.conf.dark ~/.tmux.conf && \
+    cp ~/.fzf.zsh.dark ~/.fzf.zsh && \
+    cp ~/.config/nvim/init.vim.dark ~/.config/nvim/init.vim \
+" && source ~/.tmux.conf
 
 # colors for solarized dark
 set -g status-bg colour8
