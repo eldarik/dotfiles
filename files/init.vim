@@ -3,7 +3,10 @@ setglobal nocompatible
 setglobal pastetoggle=<F2>
 set updatetime=300
 set signcolumn=yes
-set cmdheight=2
+set cmdheight=1
+set inccommand=nosplit
+set splitright
+set splitbelow
 
 set ttyfast
 set lazyredraw
@@ -100,11 +103,14 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" fzf preview
+command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 "airline config
 let g:airline_theme='base16'
@@ -172,6 +178,9 @@ map fn :tabe<CR>
 " Open same file in new tab
 map fc :tab split<CR>
 map fq :q!<CR>
+map fv :vnew<CR>
+map fs :new<CR>
+map ft :terminal<CR>
 
 map <F2> :set invpaste paste?<CR>
 " Nerdtree toggle project's tree
@@ -196,7 +205,7 @@ nmap <leader>d :call pry#insert()<cr>
 
 filetype plugin indent on
 
-" map p <Plug>(miniyank-autoput)
+map p <Plug>(miniyank-autoput)
 
 " Edit .vimrc
 map <leader>vl :vsp $MYVIMRC<CR>
