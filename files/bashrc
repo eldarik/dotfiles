@@ -127,3 +127,7 @@ alias lk4b='perl ~/bin/lk4b.pl'
 export MANOPT="-L ru"
 
 export PATH=$PATH:$HOME/Downloads/geckodriver
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias be='bundle exec'

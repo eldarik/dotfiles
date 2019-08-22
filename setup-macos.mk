@@ -62,7 +62,9 @@ install-brew-packages:
 			wget \
 			xz \
 			you-get \
-			zsh
+			zsh \
+			bat \
+			ripgrep
 
 # TODO add install nvim
 # TODO add install ansible
