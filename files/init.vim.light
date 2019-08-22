@@ -109,8 +109,17 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " fzf preview
+command! -bang -nargs=? -complete=dir Giles
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" rg preview
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
 
 "airline config
 let g:airline_theme='base16'
@@ -166,7 +175,7 @@ map <F3> :retab<CR>
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " fzf search
-map <leader>s :Ag 
+map <leader>s :Rg!<space>
 map <silent> <leader>f :silent Files<CR>
 map <silent> <leader>b :silent Buffers<CR>
 
