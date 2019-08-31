@@ -131,3 +131,4 @@ export PATH=$PATH:$HOME/Downloads/geckodriver
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias be='bundle exec'
+alias rs='bundle exec rails s -b 0.0.0.0'
