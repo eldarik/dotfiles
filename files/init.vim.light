@@ -53,6 +53,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'webdevel/tabulous'
+  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set number
@@ -159,6 +161,9 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-highlight'
       \]
+
+" tabulous
+let tabulousLabelModifiedStr = '+'
 
 " hotkeys
 let mapleader=","
