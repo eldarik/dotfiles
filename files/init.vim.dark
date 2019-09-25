@@ -55,6 +55,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'webdevel/tabulous'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'andrewradev/splitjoin.vim'
 call plug#end()
 
 set number

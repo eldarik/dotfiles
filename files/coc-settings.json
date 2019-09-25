@@ -52,7 +52,7 @@
     "javascriptreact"
   ],
   "eslint.autoFix": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
 
   "solargraph.diagnostics": true,
   "solargraph.hover": true,
