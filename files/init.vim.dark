@@ -200,6 +200,7 @@ map ft :terminal<CR>
 map <F2> :set invpaste paste?<CR>
 " Nerdtree toggle project's tree
 map <leader><leader> :NERDTreeMirrorToggle<CR>
+map <leader>n :NERDTreeFind<CR>
 
 " Fix all lines to maximum length
 map <F7> :%norm ggw<CR>
