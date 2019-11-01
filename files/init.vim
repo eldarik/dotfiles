@@ -192,7 +192,9 @@ map fk :tabnext<CR>
 map fn :tabe<CR>
 " Open same file in new tab
 map fc :tab split<CR>
-map fq :q!<CR>
+map qq :q!<CR>
+map wq :wq<CR>
+map ww :w<CR>
 map fv :vnew<CR>
 map fs :new<CR>
 map ft :terminal<CR>
@@ -200,6 +202,7 @@ map ft :terminal<CR>
 map <F2> :set invpaste paste?<CR>
 " Nerdtree toggle project's tree
 map <leader><leader> :NERDTreeMirrorToggle<CR>
+map <leader>n :NERDTreeFind<CR>
 
 " Fix all lines to maximum length
 map <F7> :%norm ggw<CR>
@@ -239,7 +242,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
+  
 " use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
