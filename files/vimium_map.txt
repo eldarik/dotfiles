@@ -58,8 +58,8 @@ map >> moveTabRight
 map ? showHelp
 map gs toggleViewSource
 / ru
-map о, <c-у> scrollDown
-map k, <c-н> scrollUp
+map о scrollDown
+map л scrollUp
 map пп scrollToTop
 map П scrollToBottom
 map в scrollPageDown
