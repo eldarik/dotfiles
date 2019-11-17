@@ -15,6 +15,7 @@ source "/home/eldar/.fzf/shell/key-bindings.zsh"
 export FZF_DEFAULT_OPTS='
  --color=bg+:7,bg:15,spinner:2,hl:2,fg:11,header:14,info:9,pointer:2,marker:2,fg+:11,prompt:2,hl+:2
 '
+# create fzf.zsh.dark and fzf.zsh.light for themes changing
 # solarized light
 # --color=bg+:7,bg:15,spinner:2,hl:2,fg:11,header:14,info:9,pointer:2,marker:2,fg+:11,prompt:2,hl+:2
 # solarized dark

@@ -1,7 +1,7 @@
 set hidden
 setglobal nocompatible
 setglobal pastetoggle=<F2>
-set updatetime=300
+set updatetime=100
 set signcolumn=yes
 set cmdheight=1
 set inccommand=nosplit
@@ -18,44 +18,44 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-  Plug 'BlakeWilliams/vim-pry'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'bfredl/nvim-miniyank'
-  "Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascript' }
-  Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-  Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-  Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-  "Plug 'elzr/vim-json'
-  Plug 'fatih/vim-nginx', { 'for': 'nginx' }
-  Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'jistr/vim-nerdtree-tabs'
-  Plug 'mattn/emmet-vim', { 'for': 'html' }
-  "Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-  Plug 'scrooloose/nerdtree'
-  Plug 'slim-template/vim-slim'
-  Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-  Plug 'tpope/vim-classpath'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-haml', { 'for': 'haml' }
-  Plug 'tpope/vim-rails', { 'for': 'ruby' }
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-unimpaired'
-  Plug 'tpope/vim-endwise'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-  Plug 'vim-scripts/paredit.vim'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'webdevel/tabulous'
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'andrewradev/splitjoin.vim'
+Plug 'BlakeWilliams/vim-pry'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bfredl/nvim-miniyank'
+"Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascript' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+"Plug 'elzr/vim-json'
+Plug 'fatih/vim-nginx', { 'for': 'nginx' }
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+"Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'scrooloose/nerdtree'
+Plug 'slim-template/vim-slim'
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-endwise'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'vim-scripts/paredit.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'webdevel/tabulous'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'andrewradev/splitjoin.vim'
 call plug#end()
 
 set number
@@ -183,6 +183,7 @@ map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " fzf search
 map <leader>s :Rg!<space>
 map <silent> <leader>f :silent Files<CR>
+map <silent> <leader>g :silent GFiles<CR>
 map <silent> <leader>b :silent Buffers<CR>
 
 "Tabs
@@ -193,11 +194,14 @@ map fn :tabe<CR>
 " Open same file in new tab
 map fc :tab split<CR>
 map qq :q!<CR>
-map wq :wq<CR>
-map ww :w<CR>
+map fw :w<CR>
+map ац :w<CR>
 map fv :vnew<CR>
+map ам :vnew<CR>
 map fs :new<CR>
+map аы :new<CR>
 map ft :terminal<CR>
+map ае :terminal<CR>
 
 map <F2> :set invpaste paste?<CR>
 " Nerdtree toggle project's tree

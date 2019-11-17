@@ -54,3 +54,4 @@ install-nvim:
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 	mv nvim-linux64.tar.gz ~/.local/
 	tar -xvf ~/.local/nvim-linux64.tar.gz
+	mv nvim-linux65 nvim
