@@ -88,6 +88,7 @@ alias v=vim
 
 alias set_light_theme="
   cp ~/.fzf.zsh.light ~/.fzf.zsh;
+  source ~/.fzf.zsh;
   cp ~/.config/nvim/init.vim.light ~/.config/nvim/init.vim;
   cp ~/.config/bat/config.light ~/.config/bat/config;
   tmux source ~/.tmux.conf.light;
@@ -96,6 +97,7 @@ alias set_light_theme="
 
 alias set_dark_theme="
   cp ~/.fzf.zsh.dark ~/.fzf.zsh;
+  source ~/.fzf.zsh;
   cp ~/.config/bat/config.dark ~/.config/bat/config;
   cp ~/.config/nvim/init.vim.dark ~/.config/nvim/init.vim;
   tmux source ~/.tmux.conf.dark;
@@ -108,6 +110,8 @@ alias cat=bat
 
 # CID=$(docker run --name openvpn_server -d --restart=always --privileged -p 1194:1194/udp -p 443:443/tcp umputun/dockvpn)
 # docker run -t -i -p 8080:8080 --volumes-from $CID umputun/dockvpn serveconfig
-#
+# wget --no-check-certificate https://<ip>:8080
+# mv index.html vpn.ovpn
+# open tunnelblink, import vpn.ovpn
 
 alias moteefe_bd='dc run -p 3000:3000 web bash'
