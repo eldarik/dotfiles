@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  vpn-server:
+    image: umputun/dockvpn
+    restart: always
+    privileged: true
+    ports:
+      - 1194:1194/udp
+      - 443:443/tcp
+
+  vpn-serve-config:
+    image: umputun/dockvpn
+    command: serveconfig
+    volumes_from:
+      - vpn-server:rw
+    ports:
+      - 8080:8080
