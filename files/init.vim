@@ -68,7 +68,7 @@ set noswapfile
 set ignorecase
 set smartcase
 
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\\",Ё\\\|,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 set tabstop=2 shiftwidth=2 expandtab
 set lcs=tab:>¬,trail:~,space:·
@@ -167,7 +167,7 @@ let g:coc_global_extensions = [
 let tabulousLabelModifiedStr = '+'
 
 " hotkeys
-let mapleader=","
+let mapleader = "\<Space>"
 
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
@@ -181,21 +181,31 @@ map <F3> :retab<CR>
 map <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " fzf search
-map <leader>s :Rg!<space>
-map <silent> <leader>f :silent Files<CR>
-map <silent> <leader>g :silent GFiles<CR>
-map <silent> <leader>b :silent Buffers<CR>
+nmap <leader>s :Rg!<space>
+nmap <leader>ы :Rg!<space>
+nmap <silent> <leader>f :silent Files<CR>
+nmap <silent> <leader>а :silent Files<CR>
+nmap <silent> <leader>g :silent GFiles<CR>
+nmap <silent> <leader>п :silent GFiles<CR>
+nmap <silent> <leader>b :silent Buffers<CR>
+nmap <silent> <leader>и :silent Buffers<CR>
 
 "Tabs
 map fj :tabprev<CR>
+map ао :tabprev<CR>
 map fk :tabnext<CR>
+map ал :tabnext<CR>
 " New tab
 map fn :tabe<CR>
+map ат :tabe<CR>
 " Open same file in new tab
-map fc :tab split<CR>
-map qq :q!<CR>
-map fw :w<CR>
-map ац :w<CR>
+map fe :tab split<CR>
+map ау :tab split<CR>
+
+nmap fq :q!<CR>
+nmap ай :q!<CR>
+nmap fw :w<CR>
+nmap ац :w<CR>
 map fv :vnew<CR>
 map ам :vnew<CR>
 map fs :new<CR>
@@ -207,23 +217,29 @@ map <F2> :set invpaste paste?<CR>
 " Nerdtree toggle project's tree
 map <leader><leader> :NERDTreeMirrorToggle<CR>
 map <leader>n :NERDTreeFind<CR>
+map <leader>т :NERDTreeFind<CR>
 
 " Fix all lines to maximum length
 map <F7> :%norm ggw<CR>
 
 " Clear highlighted text
-map ,r :nohlsearch<CR>
+map <leader>r :nohlsearch<CR>
+map <leader>к :nohlsearch<CR>
 
 " Allow to copy/paste between VIM instances
 " copy the current visual selection to ~/.vbuf
 vmap <leader>y :w! ~/.vbuf<CR>
+vmap <leader>н :w! ~/.vbuf<CR>
 " copy the current line to the buffer file if no visual selection
 nmap <leader>y :.w! ~/.vbuf<CR>
+nmap <leader>н :.w! ~/.vbuf<CR>
 " paste the contents of the buffer file
 nmap <leader>p :r ~/.vbuf<CR>
+nmap <leader>н :r ~/.vbuf<CR>
 
 " call debugger
 nmap <leader>d :call pry#insert()<cr>
+nmap <leader>в :call pry#insert()<cr>\n
 
 filetype plugin indent on
 
@@ -243,9 +259,13 @@ nnoremap <silent> <leader>gl :silent !echo `git url`/blob/`git rev-parse --abbre
 
 " remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> пв <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> пн <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> пш <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> пк <Plug>(coc-references)
   
 " use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
