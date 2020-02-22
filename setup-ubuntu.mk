@@ -23,14 +23,6 @@ install-apt-packages:
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-copy-ubuntu-dotfiles:
-	cp files/bashrc ~/.bashrc
-	cp files/zshrc ~/.zshrc
-	cp files/gitconfig ~/.gitconfig
-	cp files/gitignore_global ~/.gitignore_global
-	cp files/tmux.conf ~/.tmux.conf
-	cp files/fzf.zsh ~/.fzf.zsh
-
 install-ansible:
 	pip3 install ansible --user
 
@@ -51,9 +43,17 @@ install-oh-my-zsh:
 install-nvim:
 	mkdir ~/.config
 	mkdir ~/.config/nvim/
-	cp files/init.vim ~/.config/nvim/
-	cp files/coc-settings.json ~/.config/nvim/
 	mkdir ~/.local/
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 	tar -xvf nvim-linux64.tar.gz
 	mv nvim-linux64 ~/.local/nvim
+
+copy-ubuntu-dotfiles:
+	cp files/bashrc ~/.bashrc
+	cp files/zshrc ~/.zshrc
+	cp files/gitconfig ~/.gitconfig
+	cp files/gitignore_global ~/.gitignore_global
+	cp files/tmux.conf ~/.tmux.conf
+	cp files/fzf.zsh ~/.fzf.zsh
+	cp files/init.vim ~/.config/nvim/
+	cp files/coc-settings.json ~/.config/nvim/
