@@ -1,10 +1,10 @@
 setup-ubuntu: install-apt-packages \
 	install-tmux-plugin-manager \
-	copy-ubuntu-dotfiles \
 	install-ansible \
 	install-docker \
 	install-docker-compose \
-	install-oh-my-zsh
+	install-oh-my-zsh \
+	copy-ubuntu-dotfiles
 
 install-apt-packages:
 	sudo apt update -y -qq && \
@@ -17,10 +17,11 @@ install-apt-packages:
 			mosh \
 			python3 \
 			python3-pip \
+			python3-setuptools \
 			tmux \
-			bat \
-	~ 	linux-image-generic-hwe-18.04 \
-			linux-headers-generic-hwe-18.04
+			linux-image-generic-hwe-18.04 \
+			linux-headers-generic-hwe-18.04 \
+			bat
 
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
