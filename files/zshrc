@@ -145,8 +145,8 @@ function kill_batch_of_ps() {
 }
 
 # asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -17,17 +17,19 @@ install-apt-packages:
 			mosh \
 			python3 \
 			python3-pip \
-			tmux
+			tmux \
+			bat
 
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 copy-ubuntu-dotfiles:
-	cp bashrc ~/.bashrc
-	cp zshrc.ubuntu ~/.zshrc
-	cp gitconfig ~/.gitconfig
-	cp gitignore_global ~/.gitignore_global
-	cp tmux.conf.ubuntu ~/.tmux.conf
+	cp files/bashrc ~/.bashrc
+	cp files/zshrc ~/.zshrc
+	cp files/gitconfig ~/.gitconfig
+	cp files/gitignore_global ~/.gitignore_global
+	cp files/tmux.conf ~/.tmux.conf
+	cp files/fzf.zsh ~/.fzf.zsh
 
 install-ansible:
 	pip3 install ansible --user
@@ -43,15 +45,15 @@ install-docker-compose:
 	sudo chmod +x /usr/local/bin/docker-compose
 
 install-oh-my-zsh:
-	sh -c `$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)`
+	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh > install-zsh.sh
+	sh install-zsh.sh
 
 install-nvim:
 	mkdir ~/.config
 	mkdir ~/.config/nvim/
-	cp init.vim ~/.config/nvim/
-	cp coc-settings.json ~/.config/nvim/
+	cp files/init.vim ~/.config/nvim/
+	cp files/coc-settings.json ~/.config/nvim/
 	mkdir ~/.local/
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
-	mv nvim-linux64.tar.gz ~/.local/
-	tar -xvf ~/.local/nvim-linux64.tar.gz
-	mv nvim-linux65 nvim
+	tar -xvf nvim-linux64.tar.gz
+	mv nvim-linux64 ~/.local/nvim
