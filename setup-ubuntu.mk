@@ -20,8 +20,7 @@ install-apt-packages:
 			python3-setuptools \
 			tmux \
 			linux-image-generic-hwe-18.04 \
-			linux-headers-generic-hwe-18.04 \
-			bat
+			linux-headers-generic-hwe-18.04
 
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -63,5 +62,9 @@ copy-ubuntu-dotfiles:
 	cp files/coc-settings.json ~/.config/nvim/
 
 install-ripgrep:
-	curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+	curl -lO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
 	sudo dpkg -i ripgrep_11.0.2_amd64.deb
+
+install-bat:
+	wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+	sudo dpkg -i bat_0.12.1_amd64.deb

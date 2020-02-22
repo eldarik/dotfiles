@@ -231,8 +231,8 @@ call plug#end()
 " set t_Co=16
 " let g:solarized_termtrans = 1
 " let g:solarized_termcolors=256
-" set background=light
-set background=dark
+set background=light
+" set background=dark
 colorscheme solarized
 
 " hotkeys
