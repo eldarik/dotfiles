@@ -20,7 +20,18 @@ install-apt-packages:
 			python3-setuptools \
 			tmux \
 			linux-image-generic-hwe-18.04 \
-			linux-headers-generic-hwe-18.04
+			linux-headers-generic-hwe-18.04 \
+			libssl-dev \
+			libreadline-dev \
+			zlib1g-dev \
+			autoconf \
+			bison \
+			build-essential \
+			libyaml-dev \
+			libreadline-dev \
+			libncurses5-dev \
+			libffi-dev \
+			libgdbm-dev
 
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
