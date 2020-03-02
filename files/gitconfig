@@ -1,9 +1,9 @@
 [user]
   name = Eldar Iskhakov
-  email = iskhakov.eldar95@gmail.com
+  email = iskhakov.e11@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = vim
+  editor = ~/.local/nvim/bin/nvim
 [push]
   default = matching
 [alias]
@@ -18,4 +18,3 @@
   gr = log --graph --pretty=format:\"%Cred%h %Cblue%ar%Creset %Cgreen%an%Creset %s %Cred%d\"
   where = branch -av --contains
   sb = show-branch
-  url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
