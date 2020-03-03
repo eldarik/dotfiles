@@ -13,9 +13,15 @@ set -o vi
 
 # aliases
 # ruby & rails
+alias bi='bundle install'
 alias be='bundle exec'
-alias rs='bundle exec rails s -b 0.0.0.0'
-alias rsp='bundle exec rspec'
+alias brs='bundle exec rails s -b 0.0.0.0'
+alias brsp='bundle exec rspec'
+alias br='bundle exec rails'
+alias brc='bundle exec rails c'
+alias brdb='bundle exec rails db'
+alias brdm='bundle exec rails db:migrate'
+alias brgm='bundle exec rails g migration'
 
 # git
 alias gpr='git pull --rebase'
@@ -29,25 +35,34 @@ alias gmc='g merge --continue'
 alias gp='ggpush'
 alias grh='g reset HEAD'
 alias glc='g rev-parse HEAD'
+alias gdf='git diff'
 
 # tmux
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
 alias cl='clear'
-alias myip='curl ifconfig.co'
+alias myip='curl -4 ifconfig.co'
 
 # docker
-alias dc=docker-compose
-alias dcup='docker-compose up -d'
 alias dsc='docker stop $(d ps -a -q)'
 alias dkc='docker rm $(d ps -a -q)'
-alias dri='docker rmi $(d images -a -q) -f'
 alias dpsf='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Command}}\t{{.Networks}}\t"'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
+alias dis="docker images --format '{{.Size}}\t{{.Repository}}:{{.Tag}}\t{{.ID}}' | sort -h | column -t"
 alias de='docker exec -it'
 alias dr='docker run -it'
+
+# docker compose
+alias dc=docker-compose
+alias dcup='docker-compose up -d'
+alias dce='docker-compose exec'
+
+# remove docker images by name ilike
+function dri() {
+  docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}" | grep $1)
+}
 
 # only for moteefe project
 alias moteefe_bd='dc run -p 3000:3000 web bash'
@@ -145,8 +160,8 @@ function kill_batch_of_ps() {
 }
 
 # asdf
-# . $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -168,6 +183,4 @@ alias set_dark_theme="
   source ~/.fzf.zsh
 "
 
-# openvpn server
-# CID=$(docker run --name openvpn_server -d --restart=always --privileged -p 1194:1194/udp -p 443:443/tcp umputun/dockvpn)
-# docker run -t -i -p 8080:8080 --volumes-from $CID umputun/dockvpn serveconfig
+export NODE_OPTIONS="--max_old_space_size=2048"
