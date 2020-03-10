@@ -11,6 +11,7 @@ set ttyfast
 set lazyredraw
 set number
 set cursorline
+set cursorcolumn
 set hlsearch
 set nobackup
 set nowritebackup
@@ -300,7 +301,7 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " github link to line repo
-nnoremap <silent> <leader>gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > ~/.vbuf <CR>
+nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > ~/.vbuf <CR>
 
 " set light background
 nmap <silent> <leader>bl :set background=light<CR>

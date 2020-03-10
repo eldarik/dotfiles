@@ -12,32 +12,29 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 
 # aliases
-# ruby & rails
-alias bi='bundle install'
-alias be='bundle exec'
-alias brs='bundle exec rails s -b 0.0.0.0'
-alias brsp='bundle exec rspec'
-alias br='bundle exec rails'
-alias brc='bundle exec rails c'
-alias brdb='bundle exec rails db'
-alias brdm='bundle exec rails db:migrate'
-alias brgm='bundle exec rails g migration'
-
 # git
 alias gpr='git pull --rebase'
 alias gbrd='git branch | grep -v "master\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
-alias gsp='g stash pop'
-alias gs='g stash -u'
-alias ga='g add'
-alias gap='g add -p'
-alias gc='g ci -m'
-alias gmc='g merge --continue'
+alias gsp='git stash pop'
+alias gs='git stash -u'
+alias ga='git add'
+alias gap='git add -p'
+alias gc='git ci -m'
+alias gmc='git merge --continue'
 alias gp='ggpush'
-alias grh='g reset HEAD'
-alias glc='g rev-parse HEAD'
+alias grh='git reset HEAD'
+alias glc='git rev-parse HEAD'
 alias gdf='git diff'
+alias gcia='git ci --amend'
+alias gr='git rebase'
+alias gri='git rebase -i'
+alias grc='git rebase --continue'
+alias gcb='gco $(gb | fzf)'
+alias gnb='gco -b'
+alias gcrb='git checkout $(gba | fzf | sed "s/.*\///")'
 
 # tmux
+alias t=tmux
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
@@ -58,10 +55,11 @@ alias dr='docker run -it'
 alias dc=docker-compose
 alias dcup='docker-compose up -d'
 alias dce='docker-compose exec'
+alias dcl='docker-compose log'
 
 # remove docker images by name ilike
 function dri() {
-  docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}" | grep $1)
+  docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}" | grep $1) --force
 }
 
 # only for moteefe project
@@ -80,6 +78,22 @@ alias v=vim
 alias orcat=cat
 alias cat=bat
 
+# ruby & rails
+alias bi='bundle install'
+alias be='bundle exec'
+alias brs='bundle exec rails s -b 0.0.0.0'
+alias brsp='bundle exec rspec'
+alias br='bundle exec rails'
+alias brc='bundle exec rails c'
+alias brdb='bundle exec rails db'
+alias brdm='bundle exec rails db:migrate'
+alias brgm='bundle exec rails g migration'
+
+# node & npm
+alias nr='npm run'
+alias nrb='npm run build'
+
+# elixir & mix
 alias i='iex'
 alias ips='iex -S mix phx.server'
 alias ism='iex -S mix'
@@ -149,6 +163,26 @@ alias start_fanctrl='/Applications/Macs\ Fan\ Control.app/Contents/MacOS/MacsFan
 alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh;
+  else
+    local arg=-sh;
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@";
+  else
+    du $arg .[^.]* ./*;
+  fi;
+}
+
 bindkey '^n' expand-or-complete
 bindkey '^p' reverse-menu-complete
 
@@ -183,4 +217,4 @@ alias set_dark_theme="
   source ~/.fzf.zsh
 "
 
-export NODE_OPTIONS="--max_old_space_size=2048"
+export NODE_OPTIONS="--max-old-space-size=1536"
