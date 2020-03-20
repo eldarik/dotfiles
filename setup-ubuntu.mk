@@ -65,6 +65,7 @@ install-nvim:
 copy-ubuntu-dotfiles:
 	cp files/bashrc ~/.bashrc
 	cp files/zshrc ~/.zshrc
+	cp files/aliases ~/.aliases
 	cp files/gitconfig ~/.gitconfig
 	cp files/gitignore_global ~/.gitignore_global
 	cp files/tmux.conf ~/.tmux.conf

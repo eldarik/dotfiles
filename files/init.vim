@@ -2,7 +2,6 @@ set hidden
 setglobal nocompatible
 setglobal pastetoggle=<F2>
 set updatetime=100
-set signcolumn=yes
 set cmdheight=1
 set inccommand=nosplit
 set splitright
@@ -22,7 +21,7 @@ set smartcase
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set tabstop=2 shiftwidth=2 expandtab
 set lcs=tab:>¬,trail:~,space:·
-set textwidth=100
+" set textwidth=100
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set ruler
@@ -272,6 +271,8 @@ map fs :new<CR>
 map аы :new<CR>
 map ft :terminal<CR>
 map ае :terminal<CR>
+" Reload current file
+map <leader>e :e! <CR>
 
 map <F2> :set invpaste paste?<CR>
 
@@ -307,3 +308,4 @@ nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref H
 nmap <silent> <leader>bl :set background=light<CR>
 nmap <silent> <leader>bd :set background=dark<CR>
 
+highlight clear SignColumn
