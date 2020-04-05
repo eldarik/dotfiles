@@ -31,7 +31,12 @@ install-apt-packages:
 			libreadline-dev \
 			libncurses5-dev \
 			libffi-dev \
-			libgdbm-dev
+			libgdbm-dev \
+			automake \
+			libxml2-dev \
+			libcurl4-openssl-dev \
+			libsqlite3-dev \
+			jq
 
 install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
