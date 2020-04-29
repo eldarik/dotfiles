@@ -49,6 +49,15 @@ Plug 'scrooloose/nerdtree'
 "let g:nerdtree_tabs_open_on_console_startup=1
 au Filetype nerdtree set nolist
 let NERDTreeIgnore = ['\.pyc$', '\.retry$']
+" let g:NERDTreeMinimalUI = 1
+" let g:NERDTreeWinSize = 31
+" let g:NERDTreeChDirMode = 2
+ let g:NERDTreeAutoDeleteBuffer = 1
+" let g:NERDTreeShowBookmarks = 1
+" let g:NERDTreeCascadeOpenSingleChildDir = 1
+" let g:NERDTreeDirArrows = 1
+" let g:NERDTreeMouseMode=3
+let g:NERDTreeShowHidden=1
 map <leader><leader> :NERDTreeMirrorToggle<CR>
 map <leader>n :NERDTreeFind<CR>
 map <leader>т :NERDTreeFind<CR>
@@ -142,6 +151,8 @@ nmap <silent> <leader>g :silent GFiles<CR>
 nmap <silent> <leader>п :silent GFiles<CR>
 nmap <silent> <leader>b :silent Buffers<CR>
 nmap <silent> <leader>и :silent Buffers<CR>
+nmap <silent> <leader>h :silent History<CR>
+nmap <silent> <leader>р :silent History<CR>
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -203,6 +214,11 @@ endfunction
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+nnoremap <Leader>l :Format<CR>
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'dyng/ctrlsf.vim'
@@ -265,10 +281,10 @@ nmap fq :q!<CR>
 nmap ай :q!<CR>
 nmap fw :w<CR>
 nmap ац :w<CR>
-map fv :vnew<CR>
-map ам :vnew<CR>
-map fs :new<CR>
-map аы :new<CR>
+map fv :vsplit<CR>
+map ам :vsplit<CR>
+map fs :split<CR>
+map аы :split<CR>
 map ft :terminal<CR>
 map ае :terminal<CR>
 " Reload current file
@@ -280,7 +296,7 @@ map <F2> :set invpaste paste?<CR>
 map <F7> :%norm ggw<CR>
 
 " Clear highlighted text
-map <leader>r :nohlsearch<CR>
+map <leader>H :nohlsearch<CR>
 map <leader>к :nohlsearch<CR>
 
 " Allow to copy/paste between VIM instances
@@ -307,5 +323,19 @@ nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref H
 " set light background
 nmap <silent> <leader>bl :set background=light<CR>
 nmap <silent> <leader>bd :set background=dark<CR>
+
+" replace selected text
+nnoremap <leader>r :%s///g<left><left>
+
+" find visual selection in current buffer
+vnoremap / y:let @/ = @"<CR>
+
+" find visual selection in dir
+function SearchVisualSelection()
+  normal gv"xy
+  let selection = getreg("x")
+  execute 'Rg!' selection
+endfunction
+vnoremap f :call SearchVisualSelection() <CR>
 
 highlight clear SignColumn

@@ -1,8 +1,19 @@
 {
+  "suggest.triggerCompletionWait": 300,
+  "suggest.autoTrigger": "trigger",
+  "suggest.maxCompleteItemCount": 30,
+  "suggest.noselect": true,
+  "suggest.removeDuplicateItems": true,
+
+  "diagnostic.messageDelay": 500,
+  "diagnostic.enableSign": true,
+  "diagnostic.enableHighlightLineNumber": true,
+  // "diagnostic.checkCurrentLine": true,
   "diagnostic.infoSign": "?",
   "diagnostic.warningSign": "!",
   "diagnostic.errorSign": "x",
-  "suggest.maxCompleteItemCount": 30,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextPrefix": " --> ",
 
   "languageserver": {
     "golang": {
@@ -54,6 +65,7 @@
   "eslint.autoFix": true,
   "eslint.autoFixOnSave": false,
 
+  "solargraph.commandPath": "/home/eldar/.asdf/shims/solargraph",
   "solargraph.diagnostics": true,
   "solargraph.hover": true,
   "solargraph.autoformat": true,
