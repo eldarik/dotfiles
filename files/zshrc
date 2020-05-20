@@ -49,8 +49,10 @@ function kill_batch_of_ps() {
 }
 
 # asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# if [ -f ~/.asdf/asdf.sh ]; then
+# . ~/.asdf/asdf.sh
+# . ~/.asdf/completions/asdf.bash
+# fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

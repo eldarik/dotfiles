@@ -9,10 +9,10 @@ install-brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 install-brew-packages:
-	brew install ands \
-			autoconf \
+	brew install autoconf \
+			mosh \
+			aria2c \
 			automake \
-			chromedriver \
 			coreutils \
 			gdbm \
 			gettext \
@@ -20,8 +20,6 @@ install-brew-packages:
 			gmp \
 			gnupg \
 			gnutls \
-			heroku \
-			heroku-node \
 			icu4c \
 			jemalloc \
 			libassuan \
@@ -64,16 +62,20 @@ install-brew-packages:
 			you-get \
 			zsh \
 			bat \
-			ripgrep
-
+			ripgrep \
+			youtube-dl
+	brew tap homebrew/cask-fonts
+	brew cask install font-anonymous-pro \
+	chromedriver
 # TODO add install nvim
 # TODO add install ansible
 
-copy-dotfiles:
-	cp bashrc ~/.bashrc && \
-		cp zshrc ~/.zshrc && \
-		cp inputrc ~/.inputrc && \
-		cp bash_profile ~/.bash_profile && \
-		cp gitconfig ~/.gitconfig && \
-		cp gitignore_global ~/.gitignore_global && \
-		cp tmux.conf.macos ~/.tmux.conf
+macos-copy-dotfiles:
+	cp files/bashrc ~/.bashrc && \
+		cp files/aliases ~/.aliases && \
+		cp files/zshrc ~/.zshrc && \
+		cp files/inputrc ~/.inputrc && \
+		cp files/bash_profile ~/.bash_profile && \
+		cp files/gitconfig ~/.gitconfig && \
+		cp files/gitignore_global ~/.gitignore_global && \
+		cp files/macos/tmux.conf ~/.tmux.conf
