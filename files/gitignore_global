@@ -1,3 +1,5 @@
 *.*.sw*
-.idea*
 .DS_Store
+.tool-versions
+
+.solargraph.yml
