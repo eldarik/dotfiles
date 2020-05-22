@@ -1,29 +1,3 @@
-# aliases
-# git
-alias gpr='git pull --rebase'
-alias gbrd='git branch | grep -v "master\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
-alias gsp='git stash pop'
-alias gs='git stash -u'
-alias ga='git add'
-alias gap='git add -p'
-alias gc='git ci -m'
-alias gmc='git merge --continue'
-alias gp='ggpush'
-alias gpf='ggpush -f'
-alias grh='git reset HEAD'
-alias glc='git rev-parse HEAD'
-alias gdf='git diff'
-alias gcia='git ci --amend'
-alias gr='git rebase'
-alias grm='git rebase master'
-alias gri='git rebase -i'
-alias grc='git rebase --continue'
-alias gfu='git fetch upstream'
-alias gcm='git checkout master'
-alias gcd='git checkout development'
-alias gcb='gco $(gb | fzf)'
-alias gnb='gco -b'
-alias gcrb='git checkout $(gba | fzf | sed "s/.*\///")'
 
 # tmux
 alias t=tmux
@@ -80,8 +54,8 @@ alias brc='bundle exec rails c'
 alias brdb='bundle exec rails db'
 alias brdm='bundle exec rails db:migrate'
 alias brgm='bundle exec rails g migration'
-bcpd='bundle exec cap production deploy'
-bcbd='bundle exec cap beta deploy'
+alias bcpd='bundle exec cap production deploy'
+alias bcbd='bundle exec cap beta deploy'
 
 # node & npm
 alias nr='npm run'
