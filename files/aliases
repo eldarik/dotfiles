@@ -80,6 +80,8 @@ alias brc='bundle exec rails c'
 alias brdb='bundle exec rails db'
 alias brdm='bundle exec rails db:migrate'
 alias brgm='bundle exec rails g migration'
+bcpd='bundle exec cap production deploy'
+bcbd='bundle exec cap beta deploy'
 
 # node & npm
 alias nr='npm run'
