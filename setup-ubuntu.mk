@@ -1,11 +1,3 @@
-setup-ubuntu: install-apt-packages \
-	install-tmux-plugin-manager \
-	install-ansible \
-	install-docker \
-	install-docker-compose \
-	install-oh-my-zsh \
-	copy-ubuntu-dotfiles
-
 install-apt-packages:
 	sudo apt update -y -qq && \
 		sudo apt upgrade -y -qq && \
@@ -38,12 +30,6 @@ install-apt-packages:
 			libsqlite3-dev \
 			jq
 
-install-tmux-plugin-manager:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-install-ansible:
-	pip3 install ansible --user
-
 install-docker:
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
@@ -55,24 +41,13 @@ install-docker-compose:
 	sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 
-install-nvim:
+install-ubuntu-nvim:
 	mkdir ~/.config
 	mkdir ~/.config/nvim/
 	mkdir ~/.local/
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 	tar -xvf nvim-linux64.tar.gz
 	mv nvim-linux64 ~/.local/nvim
-
-copy-ubuntu-dotfiles:
-	cp files/bashrc ~/.bashrc
-	cp files/zshrc ~/.zshrc
-	cp files/aliases ~/.aliases
-	cp files/gitconfig ~/.gitconfig
-	cp files/gitignore_global ~/.gitignore_global
-	cp files/tmux.conf ~/.tmux.conf
-	cp files/fzf.zsh ~/.fzf.zsh
-	cp files/init.vim ~/.config/nvim/
-	cp files/coc-settings.json ~/.config/nvim/
 
 install-ripgrep:
 	curl -lO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
