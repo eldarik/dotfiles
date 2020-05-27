@@ -61,6 +61,7 @@ install-brew-packages:
 	brew tap homebrew/cask-fonts
 	brew cask install font-anonymous-pro \
 		chromedriver \
-		ngrok
+		ngrok \
+		gswitch
 # TODO add install nvim
 # TODO add install ansible
