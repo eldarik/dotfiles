@@ -27,6 +27,7 @@ set clipboard=unnamedplus
 set ruler
 set list
 set signcolumn=yes
+" set iskeyword-=_
 syntax enable
 filetype plugin indent on
 let mapleader = "\<Space>"
@@ -126,7 +127,7 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~70%' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
@@ -166,8 +167,8 @@ if has('persistent_undo')
 endif
 
 " Coc
-let g:coc_node_path = '/home/eldar/.asdf/shims/node'
-let g:coc_npm_path = '/home/eldar/.asdf/shims/npm'
+let g:coc_node_path = '$HOME/.asdf/shims/node'
+let g:coc_npm_path = '$HOME/.asdf/shims/npm'
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-html',
@@ -242,6 +243,9 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+Plug 'janko/vim-test'
+map <Leader>t :TestNearest<CR>
 
 call plug#end()
 " set t_Co=16
@@ -318,7 +322,10 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 " github link to line repo
-nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > ~/.vbuf <CR>
+" for linux workstation
+" nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs > ~/.vbuf <CR>
+" for macos
+nnoremap <silent> ,gl :silent !echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| pbcopy <CR>
 
 " set light background
 nmap <silent> <leader>bl :set background=light<CR>
@@ -338,4 +345,6 @@ function SearchVisualSelection()
 endfunction
 vnoremap f :call SearchVisualSelection() <CR>
 
+" exit from terminal mode in terminal window
+tnoremap <C-[> <C-\><C-n>
 highlight clear SignColumn
