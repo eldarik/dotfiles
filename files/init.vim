@@ -345,6 +345,5 @@ function SearchVisualSelection()
 endfunction
 vnoremap f :call SearchVisualSelection() <CR>
 
-" exit from terminal mode in terminal window
-tnoremap <C-[> <C-\><C-n>
+tnoremap fq <C-\><C-n>
 highlight clear SignColumn
