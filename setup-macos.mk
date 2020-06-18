@@ -2,66 +2,123 @@ install-brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 install-brew-packages:
-	brew install autoconf \
-		mosh \
-		aria2c \
+	brew install \
+		adns \
+		aria2 \
+		autoconf \
 		automake \
+		bat \
+		cmake \
 		coreutils \
+		docbook \
+		docbook-xsl \
+		freetype \
 		gdbm \
 		gettext \
+		ghostscript \
 		git \
+		glib \
 		gmp \
+		gnu-getopt \
 		gnupg \
 		gnutls \
+		htop \
 		icu4c \
+		ilmbase \
+		imagemagick \
 		jemalloc \
+		jpeg \
+		jq \
+		krb5 \
 		libassuan \
+		libde265 \
 		libevent \
 		libffi \
 		libgcrypt \
 		libgpg-error \
+		libheif \
 		libidn2 \
 		libksba \
+		libomp \
+		libpng \
+		libssh2 \
 		libtasn1 \
 		libtermkey \
+		libtiff \
 		libtool \
 		libunistring \
 		libusb \
 		libuv \
 		libvterm \
 		libyaml \
+		little-cms2 \
+		lua \
 		luajit \
 		m-cli \
+		make \
+		mosh \
 		msgpack \
+		mysql \
+		mysql-client \
+		ncurses \
 		nettle \
 		npth \
-		openssl \
+		oniguruma \
+		openexr \
+		openjpeg \
 		openssl@1.1 \
 		p11-kit \
 		p7zip \
 		pcre \
+		pcre2 \
 		perl \
 		pinentry \
 		pkg-config \
 		postgresql \
+		protobuf \
+		python@3.8 \
 		readline \
+		redis \
+		ripgrep \
+		rtmpdump \
+		ruby \
+		shared-mime-info \
+		speedtest-cli \
 		sqlite \
 		tmux \
+		unbound \
 		unibilium \
+		utf8proc \
 		v8 \
 		vim \
+		webp \
 		wget \
+		x265 \
+		xmlto \
 		xz \
 		you-get \
-		zsh \
-		bat \
-		ripgrep \
-		youtube-dl
+		youtube-dl \
+		zsh
 
+install-brew-casks:
 	brew tap homebrew/cask-fonts
-	brew cask install font-anonymous-pro \
+	brew cask install \
+		alacritty \
+		anydesk \
 		chromedriver \
+		dropbox \
+		font-anonymous-pro \
+		gimp \
+		google-backup-and-sync \
+		google-chrome \
+		gswitch \
+		iina \
+		macmediakeyforwarder \
+		mtmr \
 		ngrok \
-		gswitch
-# TODO add install nvim
-# TODO add install ansible
+		puush \
+		soda-player \
+		steam \
+		sublime-text \
+		turbo-boost-switcher \
+		vox
