@@ -120,5 +120,4 @@ install-brew-casks:
 		soda-player \
 		steam \
 		sublime-text \
-		turbo-boost-switcher \
-		vox
+		turbo-boost-switcher
