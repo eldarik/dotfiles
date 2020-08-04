@@ -25,9 +25,6 @@ setup-ubuntu: install-apt-packages \
 	install-oh-my-zsh \
 	copy-dotfiles
 
-install-tmux-plugin-manager:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 install-ansible:
 	pip3 install ansible --user
 
