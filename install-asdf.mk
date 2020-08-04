@@ -5,6 +5,7 @@ install-asdf-plugins:
 	asdf plugin-add elixir
 	asdf plugin-add erlang
 	asdf plugin-add golang
+	asdf plugin-add python
 
 install-asdf-nodejs:
 	asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
