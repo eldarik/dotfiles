@@ -12,6 +12,11 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+{
+  eval "$(ssh-agent -s)"
+  ssh-add
+} &> /dev/null
+
 set -o vi
 
 # masos
@@ -49,10 +54,10 @@ function kill_batch_of_ps() {
 }
 
 # asdf
-# if [ -f ~/.asdf/asdf.sh ]; then
-# . ~/.asdf/asdf.sh
-# . ~/.asdf/completions/asdf.bash
-# fi
+if [ -f ~/.asdf/asdf.sh ]; then
+. ~/.asdf/asdf.sh
+. ~/.asdf/completions/asdf.bash
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -75,3 +80,4 @@ alias set_dark_theme="
 "
 
 export NODE_OPTIONS="--max-old-space-size=1536"
+export PATH="/usr/local/sbin:$PATH"
