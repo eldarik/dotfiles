@@ -155,7 +155,7 @@ nmap <silent> <leader>и :silent Buffers<CR>
 nmap <silent> <leader>h :silent History<CR>
 nmap <silent> <leader>р :silent History<CR>
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do' : 'yarn install --frozen-lockfile' }
 
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
