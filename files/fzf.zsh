@@ -1,10 +1,10 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/eldar_iskhakov/.fzf/bin* ]]; then
+if [[ ! "$PATH" == */Users/eldar/.fzf/bin* ]]; then
   # for linux
   # export PATH="${PATH:+${PATH}:}/home/eldar/.fzf/bin"
   # for mac os
-  export PATH="${PATH:+${PATH}:}/Users/eldar_iskhakov/.fzf/bin"
+  export PATH="${PATH:+${PATH}:}/Users/eldar/.fzf/bin"
 fi
 
 # Auto-completion
@@ -12,14 +12,14 @@ fi
 # for linux
 # [[ $- == *i* ]] && source "/home/eldar/.fzf/shell/completion.zsh" 2> /dev/null
 # for mac os
-[[ $- == *i* ]] && source "/Users/eldar_iskhakov/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/Users/eldar/.fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
 # for linux
 # source "/home/eldar/.fzf/shell/key-bindings.zsh"
 # for mac os
-source "/Users/eldar_iskhakov/.fzf/shell/key-bindings.zsh"
+source "/Users/eldar/.fzf/shell/key-bindings.zsh"
 
 export FZF_DEFAULT_OPTS='
  --color=bg+:7,bg:15,spinner:2,hl:2,fg:11,header:14,info:9,pointer:2,marker:2,fg+:11,prompt:2,hl+:2
