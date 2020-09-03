@@ -1,11 +1,12 @@
 install-asdf:
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+	brew install asdf
 
 install-asdf-plugins:
 	asdf plugin-add elixir
 	asdf plugin-add erlang
 	asdf plugin-add golang
 	asdf plugin-add python
+	asdf plugin-add ruby
 
 install-asdf-nodejs:
 	asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
