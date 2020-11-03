@@ -6,7 +6,7 @@ alias gsp='git stash pop'
 alias gs='git stash -u'
 alias ga='git add'
 alias gap='git add -p'
-alias gc='git ci -m'
+alias gcom='git ci -m'
 alias gmc='git merge --continue'
 alias gp='ggpush'
 alias gpf='ggpush -f'
@@ -26,6 +26,7 @@ alias gcd='git checkout development'
 alias gcb='gco $(gb | fzf)'
 alias gnb='gco -b'
 alias gcrb='git checkout $(gba | fzf | sed "s/.*\///")'
+alias gsb='git branch --show-current'
 
 # tmux
 alias t=tmux
@@ -86,6 +87,7 @@ alias bcpd='bundle exec cap production deploy'
 alias bcbd='bundle exec cap beta deploy'
 
 # node & npm
+alias ni='npm install'
 alias nr='npm run'
 alias nrb='npm run build'
 
