@@ -199,6 +199,7 @@ nmap <silent> пк <Plug>(coc-references)
 " use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> ]r :CocRestart<CR>
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -246,6 +247,13 @@ endfunction
 
 Plug 'janko/vim-test'
 map <Leader>t :TestNearest<CR>
+
+Plug 'pechorin/any-jump.vim'
+let g:any_jump_list_numbers = 1
+let g:any_jump_search_prefered_engine = 'rg'
+let g:any_jump_window_width_ratio  = 1.0
+let g:any_jump_window_height_ratio = 0.6
+let g:any_jump_window_top_offset   = 20
 
 call plug#end()
 " set t_Co=16
