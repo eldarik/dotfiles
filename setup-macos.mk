@@ -105,19 +105,31 @@ install-brew-casks:
 	brew cask install \
 		alacritty \
 		anydesk \
+		alfred \
 		chromedriver \
+		discord \
 		dropbox \
+		firefox \
 		font-anonymous-pro \
 		gimp \
 		google-backup-and-sync \
 		google-chrome \
 		gswitch \
 		iina \
+		iterm2 \
+		karabiner-elements \
 		macmediakeyforwarder \
 		mtmr \
 		ngrok \
 		puush \
+		sensei \
+		skype \
+		slack \
 		soda-player \
+		spotify \
 		steam \
 		sublime-text \
-		slack
+		telegram \
+		toggl-track \
+		tunnelblick \
+		turbo-boost-switcher
