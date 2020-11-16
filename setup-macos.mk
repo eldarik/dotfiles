@@ -133,3 +133,13 @@ install-brew-casks:
 		toggl-track \
 		tunnelblick \
 		turbo-boost-switcher
+
+install-nvim-macos:
+	- mkdir ~/.local/
+	- curl -o ~/.local/nvim.tar.gz -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+	- tar xzf ~/.local/nvim.tar.gz -C ~/.local/
+	- mv ~/.local/nvim-osx64 ~/.local/nvim
+
+copy-karabiner-config:
+	- mkdir ~/.config/karabiner/
+	cp files/karabiner.json ~/.config/karabiner/

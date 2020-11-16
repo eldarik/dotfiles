@@ -38,7 +38,9 @@ copy-dotfiles:
 	cp files/gitignore_global ~/.gitignore_global
 	cp files/tmux.conf ~/.tmux.conf
 	cp files/fzf.zsh ~/.fzf.zsh
-	mkdir .config/
-	mkdir .config/nvim/
+	- mkdir ~/.config/
+	- mkdir ~/.config/bat/
+	cp files/bat.config ~/.config/bat/config
+	- mkdir ~/.config/nvim/
 	cp files/init.vim ~/.config/nvim/
 	cp files/coc-settings.json ~/.config/nvim/
