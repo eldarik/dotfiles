@@ -252,8 +252,26 @@ Plug 'pechorin/any-jump.vim'
 let g:any_jump_list_numbers = 1
 let g:any_jump_search_prefered_engine = 'rg'
 let g:any_jump_window_width_ratio  = 1.0
-let g:any_jump_window_height_ratio = 0.6
-let g:any_jump_window_top_offset   = 20
+let g:any_jump_window_height_ratio = 0.8
+let g:any_jump_window_top_offset   = 40
+let g:any_jump_results_ui_style = 'filename_last'
+nnoremap <leader>j :AnyJump<CR>
+nnoremap <leader>ab :AnyJumpBack<CR>
+let g:any_jump_colors = {
+      \"plain_text":         "Comment",
+      \"preview":            "Comment",
+      \"preview_keyword":    "Operator",
+      \"heading_text":       "Function",
+      \"heading_keyword":    "Identifier",
+      \"group_text":         "Comment",
+      \"group_name":         "Function",
+      \"more_button":        "Operator",
+      \"more_explain":       "Comment",
+      \"result_line_number": "Comment",
+      \"result_text":        "Statement",
+      \"result_path":        "String",
+      \"help":               "Comment"
+      \}
 
 call plug#end()
 " set t_Co=16
@@ -291,6 +309,8 @@ map ау :tab split<CR>
 
 nmap fq :q!<CR>
 nmap ай :q!<CR>
+nmap tq :tabclose<CR>
+nmap ей :tabclose<CR>
 nmap fw :w<CR>
 nmap ац :w<CR>
 map fv :vsplit<CR>
