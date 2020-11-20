@@ -8,6 +8,7 @@ install-oh-my-zsh:
 	sh install-zsh.sh
 
 install-tmux-plugin-manager:
+	- mkdir ~/.tmux
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 setup-macos: install-brew \
