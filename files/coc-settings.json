@@ -72,5 +72,5 @@
   "solargraph.definitions": true,
   "solargraph.completion": true,
   "solargraph.references": true,
-  "solargraph.formatting": true,
+  "solargraph.formatting": true
 }
