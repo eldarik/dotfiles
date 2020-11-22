@@ -1,5 +1,5 @@
 install-asdf:
-	brew install asdf
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 install-asdf-plugins:
 	asdf plugin-add elixir
