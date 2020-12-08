@@ -42,12 +42,12 @@ install-docker-compose:
 	sudo chmod +x /usr/local/bin/docker-compose
 
 install-ubuntu-nvim:
-	mkdir ~/.config
-	mkdir ~/.config/nvim/
-	mkdir ~/.local/
-	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
-	tar -xvf nvim-linux64.tar.gz
-	mv nvim-linux64 ~/.local/nvim
+	- mkdir ~/.config
+	- mkdir ~/.config/nvim/
+	- mkdir ~/.local/
+	- wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+	- tar -xvf nvim-linux64.tar.gz
+	- mv nvim-linux64 ~/.local/nvim
 
 install-ripgrep:
 	curl -lO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
