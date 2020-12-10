@@ -4,7 +4,10 @@ export PATH="$PATH:$HOME/.local/bin"
 export NPM_TOKEN=''
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-ZSH_THEME="simple"
+# ZSH_THEME="simple"
+# ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster-light"
+ZSH_THEME="geoffgarside"
 
 plugins=(git fzf)
 source $ZSH/oh-my-zsh.sh
