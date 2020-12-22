@@ -247,6 +247,7 @@ endfunction
 
 Plug 'janko/vim-test'
 map <Leader>t :TestNearest<CR>
+let test#ruby#use_binstubs = 0
 
 Plug 'pechorin/any-jump.vim'
 let g:any_jump_list_numbers = 1
