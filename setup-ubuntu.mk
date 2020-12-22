@@ -28,7 +28,10 @@ install-apt-packages:
 			libxml2-dev \
 			libcurl4-openssl-dev \
 			libsqlite3-dev \
-			jq
+			libpq-dev \
+			jq \
+			pkg-config \
+			ripgrep
 
 install-docker:
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -49,10 +52,6 @@ install-ubuntu-nvim:
 	- tar -xvf nvim-linux64.tar.gz
 	- mv nvim-linux64 ~/.local/nvim
 
-install-ripgrep:
-	curl -lO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
-	sudo dpkg -i ripgrep_11.0.2_amd64.deb
-
 install-bat:
-	wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+	wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 	sudo dpkg -i bat_0.12.1_amd64.deb
