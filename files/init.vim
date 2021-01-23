@@ -28,8 +28,6 @@ set ruler
 set list
 set signcolumn=yes
 " set iskeyword-=_
-syntax enable
-filetype plugin indent on
 let mapleader = "\<Space>"
 
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -86,7 +84,7 @@ Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -220,7 +218,8 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
-nnoremap <Leader>l :Format<CR>
+nnoremap <leader>o :<C-u>CocList outline<CR>
+nnoremap <leader>l :Format<CR>
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'dyng/ctrlsf.vim'
@@ -281,6 +280,10 @@ call plug#end()
 set background=light
 " set background=dark
 colorscheme solarized
+autocmd ColorScheme * highlight! link SignColumn CursorLineNr
+
+filetype plugin indent on
+syntax enable
 
 " hotkeys
 
