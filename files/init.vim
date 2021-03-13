@@ -85,7 +85,7 @@ Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
 
 " Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
