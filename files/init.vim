@@ -83,6 +83,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'slim-template/vim-slim'
 Plug 'leafgarland/typescript-vim'
+Plug 'dart-lang/dart-vim-plugin'
 
 " Plug 'tpope/vim-fugitive'
 " Plug 'jiangmiao/auto-pairs'
