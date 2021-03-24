@@ -15,6 +15,11 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+# foxford aliases
+if [ -f ~/gdrive/foxford-notes/aliases ]; then
+  . ~/gdrive/foxford-notes/aliases
+fi
+
 {
   eval "$(ssh-agent -s)"
   ssh-add
