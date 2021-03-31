@@ -29,6 +29,7 @@ set list
 set signcolumn=yes
 " set iskeyword-=_
 let mapleader = "\<Space>"
+let g:EasyMotion_leader_key = '<Leader>'
 
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
