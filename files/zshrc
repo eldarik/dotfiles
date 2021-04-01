@@ -16,8 +16,8 @@ if [ -f ~/.aliases ]; then
 fi
 
 # foxford aliases
-if [ -f ~/gdrive/foxford-notes/aliases ]; then
-  . ~/gdrive/foxford-notes/aliases
+if [ -f ~/gdrive/notes/dev/aliases ]; then
+  . ~/gdrive/notes/dev/aliases
 fi
 
 {
@@ -49,6 +49,10 @@ function fs() {
   else
     du $arg .[^.]* ./*;
   fi;
+}
+
+function mkgif() {
+  ffmpeg -i "$@" -r 15 -vf scale=1024:-1 "$@".gif
 }
 
 bindkey '^n' expand-or-complete

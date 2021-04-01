@@ -38,6 +38,7 @@ install-docker:
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 	sudo apt update -y -qq
 	sudo apt install -y -qq docker-ce
+	sudo groupadd docker
 	sudo usermod -aG docker eldar
 
 install-docker-compose:
