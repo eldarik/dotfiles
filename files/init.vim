@@ -276,6 +276,8 @@ let g:any_jump_colors = {
       \"help":               "Comment"
       \}
 
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_leader_key = '<Leader>'
 call plug#end()
 " set t_Co=16
 " let g:solarized_termtrans = 1
