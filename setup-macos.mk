@@ -138,6 +138,7 @@ install-nvim-macos:
 	- mkdir ~/.local/
 	- curl -o ~/.local/nvim.tar.gz -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
 	- tar xzf ~/.local/nvim.tar.gz -C ~/.local/
+	- rm ~/.local/nvim.tar.gz
 	- mv ~/.local/nvim-osx64 ~/.local/nvim
 
 copy-karabiner-config:

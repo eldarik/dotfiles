@@ -1,3 +1,4 @@
+set encoding=utf-8
 set hidden
 setglobal nocompatible
 setglobal pastetoggle=<F2>
@@ -58,7 +59,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.retry$']
 " let g:NERDTreeDirArrows = 1
 " let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
-map <leader><leader> :NERDTreeMirrorToggle<CR>
+noremap <leader><leader> :NERDTreeMirrorToggle<CR>
 map <leader>n :NERDTreeFind<CR>
 map <leader>т :NERDTreeFind<CR>
 
@@ -87,7 +88,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'kchmck/vim-coffee-script'
 
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -103,8 +104,9 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'andrewradev/splitjoin.vim'
 
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline', { 'commit': '2d650d2' }
 Plug 'vim-airline/vim-airline-themes'
+
 let g:airline_theme='base16'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
