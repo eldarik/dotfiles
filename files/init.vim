@@ -89,7 +89,10 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'kchmck/vim-coffee-script'
 
 Plug 'tpope/vim-fugitive'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
+" NOTE: temp fix, needs research
+let g:AutoPairs = {}
+
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
