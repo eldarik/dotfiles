@@ -31,6 +31,7 @@ alias gcrb='git checkout $(gba | fzf | sed "s/.*remotes\/[a-z]*\///")'
 alias gsb='git branch --show-current'
 alias gst='git status'
 alias gsh='git show'
+alias gpwip="git add . && git ci -m 'wip [ci skip]' && gp"
 
 # tmux
 alias t=tmux
