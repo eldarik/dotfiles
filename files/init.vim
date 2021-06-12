@@ -30,7 +30,6 @@ set list
 set signcolumn=yes
 " set iskeyword-=_
 let mapleader = "\<Space>"
-let g:EasyMotion_leader_key = '<Leader>'
 
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -89,9 +88,6 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'kchmck/vim-coffee-script'
 
 Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
-" NOTE: temp fix, needs research
-let g:AutoPairs = {}
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -194,6 +190,9 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-highlight'
       \]
+let g:coc_filetype_map = {
+        \ 'eruby.yaml': 'yaml',
+        \ }
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> пв <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
