@@ -32,6 +32,7 @@ set -o vi
 alias start_fanctrl='/Applications/Macs\ Fan\ Control.app/Contents/MacOS/MacsFanControl /minimized & disown'
 alias stop_fanctrl='kill_batch_of_ps MacsFanControl'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # Create a new directory and enter it
 function mkd() {
@@ -80,6 +81,7 @@ alias set_light_theme="
   cp ~/.fzf.zsh.light ~/.fzf.zsh;
   cp ~/.config/nvim/init.vim.light ~/.config/nvim/init.vim;
   cp ~/.config/bat/config.light ~/.config/bat/config;
+  cp ~/.config/alacritty/alacritty.yml.light ~/.config/alacritty/alacritty.yml;
   tmux source ~/.tmux.conf.light;
   source ~/.fzf.zsh
 "
@@ -88,9 +90,10 @@ alias set_dark_theme="
   cp ~/.fzf.zsh.dark ~/.fzf.zsh;
   cp ~/.config/bat/config.dark ~/.config/bat/config;
   cp ~/.config/nvim/init.vim.dark ~/.config/nvim/init.vim;
+  cp ~/.config/alacritty/alacritty.yml.dark ~/.config/alacritty/alacritty.yml;
   tmux source ~/.tmux.conf.dark;
   source ~/.fzf.zsh
 "
 
-export NODE_OPTIONS="--max-old-space-size=1536"
+export NODE_OPTIONS="--max-old-space-size=4096"
 export PATH="/usr/local/sbin:$PATH"

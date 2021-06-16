@@ -65,7 +65,9 @@
   "eslint.autoFix": true,
   "eslint.autoFixOnSave": false,
 
-  "solargraph.commandPath": "/home/eldar/.asdf/shims/solargraph",
+  // "solargraph.useBundler": true,
+  // "solargraph.bundlerPath": "/Users/eldar/.asdf/shims/bundle",
+  // "solargraph.transport": "external",
   "solargraph.diagnostics": true,
   "solargraph.hover": true,
   "solargraph.autoformat": true,
