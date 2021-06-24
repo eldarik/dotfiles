@@ -2,45 +2,103 @@ install-brew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 install-brew-packages:
+	brew tap homebrew/cask-fonts
 	brew install \
 		adns \
+		alacritty \
+		aldente \
+		alfred \
+		anydesk \
+		aom \
 		aria2 \
+		authy \
 		autoconf \
 		automake \
 		bat \
+		bdw-gc \
+		berkeley-db \
+		bitwarden \
+		bluestacks \
+		c-ares \
+		cairo \
+		chromedriver \
 		cmake \
 		coreutils \
+		ctags \
+		dav1d \
+		discord \
 		docbook \
 		docbook-xsl \
+		docker \
+		dropbox \
+		exa \
+		fd \
+		ffmpeg \
+		firefox \
+		firefox-developer-edition \
+		flac \
+		font-anonymous-pro \
+		font-fira-code \
+		font-jetbrains-mono \
+		fontconfig \
 		freetype \
+		frei0r \
+		fribidi \
 		gdbm \
 		gettext \
+		gh \
 		ghostscript \
+		giflib \
+		gimp \
 		git \
 		glib \
 		gmp \
 		gnu-getopt \
 		gnupg \
 		gnutls \
+		gobject-introspection \
+		google-chrome \
+		graphite2 \
+		guile \
+		hammerspoon \
+		harfbuzz \
 		htop \
 		icu4c \
+		iina \
 		ilmbase \
 		imagemagick \
+		imath \
+		iterm2 \
+		jbig2dec \
 		jemalloc \
 		jpeg \
 		jq \
+		karabiner-elements \
 		krb5 \
+		lame \
+		leptonica \
+		libass \
 		libassuan \
+		libbluray \
 		libde265 \
+		libev \
 		libevent \
 		libffi \
 		libgcrypt \
 		libgpg-error \
 		libheif \
+		libidn \
 		libidn2 \
 		libksba \
+		liblqr \
+		libogg \
 		libomp \
 		libpng \
+		libpthread-stubs \
+		libsamplerate \
+		libsndfile \
+		libsodium \
+		libsoxr \
 		libssh2 \
 		libtasn1 \
 		libtermkey \
@@ -49,43 +107,94 @@ install-brew-packages:
 		libunistring \
 		libusb \
 		libuv \
+		libvidstab \
+		libvorbis \
+		libvpx \
 		libvterm \
+		libx11 \
+		libxau \
+		libxcb \
+		libxdmcp \
+		libxext \
+		libxrender \
 		libyaml \
 		little-cms2 \
+		little-snitch4 \
 		lua \
 		luajit \
+		luajit-openresty \
+		luv \
+		lz4 \
+		lzo \
 		m-cli \
+		m4 \
+		macmediakeyforwarder \
+		macs-fan-control \
 		make \
 		mosh \
+		mpdecimal \
 		msgpack \
 		mysql \
 		mysql-client \
 		ncurses \
+		neofetch \
+		neovim \
 		nettle \
+		nghttp2 \
+		ngrok \
 		npth \
 		oniguruma \
+		opencore-amr \
 		openexr \
 		openjpeg \
 		openssl@1.1 \
+		opus \
 		p11-kit \
 		p7zip \
 		pcre \
 		pcre2 \
 		perl \
 		pinentry \
+		pixman \
 		pkg-config \
+		popt \
 		postgresql \
+		postgresql@12 \
 		protobuf \
 		python@3.8 \
+		python@3.9 \
+		rav1e \
 		readline \
 		redis \
 		ripgrep \
+		rsync \
 		rtmpdump \
+		rubberband \
 		ruby \
+		ruby-build \
+		s3cmd \
+		screenfetch \
+		screenresolution \
+		sdl2 \
 		shared-mime-info \
+		six \
+		slack \
+		snappy \
+		soda-player \
 		speedtest-cli \
+		speex \
+		spotify \
 		sqlite \
+		srt \
+		steam \
+		tcl-tk \
+		telegram \
+		tesseract \
+		theora \
+		tig \
 		tmux \
+		toggl-track \
+		tunnelblick \
 		unbound \
 		unibilium \
 		utf8proc \
@@ -93,46 +202,19 @@ install-brew-packages:
 		vim \
 		webp \
 		wget \
+		x264 \
 		x265 \
 		xmlto \
+		xorgproto \
+		xvid \
+		xxhash \
 		xz \
 		you-get \
 		youtube-dl \
-		zsh
-
-install-brew-casks:
-	brew tap homebrew/cask-fonts
-	brew cask install \
-		alacritty \
-		anydesk \
-		alfred \
-		chromedriver \
-		discord \
-		dropbox \
-		firefox \
-		font-anonymous-pro \
-		gimp \
-		google-backup-and-sync \
-		google-chrome \
-		gswitch \
-		iina \
-		iterm2 \
-		karabiner-elements \
-		macmediakeyforwarder \
-		mtmr \
-		ngrok \
-		puush \
-		sensei \
-		skype \
-		slack \
-		soda-player \
-		spotify \
-		steam \
-		sublime-text \
-		telegram \
-		toggl-track \
-		tunnelblick \
-		turbo-boost-switcher
+		zeromq \
+		zimg \
+		zsh \
+		zstd
 
 install-nvim-macos:
 	- mkdir ~/.local/
