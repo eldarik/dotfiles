@@ -5,41 +5,25 @@ install-brew-packages:
 	brew tap homebrew/cask-fonts
 	brew install \
 		adns \
-		alacritty \
-		aldente \
-		alfred \
-		anydesk \
 		aom \
 		aria2 \
-		authy \
 		autoconf \
 		automake \
 		bat \
 		bdw-gc \
 		berkeley-db \
-		bitwarden \
-		bluestacks \
 		c-ares \
 		cairo \
-		chromedriver \
 		cmake \
 		coreutils \
 		ctags \
 		dav1d \
-		discord \
 		docbook \
 		docbook-xsl \
-		docker \
-		dropbox \
 		exa \
 		fd \
 		ffmpeg \
-		firefox \
-		firefox-developer-edition \
 		flac \
-		font-anonymous-pro \
-		font-fira-code \
-		font-jetbrains-mono \
 		fontconfig \
 		freetype \
 		frei0r \
@@ -49,7 +33,6 @@ install-brew-packages:
 		gh \
 		ghostscript \
 		giflib \
-		gimp \
 		git \
 		glib \
 		gmp \
@@ -57,23 +40,18 @@ install-brew-packages:
 		gnupg \
 		gnutls \
 		gobject-introspection \
-		google-chrome \
 		graphite2 \
 		guile \
-		hammerspoon \
 		harfbuzz \
 		htop \
 		icu4c \
-		iina \
 		ilmbase \
 		imagemagick \
 		imath \
-		iterm2 \
 		jbig2dec \
 		jemalloc \
 		jpeg \
 		jq \
-		karabiner-elements \
 		krb5 \
 		lame \
 		leptonica \
@@ -119,7 +97,6 @@ install-brew-packages:
 		libxrender \
 		libyaml \
 		little-cms2 \
-		little-snitch4 \
 		lua \
 		luajit \
 		luajit-openresty \
@@ -128,8 +105,6 @@ install-brew-packages:
 		lzo \
 		m-cli \
 		m4 \
-		macmediakeyforwarder \
-		macs-fan-control \
 		make \
 		mosh \
 		mpdecimal \
@@ -141,7 +116,6 @@ install-brew-packages:
 		neovim \
 		nettle \
 		nghttp2 \
-		ngrok \
 		npth \
 		oniguruma \
 		opencore-amr \
@@ -178,23 +152,16 @@ install-brew-packages:
 		sdl2 \
 		shared-mime-info \
 		six \
-		slack \
 		snappy \
-		soda-player \
 		speedtest-cli \
 		speex \
-		spotify \
 		sqlite \
 		srt \
-		steam \
 		tcl-tk \
-		telegram \
 		tesseract \
 		theora \
 		tig \
 		tmux \
-		toggl-track \
-		tunnelblick \
 		unbound \
 		unibilium \
 		utf8proc \
@@ -214,7 +181,42 @@ install-brew-packages:
 		zeromq \
 		zimg \
 		zsh \
-		zstd
+		zstd \
+		adobe-acrobat-reader \
+		alacritty \
+		aldente \
+		alfred \
+		anydesk \
+		authy \
+		bitwarden \
+		bluestacks \
+		chromedriver \
+		discord \
+		docker \
+		dropbox \
+		firefox \
+		firefox-developer-edition \
+		font-anonymous-pro \
+		font-fira-code \
+		font-jetbrains-mono \
+		gimp \
+		google-backup-and-sync \
+		google-chrome \
+		hammerspoon \
+		iina \
+		iterm2 \
+		karabiner-elements \
+		little-snitch4 \
+		macmediakeyforwarder \
+		macs-fan-control \
+		ngrok \
+		slack \
+		soda-player \
+		spotify \
+		steam \
+		telegram \
+		toggl-track \
+		tunnelblick
 
 install-nvim-macos:
 	- mkdir ~/.local/
