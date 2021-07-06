@@ -195,7 +195,8 @@ install-brew-packages:
 		docker \
 		dropbox \
 		firefox \
-		firefox-developer-edition \
+		homebrew/cask-versions/firefox-developer-edition \
+		homebrew/cask-versions/firefox-nightly \
 		font-anonymous-pro \
 		font-fira-code \
 		font-jetbrains-mono \
@@ -217,6 +218,9 @@ install-brew-packages:
 		telegram \
 		toggl-track \
 		tunnelblick
+	brew install docker --cask
+	brew tap heroku/brew
+	brew install heroku
 
 install-nvim-macos:
 	- mkdir ~/.local/
