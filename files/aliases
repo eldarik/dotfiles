@@ -1,7 +1,7 @@
 # aliases
 # git
 alias gpr='g pull --rebase'
-alias gbrd='git branch | grep -v "master\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
+alias gbrd='git branch | grep -v "master\|develop\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
 alias gspop='git stash pop'
 alias gspush='git stash push'
 alias gsshow='git stash show'
@@ -88,6 +88,7 @@ alias brdm='bundle exec rails db:migrate'
 alias brgm='bundle exec rails g migration'
 alias bcpd='bundle exec cap production deploy'
 alias bcbd='bundle exec cap beta deploy'
+alias gemsrc='function __gemsrc() { cd $(bundle info $1 --path) }; __gemsrc'
 
 # node & npm
 alias nr='npm run'
