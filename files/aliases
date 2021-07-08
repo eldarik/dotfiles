@@ -89,6 +89,7 @@ alias brgm='bundle exec rails g migration'
 alias bcpd='bundle exec cap production deploy'
 alias bcbd='bundle exec cap beta deploy'
 alias gemsrc='function __gemsrc() { cd $(bundle info $1 --path) }; __gemsrc'
+alias brcrdsed='function __brcrded() { EDITOR=~/.local/nvim/bin/nvim bundle exec rails credentials:edit --environment $1 }; __brcrded'
 
 # node & npm
 alias nr='npm run'

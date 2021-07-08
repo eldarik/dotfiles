@@ -228,7 +228,3 @@ install-nvim-macos:
 	- tar xzf ~/.local/nvim.tar.gz -C ~/.local/
 	- rm ~/.local/nvim.tar.gz
 	- mv ~/.local/nvim-osx64 ~/.local/nvim
-
-copy-karabiner-config:
-	- mkdir ~/.config/karabiner/
-	cp files/karabiner.json ~/.config/karabiner/

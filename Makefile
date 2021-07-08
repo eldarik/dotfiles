@@ -16,7 +16,7 @@ setup-macos: install-brew \
 	install-asdf \
 	install-asdf-plugins \
 	install-oh-my-zsh \
-	copy-dotfiles
+	sync-dotfiles
 
 setup-ubuntu: install-apt-packages \
 	install-tmux-plugin-manager \
@@ -24,24 +24,25 @@ setup-ubuntu: install-apt-packages \
 	install-docker \
 	install-docker-compose \
 	install-oh-my-zsh \
-	copy-dotfiles
+	sync-dotfiles
 
 install-ansible:
 	pip3 install ansible --user
 
-copy-dotfiles:
-	cp files/bash_profile ~/.bash_profile
-	cp files/bashrc ~/.bashrc
-	cp files/zshrc ~/.zshrc
-	cp files/aliases ~/.aliases
-	cp files/inputrc ~/.inputrc
-	cp files/gitconfig ~/.gitconfig
-	cp files/gitignore_global ~/.gitignore_global
-	cp files/tmux.conf ~/.tmux.conf
-	cp files/fzf.zsh ~/.fzf.zsh
-	- mkdir ~/.config/
-	- mkdir ~/.config/bat/
-	cp files/bat.config ~/.config/bat/config
-	- mkdir ~/.config/nvim/
-	cp files/init.vim ~/.config/nvim/
-	cp files/coc-settings.json ~/.config/nvim/
+sync-dotfiles:
+	ln -sf $(PWD)/files/bash_profile ~/.bash_profile
+	ln -sf $(PWD)/files/bashrc ~/.bashrc
+	ln -sf $(PWD)/files/zshrc ~/.zshrc
+	ln -sf $(PWD)/files/aliases ~/.aliases
+	ln -sf $(PWD)/files/inputrc ~/.inputrc
+	ln -sf $(PWD)/files/gitconfig ~/.gitconfig
+	ln -sf $(PWD)/files/gitignore_global ~/.gitignore_global
+	ln -sf $(PWD)/files/tmux.conf ~/.tmux.conf
+	ln -sf $(PWD)/files/fzf.zsh ~/.fzf.zsh
+	- mkdir -p ~/.config/bat/
+	ln -sf $(PWD)/files/bat.config ~/.config/bat/config
+	- mkdir -p ~/.config/nvim/
+	ln -sf $(PWD)/files/init.vim ~/.config/nvim/
+	ln -sf $(PWD)/files/coc-settings.json ~/.config/nvim/
+	- mkdir -p ~/.config/karabiner/
+	ln -sf $(PWD)/files/karabiner.json ~/.config/karabiner/
