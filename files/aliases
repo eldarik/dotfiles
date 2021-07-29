@@ -32,6 +32,7 @@ alias gsb='git branch --show-current'
 alias gst='git status'
 alias gsh='git show'
 alias gpwip="git add . && git ci -m 'wip [ci skip]' && gp"
+function gph () { git push $1 $(gsb):master };
 
 # tmux
 alias t=tmux
