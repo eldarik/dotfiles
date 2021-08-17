@@ -21,6 +21,7 @@ set ignorecase
 set smartcase
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set tabstop=2 shiftwidth=2 expandtab
+" set lcs=tab:>¬,trail:~,space:·,eol:∏
 set lcs=tab:>¬,trail:~,space:·
 " set textwidth=100
 set backspace=indent,eol,start
@@ -188,7 +189,8 @@ let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-docker',
       \ 'coc-diagnostic',
-      \ 'coc-highlight'
+      \ 'coc-highlight',
+      \ 'coc-sql'
       \]
 let g:coc_filetype_map = {
         \ 'eruby.yaml': 'yaml',
