@@ -3,7 +3,10 @@ export LC_ALL=en_US.UTF-8
 export PATH="$PATH:$HOME/.local/bin"
 export HISTSIZE=1000
 export SAVESHIT=1000
+# disable rails spring
+export DISABLE_SPRING=true
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
+export DOCKER_HOST='ssh://127.0.0.1:60022'
 
 # ZSH_THEME="simple"
 # ZSH_THEME="agnoster"
