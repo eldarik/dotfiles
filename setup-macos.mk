@@ -11,7 +11,6 @@ install-brew-packages:
 		automake \
 		bat \
 		bdw-gc \
-		berkeley-db \
 		c-ares \
 		cairo \
 		cmake \
@@ -103,17 +102,13 @@ install-brew-packages:
 		luv \
 		lz4 \
 		lzo \
-		m-cli \
 		m4 \
 		make \
 		mosh \
 		mpdecimal \
 		msgpack \
-		mysql \
-		mysql-client \
 		ncurses \
 		neofetch \
-		neovim \
 		nettle \
 		nghttp2 \
 		npth \
@@ -133,10 +128,6 @@ install-brew-packages:
 		pkg-config \
 		popt \
 		postgresql \
-		postgresql@12 \
-		protobuf \
-		python@3.8 \
-		python@3.9 \
 		rav1e \
 		readline \
 		redis \
@@ -144,13 +135,9 @@ install-brew-packages:
 		rsync \
 		rtmpdump \
 		rubberband \
-		ruby \
 		ruby-build \
 		s3cmd \
-		screenfetch \
-		screenresolution \
 		sdl2 \
-		shared-mime-info \
 		six \
 		snappy \
 		speedtest-cli \
@@ -182,45 +169,34 @@ install-brew-packages:
 		zimg \
 		zsh \
 		zstd \
-		adobe-acrobat-reader \
-		alacritty \
-		aldente \
+		docker \
+		font-anonymous-pro \
+		ngrok
+	brew tap heroku/brew
+	brew install heroku
+
+install-apps-via-brew:
+	brew install \
+		1password \
 		alfred \
 		anydesk \
 		authy \
-		bitwarden \
-		bluestacks \
-		chromedriver \
 		discord \
-		docker \
 		dropbox \
 		firefox \
 		homebrew/cask-versions/firefox-developer-edition \
-		homebrew/cask-versions/firefox-nightly \
-		font-anonymous-pro \
-		font-fira-code \
-		font-jetbrains-mono \
 		gimp \
-		google-backup-and-sync \
 		google-chrome \
-		hammerspoon \
+		google-chrome-dev \
 		iina \
 		iterm2 \
 		karabiner-elements \
-		little-snitch4 \
-		macmediakeyforwarder \
-		macs-fan-control \
-		ngrok \
 		slack \
-		soda-player \
-		spotify \
-		steam \
 		telegram \
-		toggl-track \
+		notion \
+		spotify \
+		soda-player \
 		tunnelblick
-	brew install docker --cask
-	brew tap heroku/brew
-	brew install heroku
 
 install-nvim-macos:
 	- mkdir ~/.local/

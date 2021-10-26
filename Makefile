@@ -46,3 +46,4 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/coc-settings.json ~/.config/nvim/
 	- mkdir -p ~/.config/karabiner/
 	ln -sf $(PWD)/files/karabiner.json ~/.config/karabiner/
+	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
