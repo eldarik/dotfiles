@@ -166,6 +166,8 @@ cask 'tunnelblick'
 cask 'firefox-developer-edition'
 cask 'notion'
 cask 'discord'
+cask 'soda-player'
+cask 'iina'
 
 # fonts
 tap'homebrew/cask-fonts'
