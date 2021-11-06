@@ -72,7 +72,7 @@ alias a=asdf
 alias ans=ansible
 
 # vim & nvim
-alias v='~/.local/nvim/bin/nvim'
+alias v='nvim'
 
 # better cat
 alias orcat=cat
