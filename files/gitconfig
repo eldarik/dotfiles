@@ -3,7 +3,7 @@
   email = iskhakov.e11@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = ~/.local/nvim/bin/nvim
+  editor = nvim
 [push]
   default = matching
 [alias]
