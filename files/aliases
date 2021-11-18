@@ -93,10 +93,12 @@ alias bcbd='bundle exec cap beta deploy'
 alias gemsrc='function __gemsrc() { cd $(bundle info $1 --path) }; __gemsrc'
 alias brcrdsed='function __brcrded() { EDITOR=~/.local/nvim/bin/nvim bundle exec rails credentials:edit --environment $1 }; __brcrded'
 
-# node & npm
+# node & npm & yarn
 alias nr='npm run'
 alias ni='npm install'
 alias nrb='npm run build'
+alias y=yarn
+alias yi='yarn install'
 
 # elixir & mix
 alias i='iex'
