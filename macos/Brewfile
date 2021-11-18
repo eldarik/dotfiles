@@ -167,6 +167,7 @@ cask 'discord'
 cask 'soda-player'
 cask 'iina'
 cask 'zoom'
+cask 'ngrok'
 
 # fonts
 tap'homebrew/cask-fonts'
