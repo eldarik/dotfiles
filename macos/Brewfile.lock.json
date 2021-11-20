@@ -6000,7 +6000,7 @@
         }
       },
       "heroku": {
-        "version": "7.59.1",
+        "version": "7.59.2",
         "bottle": false
       },
       "qemu": {
@@ -6345,7 +6345,7 @@
         }
       },
       "google-chrome": {
-        "version": "96.0.4664.45",
+        "version": "96.0.4664.55",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -6505,6 +6505,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "logitech-options": {
+        "version": "9.40.75",
+        "options": {
+          "full_name": "homebrew/cask-drivers/logitech-options",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "tap": {
@@ -6512,7 +6521,7 @@
         "revision": "52d053f1ae28179eebc2b2d050087e1f750c0309"
       },
       "heroku/brew": {
-        "revision": "32e06a20bb625fc46b9267ed9e3c49fcc9f86f91"
+        "revision": "67a2d7051e9d989cded7d0776b343022e6c8b03f"
       }
     }
   },
@@ -6521,7 +6530,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.3.4",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "acfa4b1aac13b0c9ca89f36b3fc770444344224d",
+        "Homebrew/homebrew-core": "7f5797dacc096a5cee58b80cd73e56e1e4d41bf8",
         "CLT": "13.0.0.0.1.1630607135",
         "Xcode": "13.1",
         "macOS": "11.6.1"

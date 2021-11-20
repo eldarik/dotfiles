@@ -168,6 +168,7 @@ cask 'soda-player'
 cask 'iina'
 cask 'zoom'
 cask 'ngrok'
+cask 'homebrew/cask-drivers/logitech-options'
 
 # fonts
 tap'homebrew/cask-fonts'
