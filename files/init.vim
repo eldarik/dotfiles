@@ -284,6 +284,8 @@ let g:any_jump_colors = {
 
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_leader_key = '<Leader>'
+
+Plug 'jparise/vim-graphql'
 call plug#end()
 " set t_Co=16
 " let g:solarized_termtrans = 1
@@ -292,7 +294,7 @@ set background=light
 " set background=dark
 colorscheme solarized
 autocmd ColorScheme * highlight! link SignColumn CursorLineNr
-
+hi CursorLineNr    term=bold cterm=bold ctermfg=012 gui=bold
 filetype plugin indent on
 syntax enable
 
