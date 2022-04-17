@@ -169,6 +169,7 @@ cask 'iina'
 cask 'zoom'
 cask 'ngrok'
 cask 'homebrew/cask-drivers/logitech-options'
+cask 'aldente'
 
 # fonts
 tap'homebrew/cask-fonts'
