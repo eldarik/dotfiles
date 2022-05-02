@@ -284,6 +284,8 @@ let g:any_jump_colors = {
 
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_leader_key = '<Leader>'
+map mj <Plug>(easymotion-sol-j)
+map mk <Plug>(easymotion-sol-k)
 
 Plug 'jparise/vim-graphql'
 call plug#end()
