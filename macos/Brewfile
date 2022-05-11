@@ -170,6 +170,8 @@ cask 'ngrok'
 cask 'homebrew/cask-drivers/logitech-options'
 cask 'aldente'
 cask 'cloudflare-warp'
+cask 'exodus'
+cask 'homebrew/cask-versions/firefox-developer-edition'
 
 # fonts
 tap'homebrew/cask-fonts'
