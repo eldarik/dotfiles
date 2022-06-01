@@ -172,6 +172,7 @@ cask 'aldente'
 cask 'cloudflare-warp'
 cask 'exodus'
 cask 'homebrew/cask-versions/firefox-developer-edition'
+cask 'spotify'
 
 # fonts
 tap'homebrew/cask-fonts'
