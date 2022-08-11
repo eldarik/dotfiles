@@ -1,7 +1,7 @@
 # aliases
 # git
 alias gpr='g pull --rebase'
-alias gbrd='git branch | grep -v "master\|develop\|development" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
+alias gbrd='git branch | grep -v "master\|develop\|development|\main" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
 alias gspop='git stash pop'
 alias gspush='git stash push'
 alias gsshow='git stash show'
@@ -164,3 +164,17 @@ alias mts='mix test --stale'
 alias mtw='mix test.watch'
 alias mx='mix xref'
 alias mf='mix format'
+
+# reminders
+alias rms='reminders show Reminders'
+function rmsc () {
+  reminders show Reminders
+  echo "enter number: \n"
+  read -r line
+  reminders complete Reminders $line
+}
+function rmsa () {
+  echo "write down reminder: \n"
+  read -r line
+  reminders add Reminders $line
+};
