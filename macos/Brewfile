@@ -149,6 +149,7 @@ brew 'mosh'
 brew 'youtube-dl'
 brew 'docker-compose'
 brew 'speedtest-cli'
+brew 'keith/formulae/reminders-cli'
 
 # Casks
 cask '1password'
