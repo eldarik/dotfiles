@@ -41,7 +41,10 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/fzf.zsh ~/.fzf.zsh
 	- mkdir -p ~/.config/bat/
 	ln -sf $(PWD)/files/bat.config ~/.config/bat/config
-	ln -snf $(PWD)/files/nvim ~/.config/nvim
 	- mkdir -p ~/.config/karabiner/
 	ln -sf $(PWD)/files/karabiner.json ~/.config/karabiner/
 	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
+
+install-nvim:
+	rm -rf ~/.locale/share/nvim/
+	ln -snf $(PWD)/files/nvim ~/.config/nvim
