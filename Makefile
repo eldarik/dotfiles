@@ -45,6 +45,10 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
 	ln -sf $(PWD)/files/fish ~/.config/fish
 
+PACKER_PATH=~/.local/share/nvim/site/pack/packer/start
+
 install-nvim:
-	rm -rf ~/.locale/share/nvim/
+	rm -rf ~/.local/share/nvim || exit 0
+	rm -rf ~/.config/nvim || exit 0
+	rm -rf $(PACKER_PATH) || exit 0
 	ln -snf $(PWD)/files/nvim ~/.config/nvim

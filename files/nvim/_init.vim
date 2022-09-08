@@ -302,7 +302,7 @@ call plug#end()
 set background=light
 " set background=dark
 colorscheme solarized
-autocmd ColorScheme * highlight! link SignColumn CursorLineNr
+# autocmd ColorScheme * highlight! link SignColumn CursorLineNr
 hi CursorLineNr    term=bold cterm=bold ctermfg=012 gui=bold
 filetype plugin indent on
 syntax enable
