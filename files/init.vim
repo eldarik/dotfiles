@@ -288,6 +288,8 @@ map mj <Plug>(easymotion-sol-j)
 map mk <Plug>(easymotion-sol-k)
 
 Plug 'jparise/vim-graphql'
+
+Plug 'mhinz/vim-startify'
 call plug#end()
 " set t_Co=16
 " let g:solarized_termtrans = 1
