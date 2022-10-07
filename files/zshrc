@@ -8,6 +8,9 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES # https://github.com/rails/rails/
 export DISABLE_SPRING=true
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
 # ZSH_THEME="simple"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="agnoster-light"
