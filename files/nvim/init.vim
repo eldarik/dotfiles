@@ -284,6 +284,8 @@ let g:any_jump_colors = {
 
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_leader_key = '<Leader>'
+map mw <PLug>(easymotion-bd-w)
+map me <PLug>(easymotion-bd-e)
 map mj <Plug>(easymotion-sol-j)
 map mk <Plug>(easymotion-sol-k)
 
