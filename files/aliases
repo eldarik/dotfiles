@@ -177,6 +177,6 @@ function rmsc () {
 }
 function rmsa () {
   echo "write down reminder: \n"
-  read -r line
+  read -rline
   reminders add Reminders $line
 };
