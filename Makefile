@@ -44,6 +44,7 @@ sync-dotfiles:
 	- mkdir -p ~/.config/karabiner/
 	ln -sf $(PWD)/files/karabiner.json ~/.config/karabiner/
 	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
+	ln -sf $(PWD)/files/fish ~/.config/fish
 
 install-nvim:
 	rm -rf ~/.locale/share/nvim/
