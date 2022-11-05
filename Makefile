@@ -38,7 +38,6 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/gitconfig ~/.gitconfig
 	ln -sf $(PWD)/files/gitignore_global ~/.gitignore_global
 	ln -sf $(PWD)/files/tmux.conf ~/.tmux.conf
-	ln -sf $(PWD)/files/fzf.zsh ~/.fzf.zsh
 	- mkdir -p ~/.config/bat/
 	ln -sf $(PWD)/files/bat.config ~/.config/bat/config
 	- mkdir -p ~/.config/karabiner/

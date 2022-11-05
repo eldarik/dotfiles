@@ -1,5 +1,5 @@
 function fish_prompt
-  echo -n (set_color green)"[$(date +%H:%M:%S)] "
+  echo -n (set_color cyan)"[$(date +%H:%M:%S)] "
   echo -n (set_color blue)(prompt_pwd)
   echo -n " "
 
