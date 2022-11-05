@@ -3,10 +3,13 @@ if status is-interactive
 end
 
 source ~/.asdf/asdf.fish
+source ~/.fzf/shell/key-bindings.fish
+fzf_key_bindings
 
 set -g fish_key_bindings fish_hybrid_key_bindings
 set -g EDITOR nvim
 set -g OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES # https://github.com/rails/rails/issues/38560
+set -g FZF_DEFAULT_OPTS '--color=bg+:7,bg:15,spinner:2,hl:2,fg:11,header:14,info:9,pointer:2,marker:2,fg+:11,prompt:2,hl+:2 --preview-window noborder'
 
 # aliases
 # git
