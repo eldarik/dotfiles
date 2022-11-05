@@ -4,9 +4,13 @@ end
 
 source ~/.asdf/asdf.fish
 
+set -g fish_key_bindings fish_hybrid_key_bindings
+set -g EDITOR nvim
+set -g OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES # https://github.com/rails/rails/issues/38560
+
 # aliases
 # git
-alias gpr='g pull --rebase'
+alias gpr='git pull --rebase'
 alias gbrd='git branch | grep -v "master\|develop\|development|\main" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
 alias gspop='git stash pop'
 alias gspush='git stash push'
@@ -17,7 +21,7 @@ alias gap='git add -p'
 alias gcom='git ci -m'
 alias gmc='git merge --continue'
 alias gp='git push origin "$(gsb)" -u'
-alias gpf='gp -f'
+alias gpf='git pish origin "$(gsb)" -f'
 alias grh='git reset HEAD'
 # alias glc='git rev-parse HEAD'
 alias glc='g log -n 1 --pretty=format:"%H"'
@@ -49,6 +53,7 @@ alias ta='tmux attach -t'
 alias tn='tmux new -s'
 alias tks='tmux kill-server'
 
+alias mk='make'
 alias cl='clear'
 alias myip='curl -4 ifconfig.co'
 
