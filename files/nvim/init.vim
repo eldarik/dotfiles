@@ -294,6 +294,7 @@ Plug 'jparise/vim-graphql'
 Plug 'mhinz/vim-startify'
 
 Plug 'dag/vim-fish'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 " set t_Co=16
 " let g:solarized_termtrans = 1
