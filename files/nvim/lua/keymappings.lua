@@ -1,10 +1,10 @@
 local keymap = vim.keymap.set
 local options = { silent = false }
 
--- NERDTree
-keymap('n', '<leader><leader>', ':NERDTreeMirrorToggle<CR>')
-keymap('n', '<leader>n', ':NERDTreeFind<CR>')
-keymap('n', '<leader>т', ':NERDTreeFind<CR>')
+-- NvimTreeToggle
+keymap('n', '<leader><leader>', ':NvimTreeToggle<CR>')
+keymap('n', '<leader>n', ':NvimTreeFindFile<CR>')
+keymap('n', '<leader>т', ':NvimTreeFindFile<CR>')
 
 -- Files
 keymap('n', 'fq', ':q!<CR>')

@@ -16,8 +16,14 @@ return require('packer').startup({
     use 'wbthomason/packer.nvim'
 
     --- file browsering & navigation
-    use 'scrooloose/nerdtree'
-    use 'jistr/vim-nerdtree-tabs'
+    -- use 'scrooloose/nerdtree'
+    -- use 'jistr/vim-nerdtree-tabs'
+    use {
+      'kyazdani42/nvim-tree.lua',
+      config = function()
+        require('nvim-tree').setup {}
+      end
+    }
     use 'christoomey/vim-tmux-navigator'
 
     --- colorscheme
