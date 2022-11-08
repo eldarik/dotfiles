@@ -67,3 +67,6 @@ keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').live_grep()<cr>"
 keymap("n", "<leader>d", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", silent)
 keymap("n", "<leader>c", "<cmd>lua require('telescope.builtin').git_commits()<cr>", silent)
 keymap("n", "<leader>r", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", silent)
+
+-- Tests
+keymap("n", "<leader>t", ":TestNearest<CR>")

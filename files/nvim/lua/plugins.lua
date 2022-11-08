@@ -1,6 +1,5 @@
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local fn = vim.fn local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
     vim.cmd [[packadd packer.nvim]]
@@ -101,6 +100,9 @@ return require('packer').startup({
     -- require('plugins.lsp').run(use)
     -- require('plugins.autocomplete').run(use)
 
+    use {
+      'janko/vim-test'
+    }
     if packer_bootstrap then
       require('packer').sync()
     end
