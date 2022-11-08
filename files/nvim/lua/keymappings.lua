@@ -64,3 +64,6 @@ keymap("n", "<leader>c", ":FzfLua git_commits<CR>")
 
 keymap("v", "/", "y:let @/ = @\"<CR>")
 keymap("n", "<leader>h", ":set nohlsearch<CR>")
+
+keymap("n", "<Leader>r", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", options)
+keymap("v", "<Leader>r", "<cmd>lua require('spectre').open_visual()<CR>")
