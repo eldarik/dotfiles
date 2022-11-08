@@ -18,11 +18,13 @@ return require('packer').startup({
     --- file browsering & navigation
     -- use 'scrooloose/nerdtree'
     -- use 'jistr/vim-nerdtree-tabs'
+    use { 'kyazdani42/nvim-web-devicons' }
     use {
       'kyazdani42/nvim-tree.lua',
-      config = function()
-        require('nvim-tree').setup {}
-      end
+      requires = {
+        'kyazdani42/nvim-web-devicons'
+      },
+      config = require('nvim-tree').setup {}
     }
     use 'christoomey/vim-tmux-navigator'
 
