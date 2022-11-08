@@ -39,7 +39,7 @@ return require('packer').startup({
     use 'tpope/vim-repeat'
 
     --- git
-    -- use 'airblade/vim-gitgutter'
+    use 'airblade/vim-gitgutter'
 
     use 'AndrewRadev/splitjoin.vim'
     use 'lewis6991/impatient.nvim'
@@ -85,7 +85,6 @@ return require('packer').startup({
     use 'tpope/vim-rails'
 
     require('plugins.treesitter').run(use)
-    require('plugins.lsp').run(use)
   end,
 
   config = {
