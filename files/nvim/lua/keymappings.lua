@@ -46,19 +46,6 @@ keymap("n", "<C-k>", "<C-w>k", silent)
 keymap("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", options)
 keymap("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", options)
 
--- LSP
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", silent)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", silent)
-keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
-keymap("v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", silent)
-keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", silent)
-keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting({ async = true })<CR>", silent)
-keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", silent)
-keymap("n", "<leader>cl", "<cmd>lua vim.diagnostic.open_float({ border = 'rounded', max_width = 100 })<CR>", silent)
-keymap("n", "K", "<cmd>lua vim.lsp.buf.signature_help()<CR>", silent)
-keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
-keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
-
 -- Tests
 keymap("n", "<leader>t", ":TestNearest<CR>")
 
@@ -72,7 +59,7 @@ keymap("n", "ml", ":HopLine<CR>")
 keymap("n", "<leader>g", ":FzfLua git_files<CR>")
 keymap("n", "<leader>g", ":FzfLua files<CR>")
 keymap("n", "<leader>s", ":FzfLua live_grep<CR>")
-keymap("n", "<leader>w", ":FzfLua grep_cword<CR>")
+-- keymap("n", "<leader>w", ":FzfLua grep_cword<CR>")
 keymap("n", "<leader>c", ":FzfLua git_commits<CR>")
 
 keymap("v", "/", "y:let @/ = @\"<CR>")
