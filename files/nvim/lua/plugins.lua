@@ -23,7 +23,16 @@ return require('packer').startup({
       requires = {
         'kyazdani42/nvim-web-devicons'
       },
-      config = require('nvim-tree').setup {}
+      config = require('nvim-tree').setup({
+        view = {
+          mappings = {
+            list = {
+              { key = "s", action = "split" },
+              { key = "v", action = "vsplit" },
+            }
+          }
+        }
+      })
     }
     use 'christoomey/vim-tmux-navigator'
 
@@ -96,12 +105,30 @@ return require('packer').startup({
       run = function() vim.fn["mkdp#util#install"]() end,
     }
 
+    use 'janko/vim-test'
+
     -- require('plugins.treesitter').run(use)
     -- require('plugins.lsp').run(use)
     -- require('plugins.autocomplete').run(use)
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+      config = require'hop'.setup {}
+    }
+    use 'junegunn/fzf.vim'
+    use {
+      'ibhagwan/fzf-lua',
+      config = require'fzf-lua'.setup({
+        winopts = {
+          split="belowright new"
+        }
+      })
+    }
 
     use {
-      'janko/vim-test'
+      'goolord/alpha-nvim',
+      config = require'alpha'.setup(require'alpha.themes.startify'.config)
+      --- config = require 'alpha'.setup {}
     }
     if packer_bootstrap then
       require('packer').sync()

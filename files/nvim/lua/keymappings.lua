@@ -60,13 +60,28 @@ keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'round
 keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
 
 -- Telescope
-keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", silent)
-keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').find_files()<cr>", silent)
-keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", silent)
-keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').live_grep()<cr>", silent)
+-- keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", silent)
+-- keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').find_files()<cr>", silent)
+-- keymap("n", "<leader>b", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", silent)
+-- keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').live_grep()<cr>", silent)
 keymap("n", "<leader>d", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", silent)
 keymap("n", "<leader>c", "<cmd>lua require('telescope.builtin').git_commits()<cr>", silent)
 keymap("n", "<leader>r", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", silent)
 
 -- Tests
 keymap("n", "<leader>t", ":TestNearest<CR>")
+
+-- Hop
+keymap("n", "mw", ":HopWord<CR>")
+keymap("n", "mj", ":HopLine<CR>")
+keymap("n", "mk", ":HopLineBC<CR>")
+keymap("n", "ml", ":HopLine<CR>")
+
+-- FzfLua
+keymap("n", "<leader>g", ":FzfLua git_files<CR>")
+keymap("n", "<leader>g", ":FzfLua files<CR>")
+keymap("n", "<leader>s", ":FzfLua live_grep<CR>")
+keymap("n", "<leader>w", ":FzfLua grep_cword<CR>")
+keymap("n", "<leader>c", ":FzfLua git_commits<CR>")
+
+keymap("n", "<leader>h", ":set nohlsearch<CR>")
