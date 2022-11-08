@@ -3,7 +3,7 @@
 alias ga='git add'
 alias gap='git add -p'
 alias gbrd='git branch | grep -v "master\|develop\|development|\main" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
-alias gcb='gco $(git branch | fzf)'
+alias gcb='gco $(git branch | fzf | sed "s/ *//")'
 alias gcd='git checkout develop'
 alias gcia='git ci --amend'
 alias gclf='git clean -f'
@@ -14,8 +14,9 @@ alias gcrb='git checkout $(git branch -a | fzf | sed "s/.*remotes\/[a-z]*\///" |
 alias gdf='git diff'
 alias gf='git fetch'
 alias ggr='git gr'
-alias glc='g log -n 1 --pretty=format:"%H"'
-alias glcm='g log -n 1 --pretty=format:"%s"'
+alias glc='git log -n 1 --pretty=format:"%H"'
+alias glcm='git log -n 1 --pretty=format:"%s"'
+alias gm='git merge'
 alias gmc='git merge --continue'
 alias gnb='git checkout -b'
 alias gp='git push origin "$(gsb)" -u'
@@ -36,6 +37,7 @@ alias gspop='git stash pop'
 alias gspush='git stash push'
 alias gsshow='git stash show'
 alias gst='git status'
+alias gwip='gcom "wip"'
 
 # tmux
 alias t=tmux
