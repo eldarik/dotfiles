@@ -8,7 +8,10 @@ source ~/.asdf/asdf.fish
 
 source ~/.fzf/shell/key-bindings.fish
 fzf_key_bindings
+# solarized light
 set -gx FZF_DEFAULT_OPTS '--color=bg+:7,bg:15,spinner:2,hl:2,fg:11,header:14,info:9,pointer:2,marker:2,fg+:11,prompt:2,hl+:2 --preview-window noborder'
+# solarized dark
+# set -gx FZF_DEFAULT_OPTS '--color=bg+:0,bg:8,spinner:2,hl:2,fg:12,header:10,info:9,pointer:2,marker:2,fg+:12,prompt:2,hl+:2'
 
 set -g fish_key_bindings fish_hybrid_key_bindings
 set -gx EDITOR nvim
