@@ -45,13 +45,6 @@ return require('packer').startup({
     use 'lewis6991/impatient.nvim'
     use 'nathom/filetype.nvim'
     use 'nvim-lua/plenary.nvim'
-    -- use {
-    --   'pocco81/auto-save.nvim',
-    --   config = function()
-    --     local autosave = require("auto-save")
-    --     autosave.setup()
-    --   end
-    -- }
     use 'windwp/nvim-spectre'
     use {
       "iamcco/markdown-preview.nvim",
@@ -72,19 +65,39 @@ return require('packer').startup({
       'ibhagwan/fzf-lua',
       config = require('fzf-lua').setup({
         winopts = {
-          split="belowright new"
+          split = "belowright new"
         }
       })
     }
 
-    -- use {
-    --   'goolord/alpha-nvim',
-    --   config = require('alpha').setup(require'alpha.themes.startify'.config)
-    -- }
+    use {
+      'goolord/alpha-nvim',
+      config = require('alpha').setup(require'alpha.themes.startify'.config)
+    }
 
     use 'tpope/vim-rails'
 
-    require('plugins.treesitter').run(use)
+    -- LSP
+    use {
+      'williamboman/nvim-lsp-installer',
+      'neovim/nvim-lspconfig',
+      config = require("plugins.lspconfig")
+    }
+
+    --- Treesitter
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      'hrsh7th/nvim-cmp',
+      'windwp/nvim-autopairs',
+      'ThePrimeagen/refactoring.nvim',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'RRethy/nvim-treesitter-endwise',
+      'windwp/nvim-ts-autotag',
+      'andymass/vim-matchup',
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      'nvim-treesitter/nvim-treesitter-context',
+      config = require("plugins.treesitter")
+    }
   end,
 
   config = {
