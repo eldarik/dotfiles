@@ -73,6 +73,7 @@ require('packer').startup({
     use 'digitaltoad/vim-jade'
     use 'dag/vim-fish'
     use 'vtm9/vim-pry'
+    use "Pocco81/auto-save.nvim"
   end,
 
   config = {
