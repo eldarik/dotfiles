@@ -56,6 +56,10 @@ keymap("n", "mw", ":HopWord<CR>")
 keymap("n", "mj", ":HopLine<CR>")
 keymap("n", "mk", ":HopLineBC<CR>")
 keymap("n", "ml", ":HopLine<CR>")
+keymap("x", "mw", "<cmd>HopWord<CR>")
+keymap("x", "mj", "<cmd>HopLine<CR>")
+keymap("x", "mk", "<cmd>HopLineBC<CR>")
+keymap("x", "ml", "<cmd>HopLine<CR>")
 
 -- FzfLua
 keymap("n", "<leader>g", ":FzfLua git_files<CR>")
