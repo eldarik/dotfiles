@@ -27,7 +27,12 @@ for _, name in pairs(servers) do
 end
 
 lspconfig.solargraph.setup {
-  filetypes = { 'ruby', 'rake', 'eruby', 'slim' },
+  filetypes = { 'ruby', 'rake' }
+}
+
+lspconfig.html.setup {
+  filetypes = { 'html', 'slim', 'pug', 'haml' },
+  cmd = { "html-languageserver", "--stdio" },
   capabilities = capabilities
 }
 
