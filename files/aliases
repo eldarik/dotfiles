@@ -1,5 +1,6 @@
 # aliases
 # git
+alias g=git
 alias ga='git add'
 alias gap='git add -p'
 alias gbrd='git branch | grep -v "master\|develop\|development|\main" | sed "s/^[ *]*//" | sed "s/^/git branch -D /" | bash'
