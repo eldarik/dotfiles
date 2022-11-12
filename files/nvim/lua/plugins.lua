@@ -45,7 +45,8 @@ require('packer').startup({
     use 'tpope/vim-rails'
 
     -- LSP
-    use { 'VonHeikemen/lsp-zero.nvim',
+    use {
+      'VonHeikemen/lsp-zero.nvim',
       requires = {
         -- LSP Support
         'neovim/nvim-lspconfig',
