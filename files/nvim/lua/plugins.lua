@@ -86,6 +86,7 @@ require('packer').startup({
     use 'dag/vim-fish'
     use 'vtm9/vim-pry'
     use "Pocco81/auto-save.nvim"
+    use 'norcalli/nvim-colorizer.lua'
   end,
 
   config = {
@@ -119,20 +120,21 @@ require('fzf-lua').setup(
       split = "belowright new"
     },
     fzf_colors = {
-      ["fg"]          = { "fg", "CursorLine" },
-      ["bg"]          = { "bg", "Normal" },
-      ["hl"]          = { "fg", "Comment" },
-      ["fg+"]         = { "fg", "Normal" },
-      ["bg+"]         = { "bg", "CursorLine" },
-      ["hl+"]         = { "fg", "Statement" },
-      ["info"]        = { "fg", "PreProc" },
-      ["prompt"]      = { "fg", "Conditional" },
-      ["pointer"]     = { "fg", "Exception" },
-      ["marker"]      = { "fg", "Keyword" },
-      ["spinner"]     = { "fg", "Label" },
-      ["header"]      = { "fg", "Comment" },
-      ["gutter"]      = { "bg", "Normal" },
+      ["fg"]      = { "fg", "CursorLine" },
+      ["bg"]      = { "bg", "Normal" },
+      ["hl"]      = { "fg", "Comment" },
+      ["fg+"]     = { "fg", "Normal" },
+      ["bg+"]     = { "bg", "CursorLine" },
+      ["hl+"]     = { "fg", "Statement" },
+      ["info"]    = { "fg", "PreProc" },
+      ["prompt"]  = { "fg", "Conditional" },
+      ["pointer"] = { "fg", "Exception" },
+      ["marker"]  = { "fg", "Keyword" },
+      ["spinner"] = { "fg", "Label" },
+      ["header"]  = { "fg", "Comment" },
+      ["gutter"]  = { "bg", "Normal" },
     }
   }
 )
 require('alpha').setup(require 'alpha.themes.theta'.config)
+require('colorizer').setup()
