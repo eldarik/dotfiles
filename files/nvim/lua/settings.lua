@@ -1,12 +1,11 @@
 local options = {
   autoread       = true,
   autowrite      = true,
-  background     = light,
+  background     = "light",
   clipboard      = "unnamed,unnamedplus",   --- Copy-paste between vim and everything else
   cmdheight      = 1,                       --- Give more space for displaying messages
   completeopt    = "menu,menuone,noselect", --- Better autocompletion
   cursorcolumn   = true,
-  cursorline     = true,
   cursorline     = true,                    --- Highlight of current line
   encoding       = "utf-8",                 --- The encoding displayed
   expandtab      = true,                    --- Use spaces instead of tabs
@@ -39,8 +38,6 @@ local options = {
 
 local globals = {
   mapleader                   = ' ',        --- Map leader key to SPC
-  -- speeddating_no_mappings     = 1,          --- Disable default mappings for speeddating
-  EasyMotion_leader_key = '<Leader>'
 }
 
 for k, v in pairs(options) do
