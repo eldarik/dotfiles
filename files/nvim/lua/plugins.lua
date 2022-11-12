@@ -12,7 +12,7 @@ require('packer').startup({
 
     use 'LudoPinelli/comment-box.nvim'
 
-    use  'hoob3rt/lualine.nvim'
+    use 'hoob3rt/lualine.nvim'
     use 'yorik1984/lualine-theme.nvim'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
@@ -46,13 +46,26 @@ require('packer').startup({
     use 'tpope/vim-rails'
 
     -- LSP
-    use {
-      'williamboman/nvim-lsp-installer',
-      'neovim/nvim-lspconfig',
-      'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-nvim-lsp',
-      'saadparwaiz1/cmp_luasnip',
-      'L3MON4D3/LuaSnip'
+    use { 'VonHeikemen/lsp-zero.nvim',
+      requires = {
+        -- LSP Support
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'saadparwaiz1/cmp_luasnip',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-nvim-lua',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+
+        -- Snippets
+        'L3MON4D3/LuaSnip',
+        'rafamadriz/friendly-snippets',
+      }
     }
 
     --- Treesitter
