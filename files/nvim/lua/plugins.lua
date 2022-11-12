@@ -38,7 +38,6 @@ require('packer').startup({
     }
 
     -- Fuzzy search
-    use 'junegunn/fzf.vim'
     use 'ibhagwan/fzf-lua'
 
     use 'goolord/alpha-nvim'
@@ -114,5 +113,26 @@ require('nvim-tree').setup({
   }
 })
 require('hop').setup {}
-require('fzf-lua').setup({ winopts = { split = "belowright new" } })
+require('fzf-lua').setup(
+  {
+    winopts = {
+      split = "belowright new"
+    },
+    fzf_colors = {
+      ["fg"]          = { "fg", "CursorLine" },
+      ["bg"]          = { "bg", "Normal" },
+      ["hl"]          = { "fg", "Comment" },
+      ["fg+"]         = { "fg", "Normal" },
+      ["bg+"]         = { "bg", "CursorLine" },
+      ["hl+"]         = { "fg", "Statement" },
+      ["info"]        = { "fg", "PreProc" },
+      ["prompt"]      = { "fg", "Conditional" },
+      ["pointer"]     = { "fg", "Exception" },
+      ["marker"]      = { "fg", "Keyword" },
+      ["spinner"]     = { "fg", "Label" },
+      ["header"]      = { "fg", "Comment" },
+      ["gutter"]      = { "bg", "Normal" },
+    }
+  }
+)
 require('alpha').setup(require 'alpha.themes.theta'.config)
