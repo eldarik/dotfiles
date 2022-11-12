@@ -50,10 +50,21 @@ local sources = lsp.defaults.cmp_sources()
 table.insert(sources, { name = 'nvim_lsp_signature_help' })
 
 local cmp_config = lsp.defaults.cmp_config({
-  sources = sources,
+  sources = {
+    -- Copilot Source
+    { name = "copilot", group_index = 2 },
+    -- Other Sources
+    { name = "nvim_lsp", group_index = 2 },
+    { name = "path", group_index = 2 },
+    { name = "luasnip", group_index = 2 },
+  },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ["<CR>"] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    }),
   },
 })
 

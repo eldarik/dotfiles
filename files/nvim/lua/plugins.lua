@@ -68,6 +68,12 @@ require('packer').startup({
       }
     }
 
+    -- Copilot
+    use {
+      "zbirenbaum/copilot.lua",
+      "zbirenbaum/copilot-cmp",
+    }
+
     --- Treesitter
     use {
       'danymat/neogen',
@@ -139,3 +145,7 @@ require('fzf-lua').setup(
 )
 require('alpha').setup(require 'alpha.themes.theta'.config)
 require('colorizer').setup()
+require("copilot").setup()
+require("copilot_cmp").setup {
+  method = "getCompletionsCycling",
+}
