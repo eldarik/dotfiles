@@ -33,7 +33,8 @@ local options = {
   viminfo        = "'1000",                 --- Increase the size of file history
   wrap           = true,                    --- Display long lines as just one line
   writebackup    = false,                   --- Not needed
-  ttimeoutlen     = 3000
+  ttimeoutlen    = 3000,
+  termguicolors  = true,
 }
 
 local globals = {
