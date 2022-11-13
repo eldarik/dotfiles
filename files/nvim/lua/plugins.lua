@@ -3,7 +3,6 @@ require('packer').startup({
     use 'wbthomason/packer.nvim'
 
     --- file browsering & navigation
-    use 'jistr/vim-nerdtree-tabs'
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'christoomey/vim-tmux-navigator'
@@ -146,6 +145,6 @@ require('fzf-lua').setup(
 require('alpha').setup(require 'alpha.themes.theta'.config)
 require('colorizer').setup()
 require("copilot").setup()
-require("copilot_cmp").setup {
+require("copilot_cmp").setup({
   method = "getCompletionsCycling",
-}
+})
