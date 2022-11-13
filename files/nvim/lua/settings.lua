@@ -1,7 +1,7 @@
 local options = {
   autoread       = true,
   autowrite      = true,
-  background     = "light",
+  background     = "dark",
   clipboard      = "unnamed,unnamedplus",   --- Copy-paste between vim and everything else
   cmdheight      = 1,                       --- Give more space for displaying messages
   completeopt    = "menu,menuone,noselect", --- Better autocompletion
