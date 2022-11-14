@@ -26,14 +26,14 @@ local options = {
   splitright     = true,                    --- Vertical splits will automatically be to the right
   swapfile       = false,                   --- Swap not needed
   tabstop        = 2,                       --- Insert 2 spaces for a tab
-  timeoutlen     = 200,                     --- Faster completion (cannot be lower than 200 because then commenting doesn't work)
+  -- timeoutlen     = 200,                     --- Faster completion (cannot be lower than 200 because then commenting doesn't work)
+  -- ttimeoutlen    = 3000,
   undofile       = true,                    --- Sets undo to file
   updatetime     = 100,                     --- Faster completion
   viminfo        = "'1000",                 --- Increase the size of file history
   wrap           = true,                    --- Display long lines as just one line
   writebackup    = false,                   --- Not needed
   termguicolors  = true,
-  ttimeoutlen    = 10,
 }
 
 local globals = {
