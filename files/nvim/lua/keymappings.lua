@@ -43,6 +43,7 @@ keymap("n", "<C-l>", "<C-w>l", silent)
 keymap("n", "<C-h>", "<C-w>h", silent)
 keymap("n", "<C-j>", "<C-w>j", silent)
 keymap("n", "<C-k>", "<C-w>k", silent)
+keymap("n", "mz", "<Cmd>lua require('maximize').toggle()<CR>")
 
 -- Comment Box
 keymap("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", options)

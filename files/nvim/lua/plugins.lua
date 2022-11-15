@@ -93,6 +93,11 @@ require('packer').startup({
     use 'vtm9/vim-pry'
     use "Pocco81/auto-save.nvim"
     use 'norcalli/nvim-colorizer.lua'
+
+    use {
+      'declancm/maximize.nvim',
+      config = function() require('maximize').setup() end
+    }
   end,
 
   config = {
