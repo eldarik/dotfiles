@@ -1,2 +1,3 @@
 files/nvim/plugin/
 files/fish/functions/fzf_key_bindings.fish
+files/fish/completions/
