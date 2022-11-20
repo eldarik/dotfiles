@@ -68,7 +68,7 @@ keymap("n", "<leader>f", ":FzfLua files<CR>")
 keymap("n", "<leader>b", ":FzfLua buffers<CR>")
 keymap("n", "<leader>s", ":FzfLua live_grep<CR>")
 keymap("n", "<leader>w", ":FzfLua grep_cword<CR>")
-keymap("n", "<leader>c", ":FzfLua git_commits<CR>")
+keymap("n", "<leader>c", ":FzfLua git_bcommits<CR>")
 
 keymap("v", "/", "y:let @/ = @\"<CR>")
 keymap("n", "<leader>h", ":set nohlsearch<CR>")
