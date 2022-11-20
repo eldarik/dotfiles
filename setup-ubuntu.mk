@@ -5,7 +5,7 @@ install-apt-packages:
 			make \
 			git \
 			wget \
-			zsh \
+			fzf \
 			mosh \
 			python3 \
 			python3-pip \
@@ -29,7 +29,8 @@ install-apt-packages:
 			libpq-dev \
 			jq \
 			pkg-config \
-			ripgrep
+			ripgrep \
+			fish
 
 install-docker-compose:
 	sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -42,3 +43,6 @@ install-ubuntu-nvim:
 install-bat:
 	wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 	sudo dpkg -i bat_0.12.1_amd64.deb
+
+set-fish:
+	chsh -s $(which fish)
