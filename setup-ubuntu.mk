@@ -11,8 +11,6 @@ install-apt-packages:
 			python3-pip \
 			python3-setuptools \
 			tmux \
-			linux-image-generic-hwe-18.04 \
-			linux-headers-generic-hwe-18.04 \
 			libssl-dev \
 			libreadline-dev \
 			zlib1g-dev \
