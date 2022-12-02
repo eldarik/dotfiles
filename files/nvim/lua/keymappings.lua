@@ -51,6 +51,7 @@ keymap("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", options)
 
 -- Tests
 keymap("n", "<leader>t", ":TestNearest<CR>")
+keymap("n", "<leader>T", ":TestFile<CR>")
 
 -- Hop
 keymap("n", "mw", ":HopWord<CR>")
