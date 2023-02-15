@@ -15,6 +15,7 @@ require('packer').startup({
     use 'yorik1984/lualine-theme.nvim'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
+    use 'tpope/vim-abolish'
 
     --- git
     use 'airblade/vim-gitgutter'

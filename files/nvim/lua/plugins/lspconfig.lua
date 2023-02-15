@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 local servers = {
   'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
-  'emmet_ls', 'html', 'jsonls', 'jdtls', 'tsserver', 'sumneko_lua',
+  'emmet_ls', 'html', 'jsonls', 'jdtls', 'tsserver', 'lua_ls',
   'zk', 'solargraph', 'sqlls', 'stylelint_lsp', 'terraformls',
   'vimls', 'lemminx'
 }
