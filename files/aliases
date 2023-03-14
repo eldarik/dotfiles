@@ -95,6 +95,7 @@ alias brdm='bundle exec rails db:migrate'
 alias brgm='bundle exec rails g migration'
 alias bcpd='bundle exec cap production deploy'
 alias bcbd='bundle exec cap beta deploy'
+alias rcopdev='git fetch && git diff-tree -r --no-commit-id --name-only develop@\{u\} head | xargs ls -1 2>/dev/null  | xargs rubocop --force-exclusion -a'
 
 # node & npm & yarn
 alias nr='npm run'
