@@ -111,7 +111,7 @@ require('packer').startup({
 })
 
 require("plugins.lualine")
---- require("plugins.treesitter")
+require("plugins.treesitter")
 
 require("plugins.lspconfig")
 require("plugins.nvim-tree")
