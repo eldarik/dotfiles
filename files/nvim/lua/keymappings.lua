@@ -39,10 +39,10 @@ keymap('n', '<leader>vr', ':source $MYVIMRC<CR>')
 keymap('n', '<leader>vl', ':vsp $MYVIMRC<CR>')
 
 -- Better window movement
-keymap("n", "<C-l>", "<C-w>l", silent)
-keymap("n", "<C-h>", "<C-w>h", silent)
-keymap("n", "<C-j>", "<C-w>j", silent)
-keymap("n", "<C-k>", "<C-w>k", silent)
+keymap("n", "<C-l>", "<C-w>l", { silent = true })
+keymap("n", "<C-h>", "<C-w>h", { silent = true })
+keymap("n", "<C-j>", "<C-w>j", { silent = true })
+keymap("n", "<C-k>", "<C-w>k", { silent = true })
 keymap("n", "mz", "<Cmd>lua require('maximize').toggle()<CR>")
 
 -- Comment Box

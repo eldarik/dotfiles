@@ -111,20 +111,11 @@ require('packer').startup({
 })
 
 require("plugins.lualine")
-require("plugins.treesitter")
+--- require("plugins.treesitter")
+
 require("plugins.lspconfig")
-require('nvim-tree').setup({
-  view = {
-    mappings = {
-      list = {
-        { key = "s", action = "split" },
-        { key = "v", action = "vsplit" },
-        { key = "t", action = "tabnew" },
-        { key = "f", action = "" },
-      }
-    }
-  }
-})
+require("plugins.nvim-tree")
+
 require('hop').setup {}
 require('fzf-lua').setup(
   {
