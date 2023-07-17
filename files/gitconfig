@@ -19,3 +19,5 @@
   where = branch -av --contains
   sb = show-branch
   url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+[diff]
+	external = difft
