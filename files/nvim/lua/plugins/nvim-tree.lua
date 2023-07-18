@@ -84,7 +84,14 @@ end
 
 require('nvim-tree').setup({
   on_attach = on_attach,
-  view = {
+  filters   = {
+    dotfiles = false
+  },
+  git       = {
+    enable = true,
+    ignore = false
+  },
+  view      = {
     mappings = {
       list = {
         { key = "s", action = "split" },
