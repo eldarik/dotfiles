@@ -176,5 +176,5 @@ cask 'homebrew/cask-versions/firefox-developer-edition'
 cask 'spotify'
 
 # fonts
-tap'homebrew/cask-fonts'
+tap 'homebrew/cask-fonts'
 cask 'font-anonymous-pro'

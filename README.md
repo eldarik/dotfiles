@@ -1,2 +1,2 @@
 # Dotfiles
-+ configuration files for git, vim, tmux, zsh
++ configuration files for git, vim, tmux, fish

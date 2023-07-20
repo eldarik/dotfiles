@@ -40,10 +40,14 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
 	ln -sf $(PWD)/files/fish ~/.config/fish
 
-PACKER_PATH=~/.local/share/nvim/site/pack/packer/start
 
-install-nvim:
+PACKER_PATH=~/.local/share/nvim/site/pack/packer/start
+nvim-configure:
+	rm -rf nvim/plugin || exit 0
 	rm -rf ~/.local/share/nvim || exit 0
 	rm -rf ~/.config/nvim || exit 0
 	rm -rf $(PACKER_PATH) || exit 0
+	mkdir -p ~/.config
+	mkdir -p $(PACKER_PATH)
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim $(PACKER_PATH)/packer.nvim
 	ln -snf $(PWD)/files/nvim ~/.config/nvim

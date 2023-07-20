@@ -22,7 +22,6 @@ require('lazy').setup(
     { 'LudoPinelli/comment-box.nvim' },
     {
       'hoob3rt/lualine.nvim',
-      config = require('plugins.lualine')
     },
     { 'yorik1984/lualine-theme.nvim' },
     { 'tpope/vim-surround' },
@@ -35,47 +34,15 @@ require('lazy').setup(
     { 'nvim-lua/plenary.nvim' },
     { 'windwp/nvim-spectre' },
     { 'janko/vim-test' },
-    {
-      'phaazon/hop.nvim',
-      branch = 'v2',
-      config = require('hop').setup {}
-    },
-    {
-      'ibhagwan/fzf-lua',
-      commit = '7e53aeb',
-      config = require('fzf-lua').setup(
-        {
-          winopts = {
-            split = 'belowright new'
-          },
-          fzf_colors = {
-            ['fg']      = { 'fg', 'CursorLine' },
-            ['bg']      = { 'bg', 'Normal' },
-            ['hl']      = { 'fg', 'Comment' },
-            ['fg+']     = { 'fg', 'Normal' },
-            ['bg+']     = { 'bg', 'CursorLine' },
-            ['hl+']     = { 'fg', 'Statement' },
-            ['info']    = { 'fg', 'PreProc' },
-            ['prompt']  = { 'fg', 'Conditional' },
-            ['pointer'] = { 'fg', 'Exception' },
-            ['marker']  = { 'fg', 'Keyword' },
-            ['spinner'] = { 'fg', 'Label' },
-            ['header']  = { 'fg', 'Comment' },
-            ['gutter']  = { 'bg', 'Normal' },
-          }
-        }
-      )
-    },
-    {
-      'goolord/alpha-nvim',
-      config = require('alpha').setup(require 'alpha.themes.theta'.config)
-    },
+    { 'phaazon/hop.nvim',            branch = 'v2' },
+    { 'ibhagwan/fzf-lua',            commit = '7e53aeb' },
+    { 'goolord/alpha-nvim' },
     { 'tpope/vim-rails' },
     {
       'VonHeikemen/lsp-zero.nvim',
       dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' },
+        'neovim/nvim-lspconfig',
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
 
@@ -91,27 +58,16 @@ require('lazy').setup(
         -- Snippets
         'L3MON4D3/LuaSnip',
         'rafamadriz/friendly-snippets',
-      },
-      config = require('plugins.lspconfig'),
+      }
     },
 
-    {
-      'zbirenbaum/copilot.lua',
-      dependencies = {
-        'zbirenbaum/copilot-cmp',
-        config = require('copilot_cmp').setup({
-          method = 'getCompletionsCycling',
-        })
-      },
-      config = require('copilot').setup()
-    },
+    { 'zbirenbaum/copilot.lua' },
+    { 'zbirenbaum/copilot-cmp' },
 
     -- Treesitter
     { 'danymat/neogen', },
     {
       'nvim-treesitter/nvim-treesitter',
-      build = ':TSUpdate',
-      config = require('plugins.treesitter'),
       dependencies = {
         'JoosepAlviste/nvim-ts-context-commentstring',
       },
@@ -129,11 +85,41 @@ require('lazy').setup(
     { 'dag/vim-fish' },
     { 'vtm9/vim-pry' },
     { 'Pocco81/auto-save.nvim' },
-    {
-      'norcalli/nvim-colorizer.lua',
-      config = require('colorizer').setup()
-    },
+    { 'norcalli/nvim-colorizer.lua' },
+    { 'declancm/maximize.nvim' },
   }
 )
 
+require('plugins.lualine')
+require('hop').setup()
+
 require('plugins.nvim-tree')
+require('colorizer').setup()
+require('alpha').setup(require 'alpha.themes.theta'.config)
+require('plugins.lspconfig')
+require('copilot').setup()
+require('copilot_cmp').setup()
+require('plugins.treesitter')
+require('fzf-lua').setup(
+  {
+    -- winopts = {
+    --   split = 'belowright new'
+    -- },
+    fzf_colors = {
+      ['fg']      = { 'fg', 'CursorLine' },
+      ['bg']      = { 'bg', 'Normal' },
+      ['hl']      = { 'fg', 'Comment' },
+      ['fg+']     = { 'fg', 'Normal' },
+      ['bg+']     = { 'bg', 'CursorLine' },
+      ['hl+']     = { 'fg', 'Statement' },
+      ['info']    = { 'fg', 'PreProc' },
+      ['prompt']  = { 'fg', 'Conditional' },
+      ['pointer'] = { 'fg', 'Exception' },
+      ['marker']  = { 'fg', 'Keyword' },
+      ['spinner'] = { 'fg', 'Label' },
+      ['header']  = { 'fg', 'Comment' },
+      ['gutter']  = { 'bg', 'Normal' },
+    }
+  }
+)
+require('maximize').setup()

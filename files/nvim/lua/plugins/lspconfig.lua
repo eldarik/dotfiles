@@ -18,13 +18,16 @@ lsp.set_preferences({
   cmp_capabilities = true,
   manage_nvim_cmp = true,
   call_servers = 'local',
-  sign_icons = {
-    error = '',
-    warn = '',
-    hint = '',
-    info = ''
-  }
 })
+
+lsp.set_sign_icons(
+  {
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = '»'
+  }
+)
 
 lsp.setup()
 
@@ -52,11 +55,11 @@ table.insert(sources, { name = 'nvim_lsp_signature_help' })
 local cmp_config = lsp.defaults.cmp_config({
   sources = {
     -- Copilot Source
-    { name = "copilot", group_index = 2 },
+    { name = "copilot",  group_index = 2 },
     -- Other Sources
     { name = "nvim_lsp", group_index = 2 },
-    { name = "path", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
+    { name = "path",     group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
