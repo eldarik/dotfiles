@@ -96,3 +96,9 @@ keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 keymap('n', '<leader>l', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 
 keymap("n", "<leader>d", ":call pry#insert()<CR>")
+
+keymap("n", "gB", ":Blame<CR>")
+keymap("n", "gBl", ":BlameLine<CR>")
+
+keymap("n", "gb", ":Browse<CR>")
+keymap("n", "gbl", ":BrowseLine<CR>")

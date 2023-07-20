@@ -28,6 +28,7 @@ require('lazy').setup(
     { 'tpope/vim-repeat' },
     { 'tpope/vim-abolish' },
     { 'airblade/vim-gitgutter' },
+    { 'Morozzzko/git_browse.nvim' },
     { 'AndrewRadev/splitjoin.vim' },
     { 'lewis6991/impatient.nvim' },
     { 'nathom/filetype.nvim' },
