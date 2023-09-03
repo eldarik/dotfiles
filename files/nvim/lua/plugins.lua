@@ -103,9 +103,13 @@ require('copilot_cmp').setup()
 require('plugins.treesitter')
 require('fzf-lua').setup(
   {
-    -- winopts = {
-    --   split = 'belowright new'
-    -- },
+    winopts = {
+      height = 0.9,
+      width = 0.9,
+      preview = {
+        delay = 100
+      },
+    },
     fzf_colors = {
       ['fg']      = { 'fg', 'CursorLine' },
       ['bg']      = { 'bg', 'Normal' },

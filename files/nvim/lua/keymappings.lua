@@ -99,6 +99,8 @@ keymap("n", "<leader>d", ":call pry#insert()<CR>")
 
 keymap("n", "gB", ":Blame<CR>")
 keymap("n", "gBl", ":BlameLine<CR>")
+keymap("v", "gB", "<cmd>BlameSelected<CR>")
 
 keymap("n", "gb", ":Browse<CR>")
 keymap("n", "gbl", ":BrowseLine<CR>")
+keymap("v", "gb", "<cmd>BrowseSelected<CR>")
