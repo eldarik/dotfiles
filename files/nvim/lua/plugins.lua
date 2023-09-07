@@ -98,7 +98,11 @@ require('plugins.nvim-tree')
 require('colorizer').setup()
 require('alpha').setup(require 'alpha.themes.theta'.config)
 require('plugins.lspconfig')
-require('copilot').setup()
+require('copilot').setup({
+  filetypes = {
+    txt = true,
+  }
+})
 require('copilot_cmp').setup()
 require('plugins.treesitter')
 require('fzf-lua').setup(
