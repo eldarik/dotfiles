@@ -21,6 +21,13 @@ require('lazy').setup(
     },
     { 'LudoPinelli/comment-box.nvim' },
     {
+      'numToStr/Comment.nvim',
+      opts = {
+        -- add any options here
+      },
+      lazy = false,
+    },
+    {
       'hoob3rt/lualine.nvim',
     },
     { 'yorik1984/lualine-theme.nvim' },

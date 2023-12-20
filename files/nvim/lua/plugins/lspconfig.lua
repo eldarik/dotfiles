@@ -1,5 +1,3 @@
-local lspconfig = require('lspconfig')
-
 local servers = {
   'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
   'emmet_ls', 'html', 'jsonls', 'jdtls', 'tsserver', 'lua_ls',
@@ -9,7 +7,14 @@ local servers = {
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
-lsp.ensure_installed(servers)
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = servers,
+  handlers = {
+    lsp.default_setup,
+  },
+})
+
 lsp.set_preferences({
   suggest_lsp_servers = true,
   setup_servers_on_start = true,
@@ -49,8 +54,6 @@ vim.diagnostic.config({
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local sources = lsp.defaults.cmp_sources()
-table.insert(sources, { name = 'nvim_lsp_signature_help' })
 
 local cmp_config = lsp.defaults.cmp_config({
   sources = {

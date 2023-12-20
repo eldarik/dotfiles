@@ -2,12 +2,12 @@ require('neogen').setup()
 require 'treesitter-context'.setup {
   separator = '-'
 }
+-- vim.g.skip_ts_context_commentstring_module = true
+
+require('ts_context_commentstring')
+
 require('nvim-treesitter.configs').setup {
   auto_install = true,
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
   matchup = {
     enable = true
   },

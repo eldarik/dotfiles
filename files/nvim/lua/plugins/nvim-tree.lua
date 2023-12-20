@@ -81,23 +81,15 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
 end
 
-require('nvim-tree').setup({
-  on_attach = on_attach,
-  filters   = {
-    dotfiles = false
-  },
-  git       = {
-    enable = true,
-    ignore = false
-  },
-  view      = {
-    mappings = {
-      list = {
-        { key = "s", action = "split" },
-        { key = "v", action = "vsplit" },
-        { key = "t", action = "tabnew" },
-        { key = "f", action = "" },
-      }
+require('nvim-tree').setup(
+  {
+    on_attach = on_attach,
+    filters   = {
+      dotfiles = false
+    },
+    git       = {
+      enable = true,
+      ignore = false
     }
   }
-})
+)
