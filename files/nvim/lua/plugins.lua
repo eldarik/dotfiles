@@ -16,9 +16,11 @@ require('lazy').setup(
     { 'kyazdani42/nvim-web-devicons' },
     { 'kyazdani42/nvim-tree.lua' },
     { 'christoomey/vim-tmux-navigator' },
-    {
-      'overcache/NeoSolarized',
-    },
+
+    { 'overcache/NeoSolarized' },
+    -- { 'ishan9299/nvim-solarized-lua' },
+    -- { 'craftzdog/solarized-osaka.nvim' },
+    --
     { 'LudoPinelli/comment-box.nvim' },
     {
       'numToStr/Comment.nvim',
