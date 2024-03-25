@@ -39,6 +39,8 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/karabiner.json ~/.config/karabiner/
 	ln -sf $(PWD)/files/alacritty.yml ~/.alacritty.yml
 	ln -sf $(PWD)/files/fish ~/.config/fish
+	mkdir -p ~/.config/wezterm
+	ln -sf $(PWD)/files/wezterm.lua ~/.config/wezterm/wezterm.lua
 
 
 PACKER_PATH=~/.local/share/nvim/site/pack/packer/start
