@@ -44,6 +44,13 @@ local tab_bar_theme = extract_tab_bar_colors_from_theme('Solarized Light (Gogh)'
 
 return {
   font = wezterm.font("Anonymous Pro", { weight = 'Bold' }),
+
+  -- Better rendering on retina displays
+  -- freetype_load_target = "Normal",
+
+  -- Better rendering on non retina displays
+  freetype_load_target = "Light",
+
   -- font = wezterm.font("Anonymous Pro"),
   bold_brightens_ansi_colors = true,
   font_size = 15.0,
