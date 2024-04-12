@@ -53,7 +53,12 @@ return {
 
   -- font = wezterm.font("Anonymous Pro"),
   bold_brightens_ansi_colors = true,
-  font_size = 15.0,
+
+  -- For 13 inch display
+  -- font_size = 15.0,
+  -- For bigger display
+  font_size = 17.0,
+
   -- color_scheme = 'Solarized (light) (terminal.sexy)',
   color_scheme = 'Solarized Light (Gogh)',
   enable_tab_bar = false,
