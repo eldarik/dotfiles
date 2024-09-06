@@ -57,12 +57,12 @@ return {
   -- For 13 inch display
   -- font_size = 15.0,
   -- For bigger display
-  font_size = 17.0,
+  font_size = 15.0,
 
   -- color_scheme = 'Solarized (light) (terminal.sexy)',
   color_scheme = 'Solarized Light (Gogh)',
   enable_tab_bar = false,
-  -- use_fancy_tab_bar = false,
+  use_fancy_tab_bar = true,
   colors = {
     tab_bar = tab_bar_theme.tab_bar_colors,
   },
