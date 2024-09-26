@@ -1,11 +1,10 @@
 local servers = {
   'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
-  'emmet_ls', 'html', 'jsonls', 'jdtls', 'tsserver', 'lua_ls',
+  'emmet_ls', 'html', 'jsonls', 'jdtls', 'lua_ls',
   'zk', 'solargraph', 'sqlls', 'stylelint_lsp', 'terraformls',
   'vimls', 'lemminx'
 }
 local lsp = require('lsp-zero')
-lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -13,16 +12,6 @@ require('mason-lspconfig').setup({
   handlers = {
     lsp.default_setup,
   },
-})
-
-lsp.set_preferences({
-  suggest_lsp_servers = true,
-  setup_servers_on_start = true,
-  set_lsp_keymaps = true,
-  configure_diagnostics = true,
-  cmp_capabilities = true,
-  manage_nvim_cmp = true,
-  call_servers = 'local',
 })
 
 lsp.set_sign_icons(
@@ -54,8 +43,7 @@ vim.diagnostic.config({
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-local cmp_config = lsp.defaults.cmp_config({
+cmp.setup({
   sources = {
     -- Copilot Source
     { name = "copilot",  group_index = 2 },
@@ -73,5 +61,3 @@ local cmp_config = lsp.defaults.cmp_config({
     }),
   },
 })
-
-cmp.setup(cmp_config)

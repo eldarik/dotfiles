@@ -18,8 +18,10 @@ require('lazy').setup(
     { 'christoomey/vim-tmux-navigator' },
 
     { 'overcache/NeoSolarized' },
-    -- { 'ishan9299/nvim-solarized-lua' },
-    -- { 'craftzdog/solarized-osaka.nvim' },
+    { 'lifepillar/vim-solarized8' },
+    { 'ishan9299/nvim-solarized-lua' },
+    { 'craftzdog/solarized-osaka.nvim' },
+    { 'Iron-E/nvim-highlite' },
     --
     { 'LudoPinelli/comment-box.nvim' },
     {
