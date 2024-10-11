@@ -61,8 +61,8 @@ return {
   font_size = 15.0,
 
   -- color_scheme = 'Solarized (light) (terminal.sexy)',
-  -- color_scheme = 'Solarized Light (Gogh)',
-  color_scheme = 'Solarized Dark (Gogh)',
+  color_scheme = 'Solarized Light (Gogh)',
+  -- color_scheme = 'Solarized Dark (Gogh)',
   enable_tab_bar = false,
   use_fancy_tab_bar = false,
   colors = {
