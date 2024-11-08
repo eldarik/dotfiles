@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup(
   {
     { 'kyazdani42/nvim-web-devicons' },
-    { 'kyazdani42/nvim-tree.lua' },
+    { 'kyazdani42/nvim-tree.lua', commit = '2a268f631' },
     { 'christoomey/vim-tmux-navigator' },
 
     { 'overcache/NeoSolarized' },
