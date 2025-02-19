@@ -18,7 +18,7 @@
 vim.cmd [[
   try
     colorscheme solarized
-    set background=light
+    set background=dark
   catch
     colorscheme evening
     set background=light
