@@ -1,7 +1,7 @@
 local servers = {
   'bashls', 'pyright', 'yamlls', 'ansiblels', 'cssls', 'diagnosticls', 'eslint',
   'emmet_ls', 'html', 'jsonls', 'jdtls', 'lua_ls',
-  'zk', 'solargraph', 'sqlls', 'stylelint_lsp', 'terraformls',
+  'zk', 'ruby_lsp', 'rubocop', 'sqlls', 'stylelint_lsp', 'terraformls',
   'vimls', 'lemminx'
 }
 local lsp = require('lsp-zero')
@@ -11,6 +11,11 @@ require('mason-lspconfig').setup({
   ensure_installed = servers,
   handlers = {
     lsp.default_setup,
+    ruby_lsp = function()
+      require('lspconfig').ruby_lsp.setup {
+        cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
+      }
+    end,
   },
 })
 
