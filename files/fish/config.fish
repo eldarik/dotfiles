@@ -9,20 +9,20 @@ source ~/.asdf/asdf.fish
 source ~/.fzf/shell/key-bindings.fish
 fzf_key_bindings
 # solarized light
-# set -Ux FZF_DEFAULT_OPTS "
-#   --color=bg+:#eee8d5,fg:#657b83,hl:#b58900
-#   --color=fg+:#586e75,pointer:#859900,info:#268bd2
-#   --color=marker:#859900,spinner:#2aa198,prompt:#b58900
-#   --color=hl+:#cb4b16
-# "
+set -Ux FZF_DEFAULT_OPTS "
+  --color=bg+:#eee8d5,fg:#657b83,hl:#b58900
+  --color=fg+:#586e75,pointer:#859900,info:#268bd2
+  --color=marker:#859900,spinner:#2aa198,prompt:#b58900
+  --color=hl+:#cb4b16
+"
 
 # solarized dark
-set -gx FZF_DEFAULT_OPTS "
-  --color=bg+:#073642,fg:#839496,hl:#268bd2
-  --color=fg+:#839496,pointer:#b58900,info:#268bd2
-  --color=marker:#b58900,spinner:#859900,prompt:#2aa198
-  --color=hl+:#b58900
-"
+# set -gx FZF_DEFAULT_OPTS "
+#   --color=bg+:#073642,fg:#839496,hl:#268bd2
+#   --color=fg+:#839496,pointer:#b58900,info:#268bd2
+#   --color=marker:#b58900,spinner:#859900,prompt:#2aa198
+#   --color=hl+:#b58900
+# "
 
 set -g fish_key_bindings fish_hybrid_key_bindings
 set -gx EDITOR nvim

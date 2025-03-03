@@ -40,8 +40,8 @@ local extract_tab_bar_colors_from_theme = function(theme_name)
   }
 end
 
--- local tab_bar_theme = extract_tab_bar_colors_from_theme('Solarized Light (Gogh)')
-local tab_bar_theme = extract_tab_bar_colors_from_theme('Solarized Dark (Gogh)')
+local tab_bar_theme = extract_tab_bar_colors_from_theme('Solarized Light (Gogh)')
+-- local tab_bar_theme = extract_tab_bar_colors_from_theme('Solarized Dark (Gogh)')
 
 return {
   font = wezterm.font("Anonymous Pro", { weight = 'Bold' }),
@@ -61,8 +61,8 @@ return {
   font_size = 15.0,
 
   -- color_scheme = 'Solarized (light) (terminal.sexy)',
-  -- color_scheme = 'Solarized Light (Gogh)',
-  color_scheme = 'Solarized Dark (Gogh)',
+  color_scheme = 'Solarized Light (Gogh)',
+  -- color_scheme = 'Solarized Dark (Gogh)',
   enable_tab_bar = false,
   use_fancy_tab_bar = false,
   colors = {
