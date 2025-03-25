@@ -36,3 +36,7 @@ end
 if test -e ~/gdrive/notes/dev/env_vars.fish
   . ~/gdrive/notes/dev/env_vars.fish
 end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
