@@ -104,3 +104,11 @@ keymap("v", "gB", "<cmd>BlameSelected<CR>")
 keymap("n", "gb", ":Browse<CR>")
 keymap("n", "gbl", ":BrowseLine<CR>")
 keymap("v", "gb", "<cmd>BrowseSelected<CR>")
+
+-- Git
+keymap('n', '<leader>c', function() require('fzf-lua').git_status() end, { desc = 'Git Changed Files (fzf-lua)' })
+keymap('n', 'ga', ':GitGutterStageHunk<CR>', { desc = 'Stage Git Hunk' })
+keymap('n', 'gs', ':GitGutterUndoHunk<CR>', { desc = 'Reset Git Hunk' })
+keymap('n', ']h', ':GitGutterNextHunk<CR>', { desc = 'Next Git Hunk' })
+keymap('n', '[h', ':GitGutterPrevHunk<CR>', { desc = 'Previous Git Hunk' })
+keymap('n', '<leader>cm', function() vim.cmd('terminal git commit') end, { desc = 'Git Commit (Terminal)' })
