@@ -104,11 +104,96 @@ require('lazy').setup(
     -- AI coding like cursor editor
     {
       "olimorris/codecompanion.nvim",
-      lazy = false,
       dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-treesitter/nvim-treesitter",
+        "ibhagwan/fzf-lua", -- FZF Lua instead of fzf.vim
       },
+      config = function()
+        local codecompanion = require("codecompanion")
+        local actions = require("codecompanion.actions")
+        local fzf = require("fzf-lua")
+
+        codecompanion.setup({
+          display = {
+            chat = {
+              intro_message = "Welcome to Code Companion 🚀",
+              show_header_separator = true,
+              separator = "─",
+              show_references = true,
+              show_settings = false,
+              show_token_count = true,
+              start_in_insert_mode = false,
+            },
+          },
+          ui = {
+            backend = "telescope", -- Keep telescope for other parts if you prefer
+          },
+          strategies = {
+            chat = {
+              adapter = "anthropic",
+              options = {
+                model = "claude-3-7-sonnet-20250219",
+              },
+            },
+            inline = {
+              adapter = "anthropic",
+              options = {
+                model = "claude-3-7-sonnet-20250219",
+              },
+            },
+            actions = {
+              adapter = "anthropic",
+              options = {
+                model = "claude-3-7-sonnet-20250219",
+              },
+            },
+          },
+        })
+
+        local action_list = {
+          { name = "Chat", desc = "Open chat with LLM", fn = actions.chat },
+          { name = "Open chats ...", desc = "View open chats", fn = actions.open_chats },
+          { name = "Custom Prompt", desc = "Send custom prompt inline", fn = actions.prompt },
+          { name = "Explain", desc = "Explain selected code", fn = actions.explain },
+          { name = "Unit Tests", desc = "Generate unit tests", fn = actions.unit_tests },
+          { name = "Fix code", desc = "Fix selected code", fn = actions.fix },
+          { name = "Commit Message", desc = "Generate commit message", fn = actions.commit_message },
+          { name = "Code workflow", desc = "Guide LLM through code writing", fn = actions.code_workflow },
+          { name = "Edit↔Test workflow", desc = "Cycle through editing and testing", fn = actions.edit_test_workflow },
+        }
+
+        local function fzf_codecompanion_picker()
+          fzf.fzf_exec(
+            vim.tbl_map(function(a)
+              return string.format("%s — %s", a.name, a.desc)
+            end, action_list),
+            {
+              prompt = "󰚩  CodeCompanion > ",
+              previewer = false,
+              winopts = {
+                height = 0.25, -- Smaller height
+                width = 0.3, -- Smaller width
+                row = 0.4,
+                col = 0.5,
+                border = "rounded",
+              },
+              actions = {
+                default = function(selected)
+                  local label = selected[1]:match("^(.-) —")
+                  for _, a in ipairs(action_list) do
+                    if a.name == label then
+                      a.fn()
+                      return
+                    end
+                  end
+                end,
+              },
+            }
+          )
+        end
+
+        vim.keymap.set("n", "<leader>aa", fzf_codecompanion_picker, { desc = "CodeCompanion Actions (fzf-lua)" })
+      end
     }
 
   }
@@ -155,55 +240,3 @@ require('fzf-lua').setup(
   }
 )
 require('maximize').setup()
-
-require("codecompanion").setup {
-  display = {
-    chat = {
-      intro_message = "Welcome to Code Companion 🚀",
-      show_header_separator = true, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
-      separator = "─", -- The separator between the different messages in the chat buffer
-      show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
-      show_settings = false, -- Show LLM settings at the top of the chat buffer?
-      show_token_count = true, -- Show the token count for each response?
-      start_in_insert_mode = false, -- Open the chat buffer in insert mode?
-    },
-  },
-  strategies = {
-    chat = {
-      adapter = "anthropic",
-      options = {
-        model = "claude-3-7-sonnet-20250219",
-      },
-    },
-    inline = {
-      adapter = "anthropic",
-      options = {
-        model = "claude-3-7-sonnet-20250219",
-      },
-    },
-    actions = {
-      adapter = "anthropic",
-      options = {
-        model = "claude-3-7-sonnet-20250219",
-      },
-    },
-  },
-}
-
--- Code companion
-
--- local codecompanion = require "codecompanion"
--- vim.keymap.set("n", "<leader>acc", codecompanion.chat.toggle, { desc = "CodeCompanion: Toggle Chat" })
--- vim.keymap.set("n", "<leader>acn", codecompanion.chat.new, { desc = "CodeCompanion: New Chat" })
--- vim.keymap.set("n", "<leader>acr", codecompanion.chat.run, { desc = "CodeCompanion: Run Chat Command" })
--- vim.keymap.set("n", "<leader>ai", codecompanion.inline.toggle, { desc = "CodeCompanion: Toggle Inline" })
-
--- vim.keymap.set("v", "<leader>ce", codecompanion.inline.edit, { desc = "CodeCompanion: Edit Selection" })
--- vim.keymap.set("v", "<leader>cx", codecompanion.inline.explain, { desc = "CodeCompanion: Explain Selection" })
--- vim.keymap.set("v", "<leader>ct", codecompanion.inline.test, { desc = "CodeCompanion: Generate Tests" })
--- vim.keymap.set("v", "<leader>cf", codecompanion.inline.fix, { desc = "CodeCompanion: Fix Selection" })
-
--- vim.keymap.set("n", "<leader>aa", codecompanion.actions.show, { desc = "CodeCompanion: Show Actions" })
-vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
