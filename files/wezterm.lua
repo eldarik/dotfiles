@@ -80,5 +80,6 @@ return {
     right = '0.3cell',
     top = '0.2cell',
     bottom = '0.0cell',
-  }
+  },
+  cursor_blink_rate = 0,
 }
