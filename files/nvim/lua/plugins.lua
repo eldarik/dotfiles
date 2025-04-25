@@ -100,65 +100,17 @@ require('lazy').setup(
     { 'Pocco81/auto-save.nvim' },
     { 'norcalli/nvim-colorizer.lua' },
     { 'declancm/maximize.nvim' },
+
+    -- AI coding like cursor editor
     {
-      "yetone/avante.nvim",
-      event = "VeryLazy",
-      version = false, -- Never set this value to "*"! Never!
-      opts = {
-        -- add any opts here
-        -- for example
-        provider = "openai",
-        openai = {
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o",             -- your desired model (or use gpt-4o, etc.)
-          timeout = 30000,              -- Timeout in milliseconds, increase this for reasoning models
-          temperature = 0,
-          max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-          --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-        },
-      },
-      -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-      build = "make",
-      -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+      "olimorris/codecompanion.nvim",
+      lazy = false,
       dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "stevearc/dressing.nvim",
         "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
-        "echasnovski/mini.pick",         -- for file_selector provider mini.pick
-        "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-        "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
-        "ibhagwan/fzf-lua",              -- for file_selector provider fzf
-        "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
-        "zbirenbaum/copilot.lua",        -- for providers='copilot'
-        {
-          -- support for image pasting
-          "HakonHarnes/img-clip.nvim",
-          event = "VeryLazy",
-          opts = {
-            -- recommended settings
-            default = {
-              embed_image_as_base64 = false,
-              prompt_for_file_name = false,
-              drag_and_drop = {
-                insert_mode = true,
-              },
-              -- required for Windows users
-              use_absolute_path = true,
-            },
-          },
-        },
-        {
-          -- Make sure to set this up properly if you have lazy=true
-          'MeanderingProgrammer/render-markdown.nvim',
-          opts = {
-            file_types = { "markdown", "Avante" },
-          },
-          ft = { "markdown", "Avante" },
-        },
+        "nvim-treesitter/nvim-treesitter",
       },
     }
+
   }
 )
 
@@ -203,3 +155,55 @@ require('fzf-lua').setup(
   }
 )
 require('maximize').setup()
+
+require("codecompanion").setup {
+  display = {
+    chat = {
+      intro_message = "Welcome to Code Companion 🚀",
+      show_header_separator = true, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
+      separator = "─", -- The separator between the different messages in the chat buffer
+      show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
+      show_settings = false, -- Show LLM settings at the top of the chat buffer?
+      show_token_count = true, -- Show the token count for each response?
+      start_in_insert_mode = false, -- Open the chat buffer in insert mode?
+    },
+  },
+  strategies = {
+    chat = {
+      adapter = "anthropic",
+      options = {
+        model = "claude-3-7-sonnet-20250219",
+      },
+    },
+    inline = {
+      adapter = "anthropic",
+      options = {
+        model = "claude-3-7-sonnet-20250219",
+      },
+    },
+    actions = {
+      adapter = "anthropic",
+      options = {
+        model = "claude-3-7-sonnet-20250219",
+      },
+    },
+  },
+}
+
+-- Code companion
+
+-- local codecompanion = require "codecompanion"
+-- vim.keymap.set("n", "<leader>acc", codecompanion.chat.toggle, { desc = "CodeCompanion: Toggle Chat" })
+-- vim.keymap.set("n", "<leader>acn", codecompanion.chat.new, { desc = "CodeCompanion: New Chat" })
+-- vim.keymap.set("n", "<leader>acr", codecompanion.chat.run, { desc = "CodeCompanion: Run Chat Command" })
+-- vim.keymap.set("n", "<leader>ai", codecompanion.inline.toggle, { desc = "CodeCompanion: Toggle Inline" })
+
+-- vim.keymap.set("v", "<leader>ce", codecompanion.inline.edit, { desc = "CodeCompanion: Edit Selection" })
+-- vim.keymap.set("v", "<leader>cx", codecompanion.inline.explain, { desc = "CodeCompanion: Explain Selection" })
+-- vim.keymap.set("v", "<leader>ct", codecompanion.inline.test, { desc = "CodeCompanion: Generate Tests" })
+-- vim.keymap.set("v", "<leader>cf", codecompanion.inline.fix, { desc = "CodeCompanion: Fix Selection" })
+
+-- vim.keymap.set("n", "<leader>aa", codecompanion.actions.show, { desc = "CodeCompanion: Show Actions" })
+vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
