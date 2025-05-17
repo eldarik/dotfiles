@@ -112,3 +112,10 @@ keymap('n', 'gs', ':GitGutterUndoHunk<CR>', { desc = 'Reset Git Hunk' })
 keymap('n', ']h', ':GitGutterNextHunk<CR>', { desc = 'Next Git Hunk' })
 keymap('n', '[h', ':GitGutterPrevHunk<CR>', { desc = 'Previous Git Hunk' })
 keymap('n', '<leader>cm', function() vim.cmd('terminal git commit') end, { desc = 'Git Commit (Terminal)' })
+
+
+-- Code Companion
+keymap({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+keymap({ "n", "v" }, "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+keymap("v", "<leader>aa", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
