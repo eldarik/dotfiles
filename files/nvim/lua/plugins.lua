@@ -130,19 +130,19 @@ require('lazy').setup(
             chat = {
               adapter = "anthropic",
               options = {
-                model = "claude-3-7-sonnet-20250219",
+                model = "claude-sonnet-4-20250514",
               },
             },
             inline = {
               adapter = "anthropic",
               options = {
-                model = "claude-3-7-sonnet-20250219",
+                model = "claude-sonnet-4-20250514",
               },
             },
             actions = {
               adapter = "anthropic",
               options = {
-                model = "claude-3-7-sonnet-20250219",
+                model = "claude-sonnet-4-20250514",
               },
             },
           },
@@ -172,7 +172,8 @@ require('fzf-lua').setup(
       height = 0.9,
       width = 0.9,
       preview = {
-        delay = 100
+        delay = 100,
+        default = 'bat',
       },
     },
     fzf_colors = {
