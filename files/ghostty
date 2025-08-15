@@ -1,0 +1,17 @@
+font-family = Anonymous Pro
+font-style = "Bold"
+font-size = 15
+
+# adjust-cell-height = -10%
+
+cursor-style = block
+mouse-hide-while-typing = true
+
+theme = iTerm2 Solarized Light
+# theme = iTerm2 Solarized Dark
+
+window-colorspace = "display-p3"
+window-decoration = none
+window-padding-x = 5
+
+keybind = cmd+s>r=reload_config

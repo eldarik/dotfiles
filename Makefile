@@ -41,6 +41,8 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/fish ~/.config/fish
 	mkdir -p ~/.config/wezterm
 	ln -sf $(PWD)/files/wezterm.lua ~/.config/wezterm/wezterm.lua
+	mkdir -p ~/.config/ghostty/
+	ln -sf $(PWD)/files/ghostty ~/.config/ghostty/config
 
 
 PACKER_PATH=~/.local/share/nvim/site/pack/packer/start
