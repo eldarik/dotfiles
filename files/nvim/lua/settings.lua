@@ -28,16 +28,16 @@ local options = {
   tabstop       = 2,                        --- Insert 2 spaces for a tab
   -- timeoutlen     = 200,                     --- Faster completion (cannot be lower than 200 because then commenting doesn't work)
   -- ttimeoutlen    = 3000,
-  undofile      = true,     --- Sets undo to file
-  updatetime    = 100,      --- Faster completion
-  viminfo       = "'1000",  --- Increase the size of file history
-  wrap          = true,     --- Display long lines as just one line
-  writebackup   = false,    --- Not needed
+  undofile      = true,    --- Sets undo to file
+  updatetime    = 100,     --- Faster completion
+  viminfo       = "'1000", --- Increase the size of file history
+  wrap          = true,    --- Display long lines as just one line
+  writebackup   = false,   --- Not needed
   termguicolors = true,
 }
 
 local globals = {
-  mapleader = ' ',                   --- Map leader key to SPC
+  mapleader = ' ', --- Map leader key to SPC
 }
 
 for k, v in pairs(options) do
@@ -47,3 +47,9 @@ end
 for k, v in pairs(globals) do
   vim.g[k] = v
 end
+
+vim.opt.guicursor = {
+  "n-v-c:block", -- normal/visual/command: block cursor
+  "i-ci:ver25",  -- insert: vertical bar
+  "r-cr:hor20",  -- replace: horizontal bar
+}

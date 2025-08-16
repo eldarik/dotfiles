@@ -14,4 +14,9 @@ window-colorspace = "display-p3"
 window-decoration = none
 window-padding-x = 5
 
+cursor-invert-fg-bg = true
+cursor-style-blink = false
+cursor-style=block
+shell-integration-features = no-cursor
+
 keybind = cmd+s>r=reload_config
