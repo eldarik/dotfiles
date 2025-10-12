@@ -43,7 +43,7 @@ require('lazy').setup(
 
     { 'AndrewRadev/splitjoin.vim' },
     { 'lewis6991/impatient.nvim' },
-    { 'nathom/filetype.nvim' },
+    -- { 'nathom/filetype.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { 'windwp/nvim-spectre' },
     { 'janko/vim-test' },
