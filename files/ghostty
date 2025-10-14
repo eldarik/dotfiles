@@ -20,3 +20,8 @@ cursor-style=block
 shell-integration-features = no-cursor
 
 keybind = cmd+s>r=reload_config
+
+palette = 7=#eee8d5
+palette = 15=#fdf6e3
+palette = 10=#859900
+palette = 12=#268bd2
