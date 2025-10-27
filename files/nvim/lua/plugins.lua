@@ -21,7 +21,7 @@ require('lazy').setup(
     { 'lifepillar/vim-solarized8' },
     { 'ishan9299/nvim-solarized-lua' },
     { 'craftzdog/solarized-osaka.nvim' },
-    { 'Iron-E/nvim-highlite' },
+    -- { 'Iron-E/nvim-highlite' },
     --
     { 'LudoPinelli/comment-box.nvim' },
     {
