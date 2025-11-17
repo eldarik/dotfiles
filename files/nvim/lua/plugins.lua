@@ -21,7 +21,6 @@ require('lazy').setup(
     { 'lifepillar/vim-solarized8' },
     { 'ishan9299/nvim-solarized-lua' },
     { 'craftzdog/solarized-osaka.nvim' },
-    -- { 'Iron-E/nvim-highlite' },
     --
     { 'LudoPinelli/comment-box.nvim' },
     {
@@ -43,7 +42,6 @@ require('lazy').setup(
 
     { 'AndrewRadev/splitjoin.vim' },
     { 'lewis6991/impatient.nvim' },
-    -- { 'nathom/filetype.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { 'windwp/nvim-spectre' },
     { 'janko/vim-test' },
@@ -101,54 +99,6 @@ require('lazy').setup(
     { 'norcalli/nvim-colorizer.lua' },
     { 'declancm/maximize.nvim' },
 
-    -- AI coding like cursor editor
-    {
-      "olimorris/codecompanion.nvim",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        { "echasnovski/mini.pick", version = false },
-        "nvim-telescope/telescope.nvim",
-
-      },
-      config = function()
-        require("codecompanion").setup({
-          ui = {
-            -- backend = "native", -- The UI backend to use. Can be either "telescope" or "mini"
-          },
-          display = {
-            chat = {
-              intro_message = "Welcome to Code Companion 🚀",
-              show_header_separator = true, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
-              separator = "─", -- The separator between the different messages in the chat buffer
-              show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
-              show_settings = true, -- Show LLM settings at the top of the chat buffer?
-              show_token_count = true, -- Show the token count for each response?
-              start_in_insert_mode = true, -- Open the chat buffer in insert mode?
-            },
-          },
-          strategies = {
-            chat = {
-              adapter = "openai",
-              options = {
-                model = "gpt-4.1",
-              },
-            },
-            inline = {
-              adapter = "openai",
-              options = {
-                model = "gpt-4.1",
-              },
-            },
-            actions = {
-              adapter = "openai",
-              options = {
-                model = "gpt-4.1",
-              },
-            },
-          },
-        })
-      end,
-    }
   }
 )
 
