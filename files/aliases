@@ -75,7 +75,7 @@ alias moteefe_bd='dc run -p 3000:3000 web bash'
 
 alias a=asdf
 alias ans=ansible
-alias ll='exa -l -g --icons'
+alias ll='eza -l -g --icons'
 
 # vim & nvim
 alias v='nvim'
