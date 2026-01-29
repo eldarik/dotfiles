@@ -46,3 +46,4 @@ set fish_cursor_insert block
 set fish_cursor_replace_one block
 set fish_cursor_visual block
 set fish_cursor_unknown block
+export PATH="$HOME/.local/bin:$PATH"
