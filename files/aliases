@@ -170,3 +170,9 @@ alias mts='mix test --stale'
 alias mtw='mix test.watch'
 alias mx='mix xref'
 alias mf='mix format'
+
+alias cldp='claude --permission-mode plan'
+alias cldw='CLAUDE_CONFIG_DIR=~/.claude-work claude --permission-mode plan'
+alias cld="echo 'Use specific commands: cldp - personal or cldw - work'"
+
+alias ocd='opencode'
