@@ -7,7 +7,7 @@ require 'treesitter-context'.setup {
 require('ts_context_commentstring')
 
 require('nvim-treesitter.configs').setup {
-  auto_install = false,
+  auto_install = true,
   matchup = {
     enable = true
   },

@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup(
   {
     { 'kyazdani42/nvim-web-devicons' },
-    { 'kyazdani42/nvim-tree.lua',      commit = '2a268f631' },
+    { 'nvim-tree/nvim-tree.lua' },
     { 'christoomey/vim-tmux-navigator' },
 
     { 'overcache/NeoSolarized' },
@@ -45,7 +45,7 @@ require('lazy').setup(
     { 'nvim-lua/plenary.nvim' },
     { 'windwp/nvim-spectre' },
     { 'janko/vim-test' },
-    { 'phaazon/hop.nvim',            branch = 'v2' },
+    { 'smoka7/hop.nvim' },
     { 'ibhagwan/fzf-lua',            commit = '7e53aeb' },
     { 'goolord/alpha-nvim' },
     { 'tpope/vim-rails' },
@@ -96,7 +96,7 @@ require('lazy').setup(
     { 'dag/vim-fish' },
     { 'vtm9/vim-pry' },
     { 'Pocco81/auto-save.nvim' },
-    { 'norcalli/nvim-colorizer.lua' },
+    { 'catgoose/nvim-colorizer.lua' },
     { 'declancm/maximize.nvim' },
 
   }
