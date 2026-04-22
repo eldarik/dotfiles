@@ -9,7 +9,7 @@ require('ts_context_commentstring')
 require('nvim-treesitter.configs').setup {
   auto_install = true,
   matchup = {
-    enable = true
+    enable = false
   },
   highlight = {
     enable = true, -- false will disable the whole extension
