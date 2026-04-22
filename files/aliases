@@ -176,3 +176,7 @@ alias cldw='CLAUDE_CONFIG_DIR=~/.claude-work claude --permission-mode plan'
 alias cld="echo 'Use specific commands: cldp - personal or cldw - work'"
 
 alias ocd='opencode'
+
+
+# remove tmp files created by nvim shada
+alias nvshada='rm -f ~/.local/state/nvim/shada/main.shada.tmp.*'
