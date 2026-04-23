@@ -179,4 +179,4 @@ alias ocd='opencode'
 
 
 # remove tmp files created by nvim shada
-alias nvshada='rm -f ~/.local/state/nvim/shada/main.shada.tmp.*'
+alias nvshada='find ~/.local/state/nvim/shada -maxdepth 1 -name "main.shada.tmp.*" -delete 2>/dev/null'
