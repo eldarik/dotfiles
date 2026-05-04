@@ -12,7 +12,7 @@ theme = iTerm2 Solarized Light
 
 window-colorspace = "display-p3"
 # uncomment if tabs are not needed
-# window-decoration = none
+window-decoration = none
 window-padding-x = 5
 
 cursor-invert-fg-bg = true

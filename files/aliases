@@ -177,6 +177,7 @@ alias cld="echo 'Use specific commands: cldp - personal or cldw - work'"
 
 alias ocd='opencode'
 
+alias gmn='gemini'
 
 # remove tmp files created by nvim shada
 alias nvshada='find ~/.local/state/nvim/shada -maxdepth 1 -name "main.shada.tmp.*" -delete 2>/dev/null'
