@@ -181,3 +181,8 @@ alias gmn='gemini'
 
 # remove tmp files created by nvim shada
 alias nvshada='find ~/.local/state/nvim/shada -maxdepth 1 -name "main.shada.tmp.*" -delete 2>/dev/null'
+
+function gcw --description 'pick a git worktree with fzf and cd into it'
+    set -l path (git worktree list | fzf | awk '{print $1}')
+    test -n "$path"; and cd $path
+end

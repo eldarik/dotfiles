@@ -1,6 +1,7 @@
 [user]
   name = Eldar Iskhakov
   email = iskhakov.e11@gmail.com
+  signingkey = /Users/eldar/.ssh/id_ed25519.pub
 [core]
   excludesfile = ~/.gitignore_global
   editor = nvim
@@ -23,3 +24,11 @@
     defaultRemote = origin
 # [diff]
 #   external = difft
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
+[gpg "ssh"]
+  allowedSignersFile = /Users/eldar/.config/git/allowed_signers
+[includeIf "gitdir:~/projects/hoodies/"]
+    path = ~/.gitconfig-hoodies

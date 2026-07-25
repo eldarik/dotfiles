@@ -4,6 +4,8 @@ end
 
 set -U fish_greeting
 
+fish_add_path --prepend $HOME/.asdf/shims
+
 source ~/.asdf/asdf.fish
 
 source ~/.fzf/shell/key-bindings.fish
@@ -50,3 +52,10 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Added by Antigravity
 fish_add_path /Users/eldar/.antigravity/antigravity/bin
+
+# pnpm
+set -gx PNPM_HOME "/Users/eldar/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
