@@ -107,6 +107,28 @@ keymap("v", "gb", "<cmd>BrowseSelected<CR>")
 
 -- Git
 keymap('n', '<leader>c', function() require('fzf-lua').git_status() end, { desc = 'Git Changed Files (fzf-lua)' })
+keymap('n', '<leader>gw', function()
+  local output = vim.fn.system('git worktree list')
+  if vim.v.shell_error ~= 0 then
+    vim.notify('Not a git repository or no worktrees found', vim.log.levels.WARN)
+    return
+  end
+
+  local lines = vim.split(output, '\n', { trimempty = true })
+
+  require('fzf-lua').fzf_exec(lines, {
+    prompt = 'Worktree> ',
+    actions = {
+      ['default'] = function(selected)
+        local path = selected[1]:match('^(%S+)')
+        if path then
+          vim.fn.chdir(path)
+          vim.notify('Switched to worktree: ' .. path)
+        end
+      end,
+    },
+  })
+end, { desc = 'Switch git worktree (fzf)' })
 keymap('n', 'ga', ':GitGutterStageHunk<CR>', { desc = 'Stage Git Hunk' })
 keymap('n', 'gs', ':GitGutterUndoHunk<CR>', { desc = 'Reset Git Hunk' })
 keymap('n', ']h', ':GitGutterNextHunk<CR>', { desc = 'Next Git Hunk' })
