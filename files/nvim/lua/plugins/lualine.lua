@@ -6,6 +6,8 @@ end
 require('lualine').setup {
   options = {
     globalstatus = true,
+    -- Initial value only; lua/theme.lua re-setups this to match light/dark.
+    -- Not 'auto' — lualine loads before colorscheme.lua, so it would resolve wrong.
     theme = 'papercolor_light',
     section_separators = { left = '', right = '' },
     component_separators = { left = '|', right = '|' },

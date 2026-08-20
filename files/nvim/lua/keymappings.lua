@@ -134,3 +134,6 @@ keymap('n', 'gs', ':GitGutterUndoHunk<CR>', { desc = 'Reset Git Hunk' })
 keymap('n', ']h', ':GitGutterNextHunk<CR>', { desc = 'Next Git Hunk' })
 keymap('n', '[h', ':GitGutterPrevHunk<CR>', { desc = 'Previous Git Hunk' })
 keymap('n', '<leader>cm', function() vim.cmd('terminal git commit') end, { desc = 'Git Commit (Terminal)' })
+
+-- Theme
+keymap('n', '<leader>ub', function() require('theme').toggle() end, { desc = 'Toggle light/dark (whole stack)' })

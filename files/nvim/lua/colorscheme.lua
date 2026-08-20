@@ -15,13 +15,12 @@
 
 -- colorscheme solarized
 
+-- 'background' is owned by lua/theme.lua (applied at the bottom of this file).
 vim.cmd [[
   try
     colorscheme solarized
-    set background=light
   catch
     colorscheme evening
-    set background=light
   endtry
 ]]
 
@@ -35,3 +34,7 @@ end
 
 vim.api.nvim_create_autocmd('ColorScheme', { callback = clear_bg })
 clear_bg()
+
+-- Runs last in init.lua, so lualine is already set up and startup lands on the
+-- correct theme. clear_bg re-runs on its own via the ColorScheme autocmd above.
+require('theme').apply()

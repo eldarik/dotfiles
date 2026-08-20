@@ -41,8 +41,18 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/fish ~/.config/fish
 	mkdir -p ~/.config/wezterm
 	ln -sf $(PWD)/files/wezterm.lua ~/.config/wezterm/wezterm.lua
-	mkdir -p ~/.config/ghostty/
+	mkdir -p ~/.config/ghostty/themes
 	ln -sf $(PWD)/files/ghostty ~/.config/ghostty/config
+	ln -sf $(PWD)/files/ghostty-themes/solarized-light ~/.config/ghostty/themes/solarized-light
+	ln -sf $(PWD)/files/ghostty-themes/solarized-dark ~/.config/ghostty/themes/solarized-dark
+	mkdir -p ~/.config/tmux
+	ln -sf $(PWD)/files/tmux/light.conf ~/.config/tmux/light.conf
+	ln -sf $(PWD)/files/tmux/dark.conf ~/.config/tmux/dark.conf
+	mkdir -p ~/.local/bin
+	chmod +x $(PWD)/files/bin/theme-toggle $(PWD)/files/bin/theme-mode $(PWD)/files/bin/tmux-theme-apply
+	ln -sf $(PWD)/files/bin/theme-toggle ~/.local/bin/theme-toggle
+	ln -sf $(PWD)/files/bin/theme-mode ~/.local/bin/theme-mode
+	ln -sf $(PWD)/files/bin/tmux-theme-apply ~/.local/bin/tmux-theme-apply
 
 
 PACKER_PATH=~/.local/share/nvim/site/pack/packer/start

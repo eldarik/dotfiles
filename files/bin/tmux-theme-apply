@@ -1,0 +1,12 @@
+#!/bin/sh
+# Apply the tmux theme matching the CURRENT macOS appearance.
+#
+# Deliberately ignores which hook invoked it: a single appearance change can
+# fire both client-light-theme and client-dark-theme (multiple clients, and
+# more than one 2031 report per transition), so trusting the hook identity
+# makes the result a race. macOS appearance is the source of truth, so
+# re-deriving it here is idempotent — every firing converges on the same answer.
+set -e
+
+mode=$("$(dirname "$0")/theme-mode")
+tmux source-file "$HOME/.config/tmux/$mode.conf"

@@ -7,8 +7,11 @@ font-size = 15
 cursor-style = block
 mouse-hide-while-typing = true
 
-theme = iTerm2 Solarized Light
-# theme = iTerm2 Solarized Dark
+# Follows the macOS appearance automatically. Custom themes live in
+# ~/.config/ghostty/themes/ (see files/ghostty-themes/) and carry the palette
+# tweaks that used to sit in this file — palette lines here would apply to both
+# modes and break dark.
+theme = light:solarized-light,dark:solarized-dark
 
 window-colorspace = "display-p3"
 # uncomment if tabs are not needed
@@ -21,10 +24,5 @@ cursor-style=block
 shell-integration-features = no-cursor
 
 keybind = cmd+s>r=reload_config
-
-palette = 7=#eee8d5
-palette = 15=#fdf6e3
-palette = 10=#859900
-palette = 12=#268bd2
 
 copy-on-select = false

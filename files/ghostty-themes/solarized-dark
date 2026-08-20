@@ -1,0 +1,30 @@
+# Solarized Dark — based on Ghostty's shipped "iTerm2 Solarized Dark" theme.
+# Kept self-contained because Ghostty theme files may not use `theme` or `config-file`.
+#
+# Deviations from the shipped theme, matching solarized-light:
+#   10 real green instead of base01 gray
+#   12 real blue  instead of base0 gray
+# Slot 0 is base02 #073642 — tmux uses it as the inactive pane bg, one step
+# lighter than the base03 background, so pane dimming reads the same way as in light mode.
+palette = 0=#073642
+palette = 1=#dc322f
+palette = 2=#859900
+palette = 3=#b58900
+palette = 4=#268bd2
+palette = 5=#d33682
+palette = 6=#2aa198
+palette = 7=#eee8d5
+palette = 8=#335e69
+palette = 9=#cb4b16
+palette = 10=#859900
+palette = 11=#657b83
+palette = 12=#268bd2
+palette = 13=#6c71c4
+palette = 14=#93a1a1
+palette = 15=#fdf6e3
+background = #002b36
+foreground = #839496
+cursor-color = #839496
+cursor-text = #073642
+selection-background = #073642
+selection-foreground = #93a1a1

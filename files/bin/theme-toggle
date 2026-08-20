@@ -1,0 +1,22 @@
+#!/bin/sh
+# Flip macOS appearance. Ghostty, tmux and bat follow on their own;
+# nvim is nudged by the tmux client-*-theme hook (and here, for nvim outside tmux).
+set -e
+
+case "${1:-toggle}" in
+  light)  want='false' ;;
+  dark)   want='true' ;;
+  toggle) want='not dark mode' ;;
+  *) echo "usage: theme-toggle [light|dark|toggle]" >&2; exit 2 ;;
+esac
+
+osascript -e "tell application \"System Events\" to tell appearance preferences to set dark mode to $want"
+
+# Cheap state file so nvim/fish don't have to shell out to `defaults`.
+# Resolve the sibling script by path — Karabiner and Shortcuts run with a minimal PATH.
+mode=$("$(dirname "$0")/theme-mode")
+mkdir -p "$HOME/.cache"
+printf '%s\n' "$mode" > "$HOME/.cache/theme-mode"
+
+# Covers nvim running outside tmux; the tmux hook covers the rest (harmless if doubled).
+pkill -USR1 -x nvim 2>/dev/null || true

@@ -1,0 +1,30 @@
+# Solarized Light — based on Ghostty's shipped "iTerm2 Solarized Light" theme.
+# Kept self-contained because Ghostty theme files may not use `theme` or `config-file`.
+#
+# Deviations from the shipped theme (these used to be `palette` overrides in the
+# main config, which would have applied to dark mode too):
+#   7  base2 #eee8d5 instead of the muddy #bbb5a2 — tmux uses this as the inactive pane bg
+#   10 real green instead of base01 gray
+#   12 real blue  instead of base0 gray
+palette = 0=#073642
+palette = 1=#dc322f
+palette = 2=#859900
+palette = 3=#b58900
+palette = 4=#268bd2
+palette = 5=#d33682
+palette = 6=#2aa198
+palette = 7=#eee8d5
+palette = 8=#002b36
+palette = 9=#cb4b16
+palette = 10=#859900
+palette = 11=#657b83
+palette = 12=#268bd2
+palette = 13=#6c71c4
+palette = 14=#93a1a1
+palette = 15=#fdf6e3
+background = #fdf6e3
+foreground = #657b83
+cursor-color = #657b83
+cursor-text = #eee8d5
+selection-background = #eee8d5
+selection-foreground = #586e75

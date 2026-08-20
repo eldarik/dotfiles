@@ -1,0 +1,6 @@
+#!/bin/sh
+# Prints "light" or "dark". AppleInterfaceStyle is absent entirely in light mode.
+case "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" in
+  Dark) echo dark ;;
+  *)    echo light ;;
+esac
