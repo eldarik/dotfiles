@@ -6,7 +6,10 @@
 #
 # NOTE: this is deliberately -gx, not -U. A leftover universal FZF_DEFAULT_OPTS
 # would shadow it; clear one with `set -Ue FZF_DEFAULT_OPTS`.
-if test (theme-mode) = dark
+#
+# theme-mode is called by absolute path: conf.d/ is sourced before config.fish,
+# so ~/.local/bin is not on PATH yet.
+if test ($HOME/.local/bin/theme-mode) = dark
     # solarized dark
     set -gx FZF_DEFAULT_OPTS "
       --color=bg+:#073642,fg:#839496,hl:#268bd2
