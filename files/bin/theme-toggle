@@ -18,5 +18,9 @@ mode=$("$(dirname "$0")/theme-mode")
 mkdir -p "$HOME/.cache"
 printf '%s\n' "$mode" > "$HOME/.cache/theme-mode"
 
+# Repaint fzf for shells that are already open. fzf re-reads this file on every
+# invocation, so there is nothing to signal — see fish/conf.d/theme.fish.
+"$(dirname "$0")/fzf-theme"
+
 # Covers nvim running outside tmux; the tmux hook covers the rest (harmless if doubled).
 pkill -USR1 -x nvim 2>/dev/null || true

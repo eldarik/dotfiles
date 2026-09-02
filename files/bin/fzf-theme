@@ -1,0 +1,38 @@
+#!/bin/sh
+# Write the fzf --color block matching the CURRENT macOS appearance.
+#
+# fzf re-reads $FZF_DEFAULT_OPTS_FILE on every invocation, so rewriting this file
+# is what makes a theme flip reach shells that are ALREADY open — unlike
+# FZF_DEFAULT_OPTS, which is frozen into the environment at shell startup and so
+# only ever reached new shells.
+#
+# Like tmux-theme-apply, this re-derives the mode rather than taking it as an
+# argument: macOS appearance is the source of truth, so every caller converges on
+# the same answer and repeated firings are idempotent.
+#
+# Written atomically — shells start concurrently and fzf may be launched mid-write.
+#
+# theme-mode is resolved by path: Karabiner, tmux hooks and fish conf.d all run
+# with a minimal PATH that does not include ~/.local/bin.
+set -e
+
+out="$HOME/.cache/fzf-opts"
+mode=$("$(dirname "$0")/theme-mode")
+mkdir -p "$HOME/.cache"
+
+if [ "$mode" = dark ]; then
+  # solarized dark
+  colors='--color=bg+:#073642,fg:#839496,hl:#268bd2
+--color=fg+:#839496,pointer:#b58900,info:#268bd2
+--color=marker:#b58900,spinner:#859900,prompt:#2aa198
+--color=hl+:#b58900'
+else
+  # solarized light
+  colors='--color=bg+:#eee8d5,fg:#657b83,hl:#b58900
+--color=fg+:#586e75,pointer:#859900,info:#268bd2
+--color=marker:#859900,spinner:#2aa198,prompt:#b58900
+--color=hl+:#cb4b16'
+fi
+
+printf '%s\n' "$colors" > "$out.tmp.$$"
+mv -f "$out.tmp.$$" "$out"
