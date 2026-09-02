@@ -8,9 +8,11 @@ fish_add_path --prepend $HOME/.asdf/shims
 
 source ~/.asdf/asdf.fish
 
-source ~/.fzf/shell/key-bindings.fish
-fzf_key_bindings
-# FZF_DEFAULT_OPTS is set per light/dark in conf.d/theme.fish
+# fzf ships its own bindings + completions; this replaces the old ~/.fzf checkout.
+# fish_user_key_bindings re-invokes fzf_key_bindings after fish_hybrid_key_bindings.
+# The palette comes from FZF_DEFAULT_OPTS_FILE, set in conf.d/theme.fish.
+# Guarded so a fresh machine (dotfiles synced before brew packages) starts quietly.
+type -q fzf; and fzf --fish | source
 
 set -g fish_key_bindings fish_hybrid_key_bindings
 set -gx EDITOR nvim
