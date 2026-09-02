@@ -30,6 +30,29 @@
                         ]
                     },
                     {
+                        "description": "Toggle grayscale color filter",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "$HOME/.local/bin/grayscale-toggle"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Switch input source by pressing left or right shift",
                         "manipulators": [
                             {

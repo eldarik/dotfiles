@@ -1,0 +1,24 @@
+#!/bin/sh
+# Toggle the macOS grayscale color filter. Calls the private UniversalAccess entry
+# point System Settings itself uses, so the change applies instantly.
+set -e
+
+case "${1:-toggle}" in
+  on)     want=1 ;;
+  off)    want=0 ;;
+  toggle) want=t ;;
+  *) echo "usage: grayscale-toggle [on|off|toggle]" >&2; exit 2 ;;
+esac
+
+# Absolute python3 — Karabiner and Shortcuts run with a minimal PATH.
+exec /usr/bin/python3 - "$want" <<'PY'
+import ctypes, sys
+
+ua = ctypes.cdll.LoadLibrary(
+    "/System/Library/PrivateFrameworks/UniversalAccess.framework/UniversalAccess")
+ua.UAGrayscaleIsEnabled.restype = ctypes.c_bool
+ua.UAGrayscaleSetEnabled.argtypes = [ctypes.c_bool]
+
+arg = sys.argv[1]
+ua.UAGrayscaleSetEnabled(not ua.UAGrayscaleIsEnabled() if arg == "t" else arg == "1")
+PY
