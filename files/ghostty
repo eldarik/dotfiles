@@ -17,6 +17,19 @@ window-colorspace = "display-p3"
 # uncomment if tabs are not needed
 window-decoration = none
 window-padding-x = 5
+# Paint the padding with the nearest cell's background instead of `background`.
+# tmux dims inactive panes (window-style bg in files/tmux/{light,dark}.conf), so
+# with the default `background` the padding kept solarized base3/base03 and drew a
+# brighter frame down the left/right/bottom edges of every dimmed pane.
+#
+# `-always` rather than plain `extend`: `extend` skips VERTICAL extension whenever
+# the nearest row holds any cell with the default background, and tmux's bottom row
+# spans every pane — the moment one of them is the active (undimmed) pane, the whole
+# bottom padding fell back to `background` and kept a 3pt bright line. Horizontal
+# extension has no such rule, which is why only the bottom edge survived `extend`.
+# Safe here: the fish prompt sets foreground colors only (files/fish/functions/
+# fish_prompt.fish), so there is no stray cell background to bleed into the padding.
+window-padding-color = extend-always
 
 cursor-invert-fg-bg = true
 cursor-style-blink = false
