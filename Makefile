@@ -49,12 +49,13 @@ sync-dotfiles:
 	ln -sf $(PWD)/files/tmux/light.conf ~/.config/tmux/light.conf
 	ln -sf $(PWD)/files/tmux/dark.conf ~/.config/tmux/dark.conf
 	mkdir -p ~/.local/bin
-	chmod +x $(PWD)/files/bin/theme-toggle $(PWD)/files/bin/theme-mode $(PWD)/files/bin/tmux-theme-apply $(PWD)/files/bin/fzf-theme $(PWD)/files/bin/grayscale-toggle
+	chmod +x $(PWD)/files/bin/theme-toggle $(PWD)/files/bin/theme-mode $(PWD)/files/bin/tmux-theme-apply $(PWD)/files/bin/fzf-theme $(PWD)/files/bin/grayscale-toggle $(PWD)/files/bin/theme-push-remote
 	ln -sf $(PWD)/files/bin/theme-toggle ~/.local/bin/theme-toggle
 	ln -sf $(PWD)/files/bin/theme-mode ~/.local/bin/theme-mode
 	ln -sf $(PWD)/files/bin/tmux-theme-apply ~/.local/bin/tmux-theme-apply
 	ln -sf $(PWD)/files/bin/fzf-theme ~/.local/bin/fzf-theme
 	ln -sf $(PWD)/files/bin/grayscale-toggle ~/.local/bin/grayscale-toggle
+	ln -sf $(PWD)/files/bin/theme-push-remote ~/.local/bin/theme-push-remote
 	# Seed ~/.cache/fzf-opts so the first shell on a fresh machine is already themed.
 	$(PWD)/files/bin/fzf-theme
 

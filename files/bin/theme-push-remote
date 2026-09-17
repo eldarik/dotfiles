@@ -1,0 +1,45 @@
+#!/bin/sh
+# Push this Mac's appearance to every remote workstation that wants it.
+#
+# Remote boxes normally need no help: Ghostty reports the appearance over the
+# SSH pty via DEC mode 2031, tmux subscribes on every client and exposes it as
+# #{client_theme}, and the far end's theme-mode reads that. No daemon, no
+# polling, nothing to push.
+#
+# That breaks the moment the connection is mosh. mosh does not proxy the pty -
+# mosh-server runs its own terminal emulator and ships a screen diff to
+# mosh-client, so only sequences mosh explicitly models reach Ghostty. Mode
+# 2031 is not modelled (the mosh-server binary contains no 2031, 996 or 997),
+# so tmux's subscription dies at mosh-server, Ghostty is never asked to
+# report, and #{client_theme} is empty for the life of the session. Same for
+# the OSC 11 fallback. Over mosh the appearance has to be pushed, and this
+# pushes it.
+#
+# Hosts come from ~/.config/theme-push-hosts, one ssh target per line, blank
+# lines and #-comments ignored. That file is the on/off switch: with no file
+# this is a no-op, which is also what makes it harmless on the Linux box,
+# where files/bin is linked verbatim and this script exists but has no hosts.
+#
+# Like tmux-theme-apply, it re-derives the mode rather than trusting a hook
+# argument: one appearance change can fire both client-light-theme and
+# client-dark-theme, so acting on the hook's identity is a race.
+set -e
+
+hosts="$HOME/.config/theme-push-hosts"
+[ -r "$hosts" ] || exit 0
+
+mode=$("$(dirname "$0")/theme-mode")
+
+# Backgrounded and hard-timeboxed, individually. This runs from a tmux hook on
+# every appearance flip; a VPS that is asleep, roaming or simply far away must
+# never stall the Mac's own repaint, and one dead host must not block the rest.
+while IFS= read -r host || [ -n "$host" ]; do
+  case "$host" in ''|\#*) continue ;; esac
+  ssh -o BatchMode=yes \
+      -o ConnectTimeout=5 \
+      -o ServerAliveInterval=5 \
+      -o ServerAliveCountMax=2 \
+      "$host" "\$HOME/.local/bin/theme-sync $mode" >/dev/null 2>&1 &
+done < "$hosts"
+
+exit 0
