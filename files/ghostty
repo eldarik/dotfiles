@@ -14,8 +14,16 @@ mouse-hide-while-typing = true
 theme = light:solarized-light,dark:solarized-dark
 
 window-colorspace = "display-p3"
-# uncomment if tabs are not needed
-window-decoration = none
+# Tabs require window decorations on macOS: `window-decoration = none` removes the
+# titlebar *and* disables tabs entirely (enforced by the system).
+window-decoration = auto
+# Merge the tab bar into the titlebar, so there is no separate title row. The
+# titlebar tracks the terminal background, so the light/dark theme split still applies.
+macos-titlebar-style = tabs
+# Hide the traffic lights (close/minimize/zoom); the tabs start at the left edge
+# instead. The titlebar row itself has to stay — it is what holds the tabs. Close
+# with cmd+w / cmd+q, and drag the window by the empty part of the tab row.
+macos-window-buttons = hidden
 window-padding-x = 5
 # Paint the padding with the nearest cell's background instead of `background`.
 # tmux dims inactive panes (window-style bg in files/tmux/{light,dark}.conf), so
