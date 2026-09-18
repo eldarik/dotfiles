@@ -76,13 +76,17 @@ require('lazy').setup(
     { 'danymat/neogen', },
     {
       'nvim-treesitter/nvim-treesitter',
+      -- The default branch moved to `main`, an incompatible rewrite without
+      -- `nvim-treesitter.configs`. Stay on the (archived) master API; see
+      -- plugins/treesitter_patches.lua for the nvim 0.12 compatibility shims.
+      branch = 'master',
       dependencies = {
         'JoosepAlviste/nvim-ts-context-commentstring',
       },
     },
     { 'windwp/nvim-autopairs', },
     { 'ThePrimeagen/refactoring.nvim', },
-    { 'nvim-treesitter/nvim-treesitter-textobjects', },
+    { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'master' },
     { 'RRethy/nvim-treesitter-endwise', },
     { 'windwp/nvim-ts-autotag', },
     { 'andymass/vim-matchup', },
