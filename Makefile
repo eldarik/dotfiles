@@ -7,7 +7,6 @@ install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 setup-macos: install-brew \
-	install-brew-packages \
 	install-asdf \
 	install-asdf-plugins \
 	install-oh-my-zsh \
