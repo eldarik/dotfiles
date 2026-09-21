@@ -4,7 +4,16 @@ end
 
 set -U fish_greeting
 
-fish_add_path --prepend $HOME/.asdf/shims
+# Homebrew. This lived in fish_user_paths until that file stopped being tracked;
+# keep it here so a fresh checkout brings brew back on its own. Must run before
+# anything below that probes for a brew-installed tool (fzf, nvim).
+if test -x /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
+# --move: brew shellenv prepends /opt/homebrew/bin, and asdf's shims have to win
+# over it for node/python3/ruby/yarn.
+fish_add_path --move --prepend $HOME/.asdf/shims
 
 source ~/.asdf/asdf.fish
 
