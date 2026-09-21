@@ -11,11 +11,10 @@ if test -x /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
 end
 
-# --move: brew shellenv prepends /opt/homebrew/bin, and asdf's shims have to win
-# over it for node/python3/ruby/yarn.
-fish_add_path --move --prepend $HOME/.asdf/shims
-
-source ~/.asdf/asdf.fish
+# mise, in place of asdf. No shims: it puts the active runtime's bin straight on
+# PATH and re-resolves on every directory change. Runs after brew shellenv so the
+# runtime wins over /opt/homebrew/bin for node.
+mise activate fish | source
 
 # fzf ships its own bindings + completions; this replaces the old ~/.fzf checkout.
 # fish_user_key_bindings re-invokes fzf_key_bindings after fish_hybrid_key_bindings.

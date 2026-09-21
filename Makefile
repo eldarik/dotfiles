@@ -1,4 +1,4 @@
-include install-asdf.mk
+include install-mise.mk
 include setup-macos.mk
 include setup-ubuntu.mk
 
@@ -7,8 +7,7 @@ install-tmux-plugin-manager:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 setup-macos: install-brew \
-	install-asdf \
-	install-asdf-plugins \
+	install-mise \
 	install-oh-my-zsh \
 	sync-dotfiles
 
