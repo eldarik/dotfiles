@@ -1,6 +1,13 @@
 function mosha --description "mosh with a live forwarded ssh-agent"
+    # --cmd runs something other than a login shell on the far end, e.g.
+    # `--cmd "tmux new-session -A -s mosaic"`. --ignore-unknown is what keeps
+    # the rest of the contract intact: every flag mosh owns stays in $argv, in
+    # order, so argv[1] is still the target and argv[2..-1] still mosh's opts.
+    argparse --ignore-unknown 'cmd=' -- $argv
+    or return 1
+
     if test (count $argv) -eq 0
-        echo "usage: mosha <[user@]host> [extra mosh opts...]" >&2
+        echo "usage: mosha [--cmd <remote command>] <[user@]host> [extra mosh opts...]" >&2
         return 1
     end
 
@@ -53,10 +60,25 @@ function mosha --description "mosh with a live forwarded ssh-agent"
     # Seed the theme before attaching. Mid-session flips arrive via the
     # client-*-theme hooks in tmux.conf, but nothing has fired yet on a fresh
     # connection and mosh will never let the box work it out for itself.
+    # Seed the TARGET, not ~/.config/theme-push-hosts: this session's box must
+    # come up right even when that list has never heard of it — vps-eu was
+    # rebuilt without a line there and the whole mosh theme path died silently.
+    # Mid-session flips still ride the list, so the host belongs there too.
     if test -x $HOME/.local/bin/theme-push-remote
-        $HOME/.local/bin/theme-push-remote
+        $HOME/.local/bin/theme-push-remote $target
     end
 
-    mosh $moshopts $target -- sh -c \
-        'export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock; exec ${SHELL:-/bin/bash} -l'
+    # The remote command always exports the carrier's socket first, then execs,
+    # so nothing lingers between mosh-server and the real process - and with
+    # --cmd, detaching from tmux ends the mosh session instead of dropping into
+    # a shell. Single-quoted on purpose: $HOME and ${SHELL} are for the remote
+    # sh to expand, not fish.
+    set -l remote 'export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock; exec '
+    if set -q _flag_cmd
+        set remote $remote$_flag_cmd
+    else
+        set remote $remote'${SHELL:-/bin/bash} -l'
+    end
+
+    mosh $moshopts $target -- sh -c $remote
 end
