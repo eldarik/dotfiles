@@ -20,26 +20,41 @@
 # this is a no-op, which is also what makes it harmless on the Linux box,
 # where files/bin is linked verbatim and this script exists but has no hosts.
 #
+# With arguments, push to those ssh targets instead of reading the file. That
+# is how mosha seeds the box it is actually connecting to: a host absent from
+# the list (added yesterday, rebuilt, someone else's) still comes up in the
+# Mac's mode, and only the mid-session flips need a line in the file.
+#
 # Like tmux-theme-apply, it re-derives the mode rather than trusting a hook
 # argument: one appearance change can fire both client-light-theme and
 # client-dark-theme, so acting on the hook's identity is a race.
 set -e
 
 hosts="$HOME/.config/theme-push-hosts"
-[ -r "$hosts" ] || exit 0
+[ $# -gt 0 ] || [ -r "$hosts" ] || exit 0
 
 mode=$("$(dirname "$0")/theme-mode")
 
 # Backgrounded and hard-timeboxed, individually. This runs from a tmux hook on
 # every appearance flip; a VPS that is asleep, roaming or simply far away must
 # never stall the Mac's own repaint, and one dead host must not block the rest.
-while IFS= read -r host || [ -n "$host" ]; do
-  case "$host" in ''|\#*) continue ;; esac
+push() {
   ssh -o BatchMode=yes \
       -o ConnectTimeout=5 \
       -o ServerAliveInterval=5 \
       -o ServerAliveCountMax=2 \
-      "$host" "\$HOME/.local/bin/theme-sync $mode" >/dev/null 2>&1 &
-done < "$hosts"
+      "$1" "\$HOME/.local/bin/theme-sync $mode" >/dev/null 2>&1 &
+}
+
+if [ $# -gt 0 ]; then
+  for host in "$@"; do
+    push "$host"
+  done
+else
+  while IFS= read -r host || [ -n "$host" ]; do
+    case "$host" in ''|\#*) continue ;; esac
+    push "$host"
+  done < "$hosts"
+fi
 
 exit 0

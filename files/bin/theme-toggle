@@ -24,3 +24,9 @@ printf '%s\n' "$mode" > "$HOME/.cache/theme-mode"
 
 # Covers nvim running outside tmux; the tmux hook covers the rest (harmless if doubled).
 pkill -USR1 -x nvim 2>/dev/null || true
+
+# Push to the remote workstations directly. The client-*-theme hooks fire this
+# too, but only when a local tmux client is attached at flip time — this keeps
+# the hotkey path working without one. Doubling is harmless: theme-sync is
+# idempotent, and the pushes are backgrounded and timeboxed inside the script.
+"$(dirname "$0")/theme-push-remote" || true
